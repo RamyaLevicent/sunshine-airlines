@@ -1,0 +1,39 @@
+<nav>
+      <div class="nav__logo">Sunshine</div>
+      <ul class="nav__links">
+        <li class="link"><a href="home.html">Home</a></li>
+        <li class="link"><a href="about.html">About Us</a></li>
+        <li class="link"><a href="specialoffers.html">Offers</a></li>
+        <!-- <li class="link"><a href="bookaflight.html">Book a Flight</a></li> -->
+        <li class="link dropdown">
+          <a href="home.html" class="dropdown-toggle">Flight Details</a>
+          <ul class="dropdown__menu">
+            <li class="link"><a href="flightstatus.html">Flight Status</a></li>
+            <li class="link"><a href="bookaflight.html">BookFlight</a></li>       
+            <li class="link"><a href="checkin.html">CheckIn</a></li>
+            <li class="link"><a href="baggage.html">Baggage</a></li>
+            <li class="link"><a href="managebooking.html">Manage Booking</a></li>
+          </ul>
+      </li>
+        <!-- <li class="link"><a href="flightstatus.html">Flight Status</a></li>
+        <li class="link"><a href="bookaflight.html">BookFlight</a></li>       
+        <li class="link"><a href="checkin.html">CheckIn</a></li>
+        <li class="link"><a href="baggage.html">Baggage</a></li>
+        <li class="link"><a href="managebooking.html">Manage Booking</a></li>          -->
+        <!-- <li class="link"><a href="service.html">Services</a></li> -->
+        <li class="link dropdown">
+          <a href="service.html" class="dropdown-toggle">Services</a>
+          <ul class="dropdown__menu">
+              <li><a href="travelinfo.html">Travel Information</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li>
+              <li><a href="mobileapp.html">Mobile App</a></li>
+          </ul>
+      </li>
+      
+
+      <a href=contact.html target="_blank">
+        <button class="btn">Contact</button>
+      </a>
+      
+    </nav>

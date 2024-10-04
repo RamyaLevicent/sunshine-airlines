@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sunshine Airlines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+    /* Image Section */
+.image-section {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    animation: zoomIn 1s ease-in-out;
+}
+
+.image-content img {
+    width: 80%; /* Set the image to a medium width */
+    height: auto;
+    max-width: 100%;
+    border-radius: 5%; /* Smaller border-radius for a smoother corner */
+    object-fit: cover;
+    margin: 0 auto; /* Centers the image within the container */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.image-content:hover .image-overlay {
+    opacity: 1;
+}
+
+
+        .contact-header,
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+            animation: slideInFromBottom 1.2s ease-in-out;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+         .contact-form{
+            max-width: 800px;
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .form-group button {
+            background-color: #16cf5d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #b3006e;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px 0;
+            animation: slideIn 0.8s ease-in-out;
+        }
+
+        .info-box i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .faq-section {
+            max-width: 800px;
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            animation: slideInFromLeft 1s ease;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            background-color: #fff;
+            cursor: pointer;
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        .faq-question {
+            padding: 15px;
+            background-color: #6ca6cd;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-item:hover .faq-question {
+            background-color: #4b89ac;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 15px;
+            background-color: #f1f1f1;
+            color: #333;
+            border-top: 1px solid #ddd;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 15px;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 18px;
+            color: #fff;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+
+            .faq-answer {
+                font-size: 14px;
+            }
+        }
+
+/* Footer Social Section */
+.footer-social {
+    background-color: #817878;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-social h4 {
+    color: #f0c312;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 30px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #106675;
+    text-shadow: 0 0 5px rgba(255, 221, 87, 0.8);
+}
+
+/* Footer Rights Section */
+.footer-rights {
+    background-color: #060607;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Optional: Font Awesome for Social Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="home.html">Home</a></li>
+          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="flightstatus.html" class="dropdown-toggle">Flight Details</a>
+            <ul class="dropdown__menu">
+              <li><a href="flightstatus.html">Flight Status</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>       
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="services.html" class="dropdown-toggle">Services</a>
+            <ul class="dropdown__menu">
+              <li><a href="travelinfo.html">Travel Information</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li>
+              <li><a href="mobileapp.html">Mobile App</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+        </ul>
+      </nav>
+
+    <div class="contact-container">   
+        <section class="image-section">
+            <div class="image-content">
+                <img src="assets/contact.1.jpg" alt="Beautiful Travel Destination">
+                <div class="image-overlay">
+                    <h2>Explore the World with Sunshine Airlines</h2>
+                    <p>Discover your next adventure and make unforgettable memories.</p>
+                    <a href="destination.html" class="explore-btn">Explore Destinations</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-header">
+            <h1>Get in Touch with Us!</h1>
+            <p>We're here to assist you 24/7 with all your queries and bookings.</p>
+        </section>
+
+        <section class="contact-form">
+            <h2>Contact Form</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <div class="info-box">
+                <i class="fas fa-phone-alt"></i>
+                <p>Call Us: +1-800-123-4567</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-envelope"></i>
+                <p>Email: info@sunshineairlines.com</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Visit Us: 123 Sunshine St, Happy City, Country</p>
+            </div>
+        </section>
+
+     <!-- FAQ Section -->
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is your baggage policy?
+                </div>
+                <div class="faq-answer">
+                    Our baggage policy allows one carry-on bag and one personal item per passenger. For detailed
+                    information on checked baggage allowances and restrictions, please refer to our baggage policy page.
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    How can I change my flight booking?
+                </div>
+                <div class="faq-answer">
+                    You can change your booking online through the "Manage Booking" option on our website or contact our
+                    customer service for assistance.
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are the check-in procedures?
+                </div>
+                <div class="faq-answer">
+                    Check-in can be done online starting 24 hours before departure or at the airport. Make sure to arrive
+                    at least two hours before domestic flights and three hours before international flights.
+                </div>
+            </div>     
+
+<!-- Footer Social Section -->
+<footer>
+    <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+            <a href="#" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="footer-rights">
+        <p>© 2024 Sunshine Airlines. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+
+</html>

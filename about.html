@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us – Sunshine Airline</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css"/>
+        <style>
+        
+        /* Basic styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Bold black text for headings */
+        h1, h2, h3 {
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Flexbox for responsiveness */
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header with contrast color */
+        .about-header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f3f1ea;
+            color: #000; /* Black text for contrast */
+            animation: fadeInDown 2s ease;
+        }
+
+        .about-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .about-header p {
+            font-size: 1.2em;
+        }
+
+        /* Values Section */
+        .values-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            padding: 30px 0;
+            background-color: #f3f1ea; /* White background for contrast */
+        }
+
+        .values-section h2 {
+            text-align: center;
+            width: 100%;
+            color: #002855; /* Contrast color */
+        }
+
+        .purpose, .values {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .purpose:hover, .values:hover {
+            transform: translateY(-10px);
+        }
+
+        .values ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .values ul li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-weight: bold; /* Bold text */
+        }
+
+        .values ul li i {
+            margin-right: 10px;
+            color: #059bff; /* Icon color for contrast */
+        }
+         /* Footer */
+         /* footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1f;
+            color: white;
+            margin-top: 40px;
+        } */
+
+        /* Culture Section */
+        .culture-section {
+            padding: 50px 0;
+            background: #f3f1ea;
+        }
+
+        .culture-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #002855;
+        }
+
+        .culture-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .culture-item {
+            flex: 1 1 300px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .culture-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .culture-item h3 {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Image styling */
+        .about-header img, .purpose img, .values img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .about-header img {
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        /* Animation effects */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .values-section, .culture-card {
+                flex-direction: column;
+            }
+
+            .purpose, .values, .culture-item {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Call to action */
+        .cta-section {  
+            background-color: #f3f1ea;
+            color: #302d2d;
+            text-align: center;
+            padding: 40px;
+            margin-top: 30px;
+            animation: slideUp 1.5s ease-out;
+        }
+
+        .cta-section h2 {
+            font-size: 2em;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section a {
+            display: inline-block;
+            background-color: #002855;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .cta-section a:hover {
+            background-color: #ffdd57;
+            color: #002855;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="home.html">Home</a></li>
+          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="flightdetails.html" class="dropdown-toggle">Flight Details</a>
+            <ul class="dropdown__menu">
+              <li><a href="flightstatus.html">Flight Status</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>       
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="services.html" class="dropdown-toggle">Services</a>
+            <ul class="dropdown__menu">
+              <li><a href="travelinfo.html">Travel Information</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li>
+              <li><a href="mobileapp.html">Mobile App</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+        </ul>
+      </nav>
+      
+    <div class="about-container">
+        <section class="about-header">
+            <h1>Discover the Purpose & Values of Sunshine Airlines</h1>
+            <p>At Sunshine Airlines, we are committed to delivering world-class aviation services while staying true to our core values of trust, safety, and innovation.</p>
+            <img src="assets/airline3" alt="Sunshine Airlines Flight">
+        </section>
+
+        <section class="values-section">
+            <div class="purpose fade-in">
+                <h2><strong>Our Vision</strong></h2>
+                <img src="assets/about 2.jpg" alt="Vision Image">
+                <p>Our vision is to create a world where every traveler enjoys seamless journeys, enhanced by comfort and safety, while contributing positively to the environment and the communities we serve.</p>
+            </div>
+            <div class="values fade-in">
+                <h2><strong>Our Values</strong></h2>
+                <ul>
+                    <li><i class="fa-solid fa-plane"></i> <strong>Customer-Centric Approach:</strong> We prioritize our customers, ensuring that every experience meets their needs and expectations.</li>
+                    <li><i class="fa-solid fa-shield"></i> <strong>Uncompromising Safety:</strong> We are committed to the highest safety standards, safeguarding our passengers and crew at all times.</li>
+                    <li><i class="fa-solid fa-leaf"></i> <strong>Environmental Stewardship:</strong> We strive to minimize our ecological impact through sustainable practices and initiatives.</li>
+                    <li><i class="fa-solid fa-lightbulb"></i> <strong>Embracing Innovation:</strong> We leverage technology to continuously improve our services and provide an exceptional travel experience.</li>
+                    <li><i class="fa-solid fa-heart"></i> <strong>Commitment to Integrity:</strong> Our ethical practices foster trust and loyalty among our customers and partners.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="culture-section">
+            <h2>Our Six Culture Beliefs</h2>
+            <div class="culture-card">
+                <div class="culture-item fade-in">
+                    <h3>Safety</h3>
+                    <p>Safety is the core of everything we do. We are dedicated to ensuring the wellbeing of our passengers and employees.</p>
+                </div>
+                <div class="culture-item fade-in">
+                    <h3>Customer First</h3>
+                    <p>We place customer satisfaction at the forefront by delivering superior service with every journey.</p>
+                </div>
+                <div class="culture-item fade-in">
+                    <h3>Teamwork</h3>
+                    <p>We foster collaboration and respect, recognizing that our success is built on collective effort.</p>
+                </div>
+                <div class="culture-item fade-in">
+                    <h3>Excellence</h3>
+                    <p>We are committed to maintaining the highest standards of service and continuous improvement.</p>
+                </div>
+                <div class="culture-item fade-in">
+                    <h3>Innovation</h3>
+                    <p>We embrace change, adopting cutting-edge technology to provide a more enjoyable travel experience.</p>
+                </div>
+                <div class="culture-item fade-in">
+                    <h3>Environmental Responsibility</h3>
+                    <p>We aim to reduce our carbon footprint and are dedicated to sustainable and eco-friendly practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <h2>Join the Sunshine Experience</h2>
+            <p>Embark on a journey of comfort, safety, and innovation with Sunshine Airlines. Book your flight today and discover the difference!</p>
+            <a href="booking.html">Book Now</a>
+        </section>
+    </div>
+    <!-- <footer>
+        <p>&copy; 2024 Sunshine Airline. All rights reserved.</p>
+    </footer> -->
+    <footer class="footer">
+        <div class="section__container footer__container">
+          <div class="footer__col">
+            <h3>Sunshine</h3>
+            <p>
+              Where Excellence Takes Flight. With a strong commitment to customer
+              satisfaction and a passion for air travel, Sunshine Airlines offers
+              exceptional service and seamless journeys.
+            </p>
+            <p>
+              From friendly smiles to state-of-the-art aircraft, we connect the
+              world, ensuring safe, comfortable, and unforgettable experiences.
+            </p>
+          </div>
+          <div class="footer__col">
+            <h4>INFORMATION</h4>
+            <a href="home.html"><p>Home</p></a>
+            <a href="about.html"><p>About</p></a>
+            <a href="specialoffers.html"><p>Special Offers</p></a>
+            <a href="service.html"><p>Services</p></a>
+     
+            <a href="flightstatus.html"><p>Flight Status</p></a>
+    </div>
+          <div class="footer__col">
+              <a href="contact.html"> <h4>CONTACT</h4></a>
+            <a href="customers.html"><p>Customers Support</p></a>
+            <a href="mobileapp.html"><p>Mobile App</p></a>
+            <a href="travelinfo.html"><p>Travel Informations</p></a>
+     
+     
+          </div>
+        </div>
+        <div class="section__container footer__bar">
+          <p>Copyright © 2024 Sunshine Airlines. All rights reserved.</p>
+          <div class="socials">
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-youtube-fill"></i></span>
+          </div>
+        </div>
+      </footer>
+</body>
+
+</html>

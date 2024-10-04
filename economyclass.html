@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economy Class Ticket Booking - Sunshine Airlines</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #0056b3;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .features, .booking, .policies, .experience, .assistance, .loyalty, .additional {
+            margin-bottom: 30px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color:#ffdd57
+        }
+
+        @media (max-width: 768px) {
+            .feature-box {
+                padding: 15px;
+            }
+
+            h1, h2, h3 {
+                font-size: 1.5em;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="home.html">Home</a></li>
+          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="flightstatus.html" class="dropdown-toggle">Flight Details</a>
+            <ul class="dropdown__menu">
+              <li><a href="flightstatus.html">Flight Status</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>       
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="services.html" class="dropdown-toggle">Services</a>
+            <ul class="dropdown__menu">
+              <li><a href="travelinfo.html">Travel Information</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li>
+              <li><a href="mobileapp.html">Mobile App</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+        </ul>
+      </nav>
+    <div class="container">
+        <h1>Economy Class Ticket Booking</h1>
+        
+        <div class="features">
+            <h2>Features of Economy Class</h2>
+            <div class="feature-box">
+                <p><strong>Affordable Fares:</strong> Economy Class is designed for budget-conscious travelers who seek cost-effective air travel without sacrificing comfort.</p>
+                <p><strong>Comfortable Seating:</strong> Enjoy ergonomically designed seats with adequate legroom and adjustable headrests.</p>
+                <img src="assets/econmy class 3.jpg" style="width: 1200%;  height: 300px; display: block; margin: auto;" />
+
+                <p><strong>In-Flight Dining:</strong> Passengers can enjoy a complimentary meal or snack, depending on the duration of the flight.</p>
+                <p><strong>Personal Entertainment:</strong> Access to in-flight entertainment with a personal screen offering a selection of movies, TV shows, music, and games.</p>
+                <p><strong>Standard Baggage Allowance:</strong> Economy Class includes free checked baggage and carry-on allowance.</p>
+                <p><strong>Friendly Service:</strong> Our cabin crew ensures a pleasant flight, offering assistance throughout the journey.</p>
+            </div>
+        </div>
+
+        <div class="booking">
+            <h2>Booking Procedure</h2>
+            <div class="feature-box">
+                <p><strong>Search for Flights:</strong> Input travel dates, destination, and select "Economy Class" on our booking platform.</p>
+                <p><strong>Select a Flight:</strong> Choose from available Economy Class flight options based on your budget and timing.</p>
+                <img src="assets/economy class 4.jpg" style="width: 1200%;  height: 300px; display: block; margin: auto;" />
+
+                <p><strong>Enter Passenger Details:</strong> Provide names, contact details, and special requests.</p>
+                <p><strong>Baggage Selection:</strong> Add extra baggage if necessary.</p>
+                <p><strong>Payment:</strong> Complete the booking using a credit/debit card or other available payment methods.</p>
+                <button>Book Now</button>
+            </div>
+        </div>
+
+        <div class="policies">
+            <h2>Policies</h2>
+            <div class="feature-box">
+                <p><strong>Cancellations and Refunds:</strong> Economy Class tickets are non-refundable unless you purchase a flexible fare.</p>
+                <p><strong>Flight Changes:</strong> Flight changes are allowed for an additional fee, subject to availability and fare difference.</p>
+                <img src="assets/economy class.jpeg" style="width: 1200%;  height: 300px; display: block; margin: auto;" />
+
+                <p><strong>Baggage Policy:</strong> Includes 1 carry-on and 1 checked bag, with additional fees for more baggage.</p>
+                <p><strong>Check-in:</strong> Online check-in opens 24-48 hours before departure.</p>
+            </div>
+        </div>
+
+        <div class="experience">
+            <h2>In-Flight Experience</h2>
+            <div class="feature-box">
+                <p><strong>Seat Comfort:</strong> Adjustable headrests and enough legroom for a relaxing journey.</p>
+                <p><strong>Meals and Beverages:</strong> Complimentary meals or snacks depending on flight duration.</p>
+                <img src="assets/ecxonomy class 5.jpg" style="width: 1200%;  height: 300px; display: block; margin: auto;" />
+
+                <p><strong>Wi-Fi Availability:</strong> Wi-Fi is available on select flights for a fee.</p>
+            </div>
+        </div>
+
+        <div class="assistance">
+            <h2>Special Assistance</h2>
+            <div class="feature-box">
+                <p><strong>Traveling with Children:</strong> Special assistance, early boarding, and discounted fares are available for families with children.</p>
+                <img src="assets/flight ticket- new borns.jpg" style="width: 1500%;  height: 400px; display: block; margin: auto;" />
+
+                <p><strong>Passengers with Disabilities:</strong> Wheelchair services and other support available upon request.</p>
+            </div>
+        </div>
+
+        <div class="loyalty">
+            <h2>Loyalty Program Benefits</h2>
+            <div class="feature-box">
+                <p><strong>Frequent Flyer Points:</strong> Earn points on Economy Class tickets and redeem them for upgrades or free flights.</p>
+                
+                <p><strong>Upgrades:</strong> Use points or pay for upgrades to Premium Economy or Business Class.</p>
+            </div>
+        </div>
+
+        <div class="additional">
+            <h2>Additional Services</h2>
+            <div class="feature-box">
+                <p><strong>Travel Insurance:</strong> Purchase travel insurance to cover cancellations, lost luggage, or medical emergencies.</p>
+                <p><strong>Extra Legroom:</strong> Upgrade to extra legroom seats during booking or check-in.</p>
+                <img src="assets/legrooms.jpg" style="width: 1800%;  height: 300px; display: block; margin: auto;" />
+
+                
+                <p><strong>Group Bookings:</strong> Special discounts for large groups or corporate bookings.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
