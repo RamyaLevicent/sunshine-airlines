@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunshine Airlines Mobile App</title>
+    
+</head>
+<style>
+    /* CSS Variables */
+    :root {
+        --primary-color: #004080;
+        --white: #ffffff;
+        --extra-light: #cccccc;
+        --hover-color: #ffffff;
+    }
+ 
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+ 
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+ 
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primary-color);
+        padding: 20px;
+    }
+ 
+    .logo img {
+        width: 50px;
+    }
+ 
+    nav h1 {
+        color: var(--white);
+        font-size: 24px;
+        margin-left: 10px;
+    }
+ 
+    .btn {
+        background-color: #002855;
+        color: var(--white);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+ 
+    .btn:hover {
+        background-color: #ffdd57
+    }
+ 
+    /* Service Section Styles */
+    .service-section {
+        text-align: center;
+        padding: 50px 0;
+    }
+ 
+    .service-section h1 {
+        font-size: 36px;
+        color: var(--primary-color);
+        margin-bottom: 40px;
+    }
+ 
+    .service-section p {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+ 
+    .services {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+ 
+    .service-card {
+        background-color: rgb(237, 233, 241);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        padding: 30px;
+        margin: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+ 
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
+ 
+    .service-card:nth-child(odd) {
+        animation-delay: 0.3s;
+    }
+ 
+    .service-card:nth-child(even) {
+        animation-delay: 0.6s;
+    }
+ 
+    .service-card i {
+        font-size: 40px;
+        color: #ff6600;
+        margin-bottom: 20px;
+    }
+ 
+    .service-card h2 {
+        font-size: 24px;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+ 
+    .service-card p {
+        font-size: 16px;
+        color: #333;
+    }
+ 
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+ 
+    /* Footer Styles */
+    footer {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 40px 0;
+        font-family: Arial, sans-serif;
+    }
+ 
+    .footer__container {
+        display: grid;
+        grid-template-columns: 2fr repeat(2, 1fr);
+        gap: 5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+ 
+    .footer__col h3,
+    .footer__col h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--white);
+        margin-bottom: 1rem;
+    }
+ 
+    .footer__col h4 {
+        font-size: 1.2rem;
+    }
+ 
+    .footer__col p {
+        color: var(--extra-light);
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+ 
+    .footer__col p:hover {
+        color: var(--hover-color);
+    }
+ 
+    .footer__bar {
+        padding: 0.5rem 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        border-top: 1px solid var(--extra-light);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+ 
+    .footer__bar p {
+        font-size: 0.9rem;
+        color: var(--extra-light);
+    }
+ 
+    .socials {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+ 
+    .socials span {
+        font-size: 1.2rem;
+        color: var(--extra-light);
+        transition: color 0.3s;
+    }
+ 
+    .socials span:hover {
+        color: var(--hover-color);
+    }
+ 
+    /* Responsiveness */
+    @media (max-width: 768px) {
+        .footer__container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+ 
+        .services {
+            flex-direction: column;
+            align-items: center;
+        }
+ 
+        nav {
+            flex-direction: column;
+            text-align: center;
+        }
+ 
+        nav h1 {
+            margin: 10px 0;
+        }
+ 
+        .btn {
+            margin-top: 20px;
+        }
+    }
+ 
+    @media (max-width: 500px) {
+        .service-card {
+            width: 100%;
+        }
+ 
+        .service-section h1 {
+            font-size: 28px;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1>Sunshine Airlines Mobile App</h1>
+
+        <div class="section">
+            <h2>Manage your entire booking experience on the go</h2>
+            <p>With the Sunshine Airlines mobile app, you can easily manage your flight bookings, check real-time updates, and
+                enjoy a smooth travel experience. From searching for flights to receiving real-time updates, our app is designed to make every aspect of your journey easier.</p>
+                <img src="apps.avif" alt="Mobile App Image" style="width: 550px; height: 400px;" />
+            </div>
+
+        <div class="section">
+            <h2>1. Book Flights Anywhere, Anytime</h2>
+            <p><strong>Simple Flight Search:</strong> Easily search for and find flights based on your preferred travel dates, destination, and passenger details.</p>
+            <p><strong>Save Your Preferences:</strong> Save frequent traveler details and preferred payment methods to make booking faster and more convenient in the future.</p>
+            <p><strong>Exclusive Mobile Deals:</strong> Get access to app-only discounts and special offers when booking flights directly from your phone.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Manage Bookings Effortlessly</h2>
+            <p><strong>Modify Your Reservation:</strong> Need to change your travel plans? Use the app to modify your booking, select seats, add extra luggage, or request in-flight services.</p>
+            <p><strong>Cancel and Refund:</strong> Easily cancel or request a refund directly from the app without the hassle of calling customer support.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. Real-Time Notifications</h2>
+            <p>Stay informed with push notifications for:</p>
+            <ul>
+                <li>Flight status updates</li>
+                <li>Gate changes</li>
+                <li>Check-in reminders</li>
+                <li>Flight delays or cancellations</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Check-In and Get Your Digital Boarding Pass</h2>
+            <p>Skip the airport lines by checking in directly from the app. Download your digital boarding pass, and simply scan your phone at the gate.</p>
+            <img src="digital boarding pass.jpg" alt="Boarding Pass Image"style="width: 550px; height: 600px;" />
+        </div>
+
+        <div class="section">
+            <h2>5. Loyalty Program Integration</h2>
+            <p>View your Sunshine Loyalty Program points balance, redeem points for flights, and receive loyalty rewards and special promotions right within the app.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. User-Friendly and Secure</h2>
+            <p><strong>Biometric Login:</strong> Log in quickly and securely using face recognition or fingerprint scanning.</p>
+            <p><strong>Data Protection:</strong> We use industry-standard encryption to ensure all your personal and payment information remains safe and secure.</p>
+            <p><strong>Multiple Languages:</strong> The app supports multiple languages, allowing you to switch between them effortlessly.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. Available on All Devices</h2>
+            <p><strong>Apple iOS:</strong> Download the Sunshine Airlines app from the Apple App Store.</p>
+            <p><strong>Android:</strong> Download the app from the Google Play Store.</p>
+        </div>
+
+        <a href="#" class="btn">Download the App</a>
+    <!-- </div><footer class="footer">
+        <div class="section__container footer__container">
+          <div class="footer__col">
+            <h3>Sunshine</h3>
+            <p>
+              Where Excellence Takes Flight. With a strong commitment to customer
+              satisfaction and a passion for air travel, Sunshine Airlines offers
+              exceptional service and seamless journeys.
+            </p>
+            <p>
+              From friendly smiles to state-of-the-art aircraft, we connect the
+              world, ensuring safe, comfortable, and unforgettable experiences.
+            </p>
+          </div>
+          <div class="footer__col">
+            <h4>INFORMATION</h4>
+            <a href="home.html"><p>Home</p></a>
+            <a href="about.html"><p>About</p></a>
+            <a href="specialoffers.html"><p>Special Offers</p></a>
+            <a href="service.html"><p>Services</p></a>
+    
+            <a href="flightstatus.html"><p>Flight Status</p></a>
+    </div>
+          <div class="footer__col">
+              <a href="contact.html"> <h4>CONTACT</h4></a>
+            <a href="customers.html"><p>Customers Support</p></a>
+            <a href="mobileapp.html"><p>Mobile App</p></a>
+            <a href="travelinfo.html"><p>Travel Informations</p></a>
+    
+    
+          </div>
+        </div>
+        <div class="section__container footer__bar">
+            <p style="text-align: center; font-weight: bold;">Copyright &copy; 2024 Sunshine Airlines. All rights reserved.</p>
+            <div class="socials">
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-youtube-fill"></i></span>
+          </div>
+        </div>
+      </footer> -->
+    
+
+
+</body>
+
+</html>
