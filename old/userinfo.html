@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Informations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRN+8FvOybvN4C5lxukQ4BBU1b7Z1eKx2wvzA6aS5h3P9ENiMbFlqI6bk4CK8c/sm+9+T0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 2px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3em;
+            animation: fadeInDown 2s ease forwards;
+            opacity: 0;
+        }
+
+        /* Animated Headings */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            animation: fadeIn 2s ease forwards;
+            opacity: 0;
+        }
+
+        section:nth-child(even) {
+            background-color: #fff;
+        }
+
+        section:nth-child(odd) {
+            background-color: #e6f2ff;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #003366;
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Content Lists */
+        .content-list {
+            list-style: none;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .content-list li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 15px 20px;
+            border-left: 5px solid #003366;
+            position: relative;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .content-list li:hover {
+            background-color:gray;
+            transform: translateX(5px);
+        }
+
+        .content-list li i {
+            margin-right: 10px;
+            color: #003366;
+            min-width: 25px;
+            text-align: center;
+        }
+
+        /* Images with Graphic Effects */
+        .image-box {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #003366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 20px 0;
+            text-align: center;
+            display: block;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn:hover {
+            background-color:gray;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .content-list li {
+                padding: 10px 15px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .content-list li i {
+                margin-bottom: 5px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation (Optional for better UX) */
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(0, 51, 102, 0.9);
+            padding: 10px 0;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e6f2ff;
+        }
+
+        /* Add top padding to body to prevent content being hidden behind nav */
+        body {
+            padding-top: 60px;
+        }
+
+        /* Form Styles */
+        .booking-form {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .booking-form input[type="text"],
+        .booking-form input[type="email"],
+        .booking-form input[type="tel"],
+        .booking-form input[type="date"],
+        .booking-form select,
+        .booking-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .booking-form input[type="submit"] {
+            background-color: #003366;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .booking-form input[type="submit"]:hover {
+            background-color: #0055a5;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Form */
+        @media (max-width: 768px) {
+            .booking-form input[type="submit"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (Optional) -->
+    <nav>
+        <ul>
+            <li><a href="#personal-info">Personal Informations</a></li>
+            <li><a href="#travel-preferences">Travel Preferences</a></li>
+            <li><a href="#passenger-details">Passenger Details</a></li>
+            <li><a href="#payment-info">Payment Information</a></li>
+            <li><a href="#additional-services">Additional Services</a></li>
+            <li><a href="#communication-preferences">Communication Preferences</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>User Informations</h1>
+    </header>
+
+    <div class="container">
+
+        <!-- Booking Form -->
+        <form class="booking-form" action="#" method="POST">
+        
+            <!-- Personal Informations Section -->
+            <section id="personal-info">
+                <h2>1. Personal Informations</h2>
+                <ul class="content-list">
+                    <li>
+                        <i class="fas fa-user"></i> 
+                        <strong>Full Name:</strong>
+                        <input type="text" name="full_name" placeholder="First Name, Middle Name, Last Name" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i> 
+                        <strong>Email Address:</strong>
+                        <input type="email" name="email" placeholder="example@domain.com" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i> 
+                        <strong>Phone Number:</strong>
+                        <input type="tel" name="phone" placeholder="+1234567890" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-alt"></i> 
+                        <strong>Date of Birth:</strong>
+                        <input type="date" name="dob" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-venus-mars"></i> 
+                        <strong>Gender:</strong>
+                        <select name="gender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe"></i> 
+                        <strong>Nationality:</strong>
+                        <input type="text" name="nationality" placeholder="Your Nationality" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-passport"></i> 
+                        <strong>Passport Information:</strong>
+                        <input type="text" name="passport_number" placeholder="Passport Number" required>
+                        <input type="text" name="issuing_country" placeholder="Issuing Country" required>
+                        <input type="date" name="passport_expiry" placeholder="Expiry Date" required>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Travel Preferences Section -->
+            <section id="travel-preferences">
+                <h2>2. Travel Preferences</h2>
+                <ul class="content-list">
+                    <li>
+                        <i class="fas fa-plane-departure"></i> 
+                        <strong>Type of Flight:</strong>
+                        <select name="flight_type" required>
+                            <option value="">Select Flight Type</option>
+                            <option value="one-way">One-way</option>
+                            <option value="round-trip">Round-trip</option>
+                            <option value="multi-city">Multi-city</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marked-alt"></i> 
+                        <strong>Departure and Destination Cities:</strong>
+                        <input type="text" name="departure_city" placeholder="Departure City" required>
+                        <input type="text" name="destination_city" placeholder="Destination City" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-day"></i> 
+                        <strong>Preferred Departure Date and Return Date:</strong>
+                        <input type="date" name="departure_date" required>
+                        <input type="date" name="return_date">
+                    </li>
+                    <li>
+                        <i class="fas fa-cocktail"></i> 
+                        <strong>Flight Class:</strong>
+                        <select name="flight_class" required>
+                            <option value="">Select Class</option>
+                            <option value="economy">Economy</option>
+                            <option value="premium-economy">Premium Economy</option>
+                            <option value="business">Business</option>
+                            <option value="first-class">First Class</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="fas fa-chair"></i> 
+                        <strong>Seat Preferences:</strong>
+                        <select name="seat_preference" required>
+                            <option value="">Select Seat Preference</option>
+                            <option value="aisle">Aisle</option>
+                            <option value="window">Window</option>
+                            <option value="middle">Middle</option>
+                            <option value="exit-row">Exit Row</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="fas fa-utensils"></i> 
+                        <strong>Meal Preferences:</strong>
+                        <select name="meal_preference" required>
+                            <option value="">Select Meal Preference</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="non-vegetarian">Non-Vegetarian</option>
+                            <option value="special-diet">Special Diet</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="fas fa-wheelchair"></i> 
+                        <strong>Special Assistance Requests:</strong>
+                        <select name="assistance">
+                            <option value="">Select Assistance Type</option>
+                            <option value="wheelchair">Wheelchair</option>
+                            <option value="visual">Visual Assistance</option>
+                            <option value="hearing">Hearing Assistance</option>
+                            <option value="none">None</option>
+                        </select>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Passenger Details Section -->
+            <section id="passenger-details">
+                <h2>3. Passenger Details</h2>
+                <ul class="content-list">
+                    <li>
+                        <i class="fas fa-user-friends"></i> 
+                        <strong>Passenger Type:</strong>
+                        <select name="passenger_type" required>
+                            <option value="">Select Passenger Type</option>
+                            <option value="adult">Adult</option>
+                            <option value="child">Child</option>
+                            <option value="infant">Infant</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i> 
+                        <strong>Number of Passengers:</strong>
+                        <input type="number" name="number_of_passengers" min="1" max="10" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-star"></i> 
+                        <strong>Frequent Flyer Information:</strong>
+                        <input type="text" name="frequent_flyer" placeholder="Frequent Flyer Number">
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i> 
+                        <strong>Emergency Contact Information:</strong>
+                        <input type="text" name="emergency_contact_name" placeholder="Emergency Contact Name" required>
+                        <input type="tel" name="emergency_contact_phone" placeholder="Emergency Contact Phone" required>
+                        <input type="email" name="emergency_contact_email" placeholder="Emergency Contact Email" required>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Payment Information Section -->
+            <section id="payment-info">
+                <h2>4. Payment Information</h2>
+                <ul class="content-list">
+                    <li>
+                        <i class="fas fa-credit-card"></i> 
+                        <strong>Credit/Debit Card Details:</strong>
+                        <input type="text" name="card_number" placeholder="Card Number" required>
+                        <input type="text" name="card_holder" placeholder="Card Holder Name" required>
+                        <input type="month" name="card_expiry" placeholder="Expiry Date" required>
+                        <input type="text" name="card_cvv" placeholder="CVV" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-address-card"></i> 
+                        <strong>Billing Address:</strong>
+                        <input type="text" name="billing_address" placeholder="Street Address" required>
+                        <input type="text" name="billing_city" placeholder="City" required>
+                        <input type="text" name="billing_state" placeholder="State/Province" required>
+                        <input type="text" name="billing_postal" placeholder="Postal Code" required>
+                        <input type="text" name="billing_country" placeholder="Country" required>
+                    </li>
+                    <li>
+                        <i class="fas fa-wallet"></i> 
+                        <strong>Payment Methods:</strong>
+                        <select name="payment_method" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="credit-card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="bank-transfer">Bank Transfer</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="fas fa-ticket-alt"></i> 
+                        <strong>Coupon Code:</strong>
+                        <input type="text" name="coupon_code" placeholder="Enter Coupon Code">
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Additional Services Section -->
+            <section id="additional-services">
+                <h2>5. Additional Services</h2>
+                <ul class="content-list">
+                    <li>
+                        <i class="fas fa-suitcase-rolling"></i> 
+                        <strong>Extra Baggage Allowance:</strong>
+                        <input type="number" name="extra_baggage" min="0" max="5" placeholder="Number of Additional Bags">
+                    </li>
+                    <li>
+                        <i class="fas fa-shield-alt"></i> 
+                        <strong>Travel Insurance Options:</strong>
+                        <select name="travel_insurance">
+                            <option value="">Select Insurance Option</option>
+                            <option value="flight-cancellation">Flight Cancellation</option>
+                            <option value="health-coverage">Health Coverage</option>
+                            <option value="both">Both</option>
+                            <option value="none">None</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="fas fa-car"></i> 
+                        <strong>Car Rentals:</strong>
+                        <input type="checkbox" name="car_rental" value="yes"> Yes, I want to rent a car at my destination.
+                    </li>
+                    <li>
+                        <i class="fas fa-hotel"></i> 
+                        <strong>Hotel Bookings:</strong>
+                        <input type="checkbox" name="hotel_booking" value="yes"> Yes, I want to book a hotel.
+                    </li>
+                    <li>
+                        <i class="fas fa-shuttle-van"></i> 
+                        <strong>Airport Transfers:</strong>
+                        <input type="checkbox" name="airport_transfer" value="yes"> Yes, I need airport transfers.
+                    </li>
+                    <li>
+                        <i class="fas fa-arrow-up"></i> 
+                        <strong>Upgrade Options:</strong>
+                        <select name="upgrade_option">
+                            <option value="">Select Upgrade Option</option>
+                            <option value="higher-class">Upgrade to a Higher Class</option>
+                            <option value="vip-lounge">Access to VIP Lounges</option>
+                            <option value="both">Both</option>
+                            <option value="none">None</option>
+                        </select>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Communication Preferences Section -->
+            <section id="communication-preferences">
+                <h2>6. Preferences for Communication</h2>
+                <ul class="content-list">
+                    <li>
+                        <i class="fas fa-envelope-open-text"></i> 
+                        <strong>Marketing Opt-in:</strong>
+                        <input type="checkbox" name="marketing_optin" value="yes"> Yes, I want to receive newsletters and promotional emails.
+                    </li>
+                    <li>
+                        <i class="fas fa-bell"></i> 
+                        <strong>Notification Preferences:</strong>
+                        <label><input type="checkbox" name="notify_sms" value="sms"> SMS Updates</label>
+                        <label><input type="checkbox" name="notify_email" value="email"> Email Updates</label>
+                    </li>
+                </ul>
+                <input type="submit" value="Book Now" class="btn">
+            </section>
+
+            <!-- Image with Graphic Effects -->
+            <section>
+                <h2>Why Choose Us?</h2>
+                <div class="image-box">
+                    <img src="assets/personalization.webp"
+                    style="display: block; 
+                           margin: 0 auto; 
+                           width: 75%; /* Make the image responsive */
+                           max-width: 800px; /* Ensure it doesn't exceed the original size */
+                           height: 250px; /* Maintain aspect ratio */
+                           border-radius: 10px; 
+                           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                           transition: transform 0.3s ease-in-out;">
+                            </div>
+                <a href="#" class="btn">Learn More</a>
+            </section>
+
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Airline Ticket Booking System. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Animations on Scroll -->
+    <script>
+        // Function to check if an element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
+        }
+
+        // Function to add animation class
+        function animateOnScroll() {
+            const sections = document.querySelectorAll('section');
+            const headings = document.querySelectorAll('section h2, section h3');
+            const images = document.querySelectorAll('.image-box img');
+
+            sections.forEach(section => {
+                if (isInViewport(section)) {
+                    section.style.opacity = '1';
+                }
+            });
+
+            headings.forEach(heading => {
+                if (isInViewport(heading)) {
+                    heading.style.opacity = '1';
+                }
+            });
+
+            images.forEach(image => {
+                if (isInViewport(image)) {
+                    image.style.opacity = '1';
+                }
+            });
+        }
+
+        // Initial check
+        animateOnScroll();
+
+        // Event listener for scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+
+</body>
+</html>

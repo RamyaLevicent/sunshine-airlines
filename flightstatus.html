@@ -89,11 +89,13 @@
             margin-bottom: 40px;
         }
 
-        .info-section img {
-            width: 80%;
+        /* .info-section img {
+          display: block;
+            width: 50%; 
+            align-items: center;
             border-radius: 8px;
             margin-top: 20px;
-        }
+        } */
 
         /* Real-Time Updates Section */
         .real-time-updates {
@@ -123,7 +125,7 @@
         }
 
         .tips-image {
-            width: 80%;
+            width: 50%;
             border-radius: 8px;
             margin-top: 20px;
         }
@@ -213,45 +215,116 @@
   font-size: 1.2rem;
   color: var(--extra-light);
 }
+ /* Dropdown Menu Styles */
+ .dropdown__menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown__menu.show {
+            display: block;
+        }
+
+        .dropdown__menu li {
+            padding: 10px 20px;
+        }
+
+        .dropdown__menu li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown__menu li a:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Rotate the icon when active */
+        .dropdown-toggle.active i {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+
+        /* Ensure icons transition smoothly */
+        .dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Positioning for dropdown */
+        .dropdown {
+            position: relative;
+        }
+        /* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav__logo">Sunshine</div>
-        <ul class="nav__links">
-          <li class="link"><a href="home.html">Home</a></li>
-          <li class="link"><a href="about.html">About Us</a></li>
-          <li class="link"><a href="specialoffers.html">Offers</a></li>
-          
-          <!-- Flight Details Dropdown -->
-          <li class="link dropdown">
-            <a href="flightdetails.html" class="dropdown-toggle">Flight Details</a>
-            <ul class="dropdown__menu">
-              <li><a href="flightstatus.html">Flight Status</a></li>
-              <li><a href="bookaflight.html">Book Flight</a></li>       
-              <li><a href="checkin.html">Check-In</a></li>
-              <li><a href="baggage.html">Baggage</a></li>
-              <li><a href="managebooking.html">Manage Booking</a></li>
-            </ul>
-          </li>
-          
-          <!-- Services Dropdown -->
-          <li class="link dropdown">
-            <a href="services.html" class="dropdown-toggle">Services</a>
-            <ul class="dropdown__menu">
-              <li><a href="travelinfo.html">Travel Information</a></li>
-              <li><a href="customersupport.html">Customer Support</a></li>
-              <li><a href="language.html">Language / Region Selector</a></li>
-              <li><a href="mobileapp.html">Mobile App</a></li>
-            </ul>
-          </li>
-          
-          <!-- Contact Button -->
-          <li class="link contact-btn">
-            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
-          </li>
+  <nav>
+    <div class="nav__logo">Sunshine</div>
+    <ul class="nav__links">
+      <li class="link"><a href="index.html">Home</a></li>
+      <li class="link"><a href="about.html">About </a></li>
+      <li class="link"><a href="specialoffers.html">Offers</a></li>
+      <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+      <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+      <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+      <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+      
+      <!-- Flight Details Dropdown -->
+      <li class="link dropdown">
+        <a href="managebooking.html" class="dropdown-toggle">
+            Flight Details <i class="fa fa-chevron-down"></i>
+        </a>
+        <ul class="dropdown__menu">
+            <li><a href="baggage.html">Baggage</a></li>
+            <li><a href="bookaflight.html">Book Flight</a></li>  
+            <li><a href="checkin.html">Check-In</a></li>
+            <li><a href="flightstatus.html">Flight Status</a></li>
+            <li><a href="managebooking.html">Manage Booking</a></li>
         </ul>
-      </nav>
+    </li>
+    
+    <!-- Services Dropdown -->
+    <li class="link dropdown">
+        <a href="travelinfo.html" class="dropdown-toggle">
+            Services <i class="fa fa-chevron-down"></i>
+        </a>
+        <ul class="dropdown__menu">
+            <li><a href="customersupport.html">Customer Support</a></li>
+            <li><a href="insurance.html">Insurance</a></li>        
+            <li><a href="mobileapp.html">Mobile App</a></li>
+            <li><a href="language.html">Language / Region Selector</a></li> 
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="travelinfo.html">Travel Information</a></li>
+        </ul>
+    </li>
+      
+      <!-- Contact Button -->
+      <li class="link contact-btn">
+        <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+      </li>
+      <!-- <li class="link contact-btn"></li>
+        <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+      </li> -->
+    </ul>
+  </nav>
     <div class="container">
         <h1><b>Flight Status and Availability</b></h1>
         
@@ -282,11 +355,16 @@
         </div>
 
         <!-- Information Section -->
-        <div class="info-section">
+        <!-- <div class="info-section">
             <h2>Why Check Flight Status?</h2>
             <p><b>Checking your flight status before departure helps you stay informed about any delays or cancellations. It allows you to plan your travel better and avoid any last-minute surprises.</b></p>
             <img src="assets/flight status.jpg" alt="Check Flight Status">
-        </div>
+        </div> -->
+        <div class="info-section">
+          <h2>Why Check Flight Status?</h2>
+          <p><b>Checking your flight status before departure helps you stay informed about any delays or cancellations. It allows you to plan your travel better and avoid any last-minute surprises.</b></p>
+          <img src="assets/flight status.jpg" alt="Check Flight Status" style="display: block; margin: 20px auto 0; width: 700px; border-radius: 8px;">
+      </div>
 
         <!-- Real-Time Flight Updates Section -->
         <div class="real-time-updates">
@@ -303,7 +381,7 @@
                 <li>Download your airline’s app for instant updates.</li>
                 <li>Confirm your terminal and gate details before departure.</li>
             </ul>
-            <img src="assets/travel tip.jpg" alt="Travel Tips Image" class="tips-image">
+            <img src="assets/travel tip.jpg" alt="Travel Tips Image" class="tips-image"style="display: block; margin: 20px auto 0; width: 700px; border-radius: 8px;">
         </div>
     </div>
 

@@ -139,19 +139,37 @@
             }
         }
 
-        /* footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #323335;
-            color: white;
+        .dropdown {
             position: relative;
-            bottom: 0;
-            width: 100%;
         }
 
-        footer p {
+        .dropdown__menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 0;
             margin: 0;
-        } */
+            list-style: none;
+        }
+
+        .dropdown:hover .dropdown__menu {
+            display: block;
+        }
+
+        .dropdown__menu li {
+            padding: 10px 15px;
+        }
+
+        .dropdown__menu li a {
+            text-decoration: none;
+            color: #002855;
+        }
+
+        .dropdown__menu li:hover {
+            background-color: #f0f0f0;
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -180,6 +198,115 @@
                 font-size: 1rem;
             }
         }
+        /* Footer Styles */
+ footer {
+            background-color: #004080;
+            color: white;
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 5rem;
+            padding: 20px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer__col p:hover {
+            color: #dddddd;
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #cccccc;
+        }
+
+        .footer__bar p {
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+        }
+         /* Dropdown Menu Styles */
+         .dropdown__menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown__menu.show {
+            display: block;
+        }
+
+        .dropdown__menu li {
+            padding: 10px 20px;
+        }
+
+        .dropdown__menu li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown__menu li a:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Rotate the icon when active */
+        .dropdown-toggle.active i {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+
+        /* Ensure icons transition smoothly */
+        .dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Positioning for dropdown */
+        .dropdown {
+            position: relative;
+        }
+        /* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
     </style>
 </head>
 
@@ -187,37 +314,51 @@
     <nav>
         <div class="nav__logo">Sunshine</div>
         <ul class="nav__links">
-          <li class="link"><a href="home.html">Home</a></li>
-          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
           <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
           
-          <!-- Flight Details Dropdown -->
-          <li class="link dropdown">
-            <a href="flightdetails.html" class="dropdown-toggle">Flight Details</a>
+         <!-- Flight Details Dropdown -->
+         <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+                Flight Details <i class="fa fa-chevron-down"></i>
+            </a>
             <ul class="dropdown__menu">
-              <li><a href="flightstatus.html">Flight Status</a></li>
-              <li><a href="bookaflight.html">Book Flight</a></li>       
-              <li><a href="checkin.html">Check-In</a></li>
-              <li><a href="baggage.html">Baggage</a></li>
-              <li><a href="managebooking.html">Manage Booking</a></li>
+                <li><a href="baggage.html">Baggage</a></li>
+                <li><a href="bookaflight.html">Book Flight</a></li>  
+                <li><a href="checkin.html">Check-In</a></li>
+                <li><a href="flightstatus.html">Flight Status</a></li>
+                <li><a href="managebooking.html">Manage Booking</a></li>
             </ul>
-          </li>
-          
-          <!-- Services Dropdown -->
-          <li class="link dropdown">
-            <a href="services.html" class="dropdown-toggle">Services</a>
+        </li>
+        
+        <!-- Services Dropdown -->
+        <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+                Services <i class="fa fa-chevron-down"></i>
+            </a>
             <ul class="dropdown__menu">
-              <li><a href="travelinfo.html">Travel Information</a></li>
-              <li><a href="customersupport.html">Customer Support</a></li>
-              <li><a href="language.html">Language / Region Selector</a></li>
-              <li><a href="mobileapp.html">Mobile App</a></li>
+                <li><a href="customersupport.html">Customer Support</a></li>
+                <li><a href="insurance.html">Insurance</a></li>        
+                <li><a href="mobileapp.html">Mobile App</a></li>
+                <li><a href="language.html">Language / Region Selector</a></li> 
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="travelinfo.html">Travel Information</a></li>
             </ul>
-          </li>
+        </li>
+      
           
           <!-- Contact Button -->
           <li class="link contact-btn">
             <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
           </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
         </ul>
       </nav>
     <div class="container">
@@ -244,7 +385,7 @@
 
         <section class="baggage-allowance">
             <h2>Carry-On Baggage Allowance</h2>
-            <img src="assets/baggage 3.jpeg" alt="Carry-On Baggage" class="baggage-image">
+            <img src="assets/carryon.jpeg" alt="Carry-On Baggage" class="baggage-image">
             <p>Each passenger is allowed:</p>
             <ul>
                 <li><strong>1 Carry-On Bag:</strong> Maximum dimensions 55 cm x 35 cm x 25 cm, up to 7 kg (15 lbs).</li>
@@ -265,7 +406,7 @@
 
         <section class="prohibited-items">
             <h2>Prohibited and Restricted Items</h2>
-            <img src="assets/baggage 6.jpeg" alt="Prohibited Items" class="baggage-image">
+            <img src="assets/resticted item.jpeg" alt="Prohibited Items" class="baggage-image">
             <p>For your safety, the following items are prohibited in carry-on and checked baggage:</p>
             <ul>
                 <li>Explosives and flammable substances (e.g., fireworks, gas canisters).</li>
@@ -293,49 +434,47 @@
             <a href="checkin.html" class="checkin-btn">Check In Now</a>
         </section>
 
-        <footer class="footer">
-            <div class="section__container footer__container">
-              <div class="footer__col">
+    </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
                 <h3>Sunshine</h3>
                 <p>
-                  Where Excellence Takes Flight. With a strong commitment to customer
-                  satisfaction and a passion for air travel, Sunshine Airlines offers
-                  exceptional service and seamless journeys.
+                    Where Excellence Takes Flight. With a strong commitment to customer
+                    satisfaction and a passion for air travel, Sunshine Airlines offers
+                    exceptional service and seamless journeys.
                 </p>
                 <p>
-                  From friendly smiles to state-of-the-art aircraft, we connect the
-                  world, ensuring safe, comfortable, and unforgettable experiences.
+                    From friendly smiles to state-of-the-art aircraft, we connect the
+                    world, ensuring safe, comfortable, and unforgettable experiences.
                 </p>
-              </div>
-              <div class="footer__col">
-                <h4>INFORMATION</h4>
-                <a href="home.html"><p>Home</p></a>
-                <a href="about.html"><p>About</p></a>
-                <a href="specialoffers.html"><p>Special Offers</p></a>
-                <a href="service.html"><p>Services</p></a>
-         
-                <a href="flightstatus.html"><p>Flight Status</p></a>
+            </div>
+  
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <p>Home</p>
+                <p>Special Offers</p>
+                <p>Manage Booking</p>
+                <p>Contact Us</p>
+                <p>About Us</p>
+            </div>
+  
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p>Email: info@sunshineairline.com</p>
+                <p>Phone: 1-800-555-0199</p>
+                <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+            </div>
         </div>
-              <div class="footer__col">
-                  <a href="contact.html"> <h4>CONTACT</h4></a>
-                <a href="customers.html"><p>Customers Support</p></a>
-                <a href="mobileapp.html"><p>Mobile App</p></a>
-                <a href="travelinfo.html"><p>Travel Informations</p></a>
-         
-         
-              </div>
+        <div class="footer__bar">
+            <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+            <div class="socials">
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
             </div>
-            <div class="section__container footer__bar">
-              <p>Copyright © 2024 Sunshine Airlines. All rights reserved.</p>
-              <div class="socials">
-                <span><i class="ri-facebook-fill"></i></span>
-                <span><i class="ri-twitter-fill"></i></span>
-                <span><i class="ri-instagram-line"></i></span>
-                <span><i class="ri-youtube-fill"></i></span>
-              </div>
-            </div>
-          </footer>
-    </div>
+        </div>
+    </footer>
 </body>
 
 </html>

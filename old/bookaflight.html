@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Sunshine Airlines</title>
+  </head>
+    <style>
+        /* CSS Variables for Consistent Theming */
+        :root {
+            --primary-color: #004080;
+            --secondary-color: #ff6600;
+            --light-bg: #f4f4f4;
+            --white: #ffffff;
+            --text-color: #333333;
+            --extra-light: #cccccc;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .book-flight-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 30px 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation-fill-mode: forwards;
+            animation-delay: 0.3s;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Flight Options */
+        .flight-options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-delay: 0.7s;
+        }
+
+        .option-box {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-box i {
+            font-size: 40px;
+            color: black;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .option-box:hover i {
+            transform: scale(1.1);
+        }
+
+        .option-box h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .option-box h3:hover {
+            color: var(--secondary-color);
+        }
+
+        .option-box p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .option-box img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 0.9;
+        }
+
+        .option-box img:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        /* Flight Booking Steps */
+        .flight-steps {
+            text-align: center;
+            margin: 50px 0;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+        }
+
+        .flight-steps h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation-fill-mode: forwards;
+            animation-delay: 1.2s;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            margin: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-delay: 1.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .step h3 {
+            font-size: 20px;
+            color: navy;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .step h3:hover {
+            color: var(--primary-color);
+        }
+
+        .step p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Additional Features */
+        .additional-features {
+            background-color: var(--white);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-delay: 1.5s;
+        }
+
+        .additional-features h2 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .feature-item {
+            width: 45%;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+        }
+
+        .feature-item:nth-child(odd) {
+            animation-delay: 1.6s;
+        }
+
+        .feature-item:nth-child(even) {
+            animation-delay: 1.7s;
+        }
+
+        .feature-item i {
+            font-size: 30px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .feature-item h4 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background-color: var(--light-bg);
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-delay: 1.8s;
+        }
+
+        .testimonials-section h2 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .testimonial {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .testimonial h4 {
+            font-size: 18px;
+            color: var(--primary-color);
+            text-align: right;
+        }
+
+        /* FAQs */
+        .faqs-section {
+            background-color: var(--white);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-delay: 2s;
+        }
+
+        .faqs-section h2 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+        }
+
+        .faq-item:nth-child(odd) {
+            animation-delay: 2.1s;
+        }
+
+        .faq-item:nth-child(even) {
+            animation-delay: 2.2s;
+        }
+
+        .faq-item strong {
+            color:darkviolet;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background-color: var(--white);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px --green(0, 0, 0, 0.1);
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-delay: 2.4s;
+        }
+
+        .tips-section h2 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tips-list {
+            list-style-type: disc;
+            margin-left: 40px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .tips-list li {
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .tips-list li:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer Styling */
+        /* footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 20px;
+            border-top: 5px solid var(--secondary-color);
+        } */
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 5rem;
+            margin-bottom: 40px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p,
+        .footer__col a p {
+            color: var(--extra-light);
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .footer__col p:hover,
+        .footer__col a p:hover {
+            color: var(--white);
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid var(--extra-light);
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+            color: var(--extra-light);
+            transition: color 0.3s;
+        }
+
+        .socials span:hover {
+            color: var(--white);
+        }
+
+        /* Button Hover Effect */
+        .btn {
+            /* text-decoration: none;
+            color: var(--green);
+            background-color:(--secondary-color);
+            padding: 12px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            text-align: center;
+            font-size: 16px;
+            box-shadow: 0 4px 15px --green(0, 0, 0, 0.1); */
+        
+
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            margin: 30px 0;
+
+            background-color: #004080;
+
+            border-radius: 10px;
+
+            animation: slideUp 1.5s ease-out;
+
+        }
+
+        .app-link, .get-pass-btn {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 10px 20px;
+
+            color: white;
+
+            background-color: #857ba8;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            transition: background-color 0.3s ease-in-out;
+
+        }
+        
+
+
+        .btn:hover {
+            background-color: #ffdd57;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px 
+            second#ffdd57;
+        }
+/* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .flight-options,
+            .features-list,
+            .testimonials,
+            .faqs-section,
+            .additional-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .option-box,
+            .step,
+            .feature-item,
+            .testimonial,
+            .faq-item {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .flight-steps h2,
+            .additional-features h2,
+            .testimonials-section h2,
+            .faqs-section h2,
+            .tips-section h2 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            .option-box h3,
+            .step h3,
+            .feature-item h4 {
+                font-size: 20px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .flight-steps h2,
+            .additional-features h2,
+            .testimonials-section h2,
+            .faqs-section h2,
+            .tips-section h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library for Scroll Animations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="flightstatus.html" class="dropdown-toggle">
+              Flight Details <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="flightstatus.html">Flight Status</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>       
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="services.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="travelinfo.html">Travel Information</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li>
+              <li><a href="mobileapp.html">Mobile App</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+        </ul>
+      </nav>
+    <div class="book-flight-container">
+        <header>
+            <h1>Book Your Flight</h1>
+            <p><strong>Explore the world with Sunshine Airline. Convenient, affordable, and reliable travel booking options.</strong></p>
+        </header>
+        <!-- <img src="assets/air ticket booking.jpg"style="width: 300px; height: 200px;" /> -->
+        <img src="assets/air ticket booking.jpg" style="width: 800px; height: 400px; display: block; margin: auto;" />
+
+
+        <!-- Flight Options -->
+        <div class="flight-options">
+            <div class="option-box" data-aos="fade-up">
+                <i class="fas fa-plane-arrival"></i>
+                <h3>Round Trip</h3>
+                <p>Book a round-trip flight for seamless travel.</p>
+                
+            </div>
+
+            <div class="option-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-plane"></i>
+                <h3>One-Way</h3>
+                <p>Choose a One-way trip to your destination.</p>
+
+            </div>
+
+            <div class="option-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-globe"></i>
+                <h3>Multi-City</h3>
+                <p>Plan an Adventure with a multi-city flight.</p>
+                
+            </div>
+
+            <div class="option-box" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-road"></i>
+                <h3>Open-Jaw Flights</h3>
+                <p>Fly  and depart  with our flexible Open-Jaw flights.</p>
+                
+            </div>
+        </div>
+        <a href="#" class="btn">Book Now</a>
+
+        <!-- Flight Booking Steps -->
+        <section class="flight-steps">
+            <h2><strong>How to Book Your Flight</strong></h2>
+            
+            <div class="steps">
+                <div class="step" data-aos="fade-right">
+                    <h3>Step 1: Choose Your Destination</h3>
+                    <p>Select from our range of international and domestic destinations.</p>
+                </div>
+
+                <div class="step" data-aos="fade-left" data-aos-delay="100">
+                    <h3>Step 2: Pick Your Travel Dates</h3>
+                    <p>Decide your departure and return dates or choose flexible travel options.</p>
+                </div>
+
+                <div class="step" data-aos="fade-right" data-aos-delay="200">
+                    <h3>Step 3: Enter Passenger Details</h3>
+                    <p>Fill in the details of each passenger, including preferences for seats and services.</p>
+                </div>
+
+                <div class="step" data-aos="fade-left" data-aos-delay="300">
+                    <h3>Step 4: Make a Payment</h3>
+                    <p>Pay for your booking with various payment methods available.</p>
+                </div>
+
+                <div class="step" data-aos="fade-right" data-aos-delay="400">
+                    <h3>Step 5:Select Preferred Cabin Class
+                    </h3>
+                    <p>Choose Your Cabin Class  
+                        Select the comfort level that suits your journey, from economy to premium options.</p>
+                </div>
+                <div class="step" data-aos="fade-right" data-aos-delay="400">
+                    <h3>Step 6: Review and Confirm</h3>
+                    <p>Review all details and confirm your booking to receive an instant e-ticket.</p>
+                </div>
+
+            </div>
+        </section>
+        <img src="assets/flight-booking-2.jpg" style="width: 800px; height: 400px; display: block; margin: auto;" />
+
+        <!-- Additional Features Section -->
+        <section class="additional-features">
+            <h2>Additional Features</h2>
+            <div class="features-list">
+                <div class="feature-item" data-aos="fade-up">
+                    <i class="fas fa-star"></i>
+                    <h4>Frequent Flyer Discounts</h4>
+                    <p>Earn points on every booking. Redeem points for free flights, upgrades, and exclusive offers.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Customer Support</h4>
+                    <p>Need help? Our support team is available around the clock via phone, email, or live chat.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h4>Flexible Booking Options</h4>
+                    <p>Change or cancel flights with minimal hassle. Enjoy peace of mind with our flexible policies.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Travel Insurance</h4>
+                    <p>Protect your trip with our comprehensive travel insurance options covering cancellations, medical emergencies, and more.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-chair"></i>
+                    <h4>Seat Selection</h4>
+                    <p>Choose your preferred seat in advance, ensuring you sit where you feel most comfortable.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-suitcase-rolling"></i>
+                    <h4>Baggage Allowance</h4>
+                    <p>Benefit from generous baggage policies, including options to add extra baggage at discounted rates during booking.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-utensils"></i>
+                    <h4>In-Flight Amenities</h4>
+                    <p>Enjoy complimentary meals, entertainment, and Wi-Fi on selected flights for a comfortable journey.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="700">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Mobile App Integration</h4>
+                    <p>Manage your bookings, check-in, and receive real-time flight updates through our user-friendly mobile app.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us">
+            <h2>Why Choose Sunshine Airlines?</h2>
+            <div class="features-list">
+                <div class="feature-item" data-aos="fade-up">
+                    <i class="fas fa-clock"></i>
+                    <h4>Reliability</h4>
+                    <p>With a fleet of modern aircraft and a commitment to punctuality, Sunshine Airline ensures your flights are on time and your journey is smooth.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-wallet"></i>
+                    <h4>Affordability</h4>
+                    <p>Competitive pricing without compromising on quality. Enjoy premium services at budget-friendly rates.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>Exceptional Service</h4>
+                    <p>Our dedicated team is focused on providing you with the best travel experience, from booking to landing.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-globe-americas"></i>
+                    <h4>Extensive Network</h4>
+                    <p>Connect to over 100 destinations worldwide with our expansive network, making your travel plans effortless.</p>
+                </div>
+
+                <!-- <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Sustainability</h4>
+                    <p>Committed to reducing our carbon footprint, Sunshine Airline implements eco-friendly practices across all operations.</p>
+                </div> -->
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2>Testimonials</h2>
+            <div class="testimonials">
+                <div class="testimonial" data-aos="fade-up">
+                    <p>"Booking my flight with Sunshine Airline was a breeze. The multi-city option allowed me to visit three countries in one trip, and the customer service was outstanding!"</p>
+                    <h4>Jane D. from New York</h4>
+                </div>
+
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+                    <p>"I upgraded to Business Class for my trip to Tokyo and it was worth every penny. The lounge access and extra legroom made my journey incredibly comfortable."</p>
+                    <h4>Mark S. from London</h4>
+                </div>
+
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+                    <p>"The 24/7 customer support was a lifesaver when I needed to change my flight details last minute. Highly recommend Sunshine Airline for their flexibility and reliability."</p>
+                    <h4>Lisa K. from Sydney</h4>
+                </div>
+            </div>
+        </section>
+        <img src="assets/client-4.jpg" style="width: 800px; height: 600px; display: block; margin: auto;" />
+        <!-- FAQs Section -->
+        <section class="faqs-section">
+            <h2>FAQs</h2>
+            <div class="faqs">
+                <div class="faq-item" data-aos="fade-up">
+                    <strong>Q1: How can I change my flight booking?</strong>
+                    <p>A1: You can easily modify your booking through our Manage Booking section on our website or by contacting our customer support team.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <strong>Q2: What is the baggage allowance for my flight?</strong>
+                    <p>A2: Our standard baggage allowance includes one checked bag and one carry-on. Additional baggage can be added during booking for a discounted rate.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <strong>Q3: Can I earn frequent flyer points on all my bookings?</strong>
+                    <p>A3: Yes, all bookings made with Sunshine Airline are eligible for frequent flyer points, which can be redeemed for future flights, upgrades, and more.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <strong>Q4: Is travel insurance mandatory?</strong>
+                    <p>A4: Travel insurance is optional but highly recommended to protect against unforeseen circumstances like flight cancellations, medical emergencies, and lost baggage.</p>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <strong>Q5: How do I select my seat?</strong>
+                    <p>A5: During the booking process, you can choose your preferred seat in the Seat Selection section. Alternatively, you can select your seat later through the Manage Booking portal.</p>
+                </div>
+            </div>
+        </section>
+        <img src="assets/StockCake-Airport Check-in Counter_1727683542.jpg" style="width: 800px; height: 400px; display: block; margin: auto;" />
+
+        <!-- Tips for a Smooth Booking Experience Section -->
+        <section class="tips-section">
+            <h2>Tips for a Smooth Booking Experience</h2>
+            <ul class="tips-list" data-aos="fade-up">
+                <li><strong>Book Early:</strong> Secure the best fares and seat selections by booking your flights well in advance.</li>
+                <li><strong>Be Flexible:</strong> If your travel dates are flexible, use our flexible date search to find the most economical options.</li>
+                <li><strong>Check Promotions:</strong> Keep an eye on our special promotions and discounts to save even more on your bookings.</li>
+                <li><strong>Use Our Mobile App:</strong> Manage your bookings on the go with our intuitive mobile app, available for both iOS and Android devices.</li>
+                <li><strong>Join Our Loyalty Program:</strong> Sign up for our frequent flyer program to start earning points immediately on your bookings.</li>
+            </ul>
+        </section>
+    </div>
+
+
+    <!-- AOS Library for Scroll Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true
+        });
+             // Toggle dropdown on click for touch devices
+ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+   toggle.addEventListener('click', function(event) {
+     event.preventDefault(); // Prevent default link behavior
+     const dropdownMenu = this.nextElementSibling;
+     dropdownMenu.classList.toggle('show');
+     
+     // Toggle 'active' class on the toggle link
+     this.classList.toggle('active');
+     
+     // Close other open dropdowns
+     document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+       if (menu !== dropdownMenu) {
+         menu.classList.remove('show');
+       }
+     });
+     
+     // Remove 'active' class from other toggles
+     document.querySelectorAll('.dropdown-toggle').forEach(function(otherToggle) {
+       if (otherToggle !== toggle) {
+         otherToggle.classList.remove('active');
+       }
+     });
+   });
+ });
+ 
+ // Close dropdowns when clicking outside
+ document.addEventListener('click', function(event) {
+   if (!event.target.closest('.dropdown')) {
+     document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+       menu.classList.remove('show');
+     });
+     document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+       toggle.classList.remove('active');
+     });
+   }
+ });
+    </script>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer__container">
+            <div class="footer__col">
+                <h3>Sunshine</h3>
+                <p>
+                    Where Excellence Takes Flight. With a strong commitment to customer
+                    satisfaction and a passion for air travel, Sunshine Airlines offers
+                    exceptional service and seamless journeys.
+                </p>
+                <p>
+                    From friendly smiles to state-of-the-art aircraft, we connect the
+                    world, ensuring safe, comfortable, and unforgettable experiences.
+                </p>
+            </div>
+            <div class="footer__col">
+                <h4>INFORMATION</h4>
+                <a href="home.html"><p>Home</p></a>
+                <a href="about.html"><p>About</p></a>
+                <a href="specialoffers.html"><p>Special Offers</p></a>
+                <a href="service.html"><p>Services</p></a>
+                <a href="flightstatus.html"><p>Flight Status</p></a>
+            </div>
+            <div class="footer__col">
+                <a href="contact.html"> <h4>CONTACT</h4></a>
+                <a href="customers.html"><p>Customers Support</p></a>
+                <a href="mobileapp.html"><p>Mobile App</p></a>
+                <a href="travelinfo.html"><p>Travel Informations</p></a>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <p>&copy; 2024 Sunshine Airlines. All rights reserved.</p>
+            <div class="socials">
+                <span><i class="fab fa-facebook-f"></i></span>
+                <span><i class="fab fa-twitter"></i></span>
+                <span><i class="fab fa-instagram"></i></span>
+                <span><i class="fab fa-youtube"></i></span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

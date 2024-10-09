@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Special Offers – Sunshine Airline</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css"/>
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #004080;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Offer Card Styles */
+        .offer-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .offer-details {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .offer-details h2 {
+            color: #004080;
+            margin-bottom: 15px;
+        }
+
+        .offer-details p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            color: #fff;
+            background-color: #004080;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color:#ffdd57;
+            transform: translateY(-5px);
+        }
+
+        /* Animated Effects */
+        .animated-offer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-offer img {
+            transition: transform 1s ease-in-out;
+        }
+
+        .animate img {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .offer-card {
+                margin-bottom: 20px;
+                text-align: center; /* Center align offer cards */
+                flex-direction: column; /* Stack elements vertically */
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+
+            .offer-details p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .btn {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .offer-details p {
+                font-size: 12px;
+            }
+
+            .offer-card {
+                text-align: center; /* Ensure center alignment for smaller screens */
+            }
+
+            h1 {
+                font-size: 24px; /* Smaller font size for heading */
+            }
+
+            p {
+                font-size: 16px; /* Smaller font size for paragraphs */
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #004080;
+            color: white;
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 5rem;
+            padding: 20px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer__col p:hover {
+            color: #dddddd;
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #cccccc;
+        }
+
+        .footer__bar p {
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer__container {
+                grid-template-columns: 1fr; /* Stack footer columns on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+            <li class="link"><a href="home.html">Home</a></li>
+            <li class="link"><a href="about.html">About Us</a></li>
+            <li class="link"><a href="specialoffers.html">Offers</a></li>
+            
+            <!-- Flight Details Dropdown -->
+            <li class="link dropdown">
+                <a href="flightdetails.html" class="dropdown-toggle">
+                    Flight Details <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown__menu">
+                    <li><a href="flightstatus.html">Flight Status</a></li>
+                    <li><a href="bookaflight.html">Book Flight</a></li>       
+                    <li><a href="checkin.html">Check-In</a></li>
+                    <li><a href="baggage.html">Baggage</a></li>
+                    <li><a href="managebooking.html">Manage Booking</a></li>
+                </ul>
+            </li>
+            
+            <!-- Services Dropdown -->
+            <li class="link dropdown">
+                <a href="services.html" class="dropdown-toggle">
+                    Services <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown__menu">
+                    <li><a href="travelinfo.html">Travel Information</a></li>
+                    <li><a href="customersupport.html">Customer Support</a></li>
+                    <li><a href="language.html">Language / Region Selector</a></li>
+                    <li><a href="mobileapp.html">Mobile App</a></li>
+                </ul>
+            </li>
+            
+            <!-- Contact Button -->
+            <li class="link contact-btn">
+                <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Special Offers</h1>
+        <p>Explore our exclusive deals and discounts for flights, vacation packages, and more! Book today and save on your next adventure.</p>
+
+        <!-- Special Offers Section 1 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="assets/paris.jpg" alt="Beautiful landscape">
+            </div>
+            <div class="offer-details">
+                <h2>Discounted Flights to Paris</h2>
+                <p>Book now and enjoy up to 30% off on round-trip flights to Paris. Experience the beauty of the Eiffel Tower, Louvre, and more!</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Special Offers Section 2 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="assets/bali 1.webp" alt="Beautiful landscape">
+            </div>
+            <div class="offer-details">
+                <h2>All-Inclusive Bali Vacation</h2>
+                <p>Enjoy a 5-day all-inclusive stay in Bali, including airfare, luxury accommodation, and guided tours. Starting at just $999!</p>
+                <a href="#" class="btn">Grab the Deal</a>
+            </div>
+        </div>
+
+        <!-- Special Offers Section 3 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="assets/new york.webp" alt="New York Business Class Upgrade">
+            </div>
+            <div class="offer-details">
+                <h2>New York Business Class Upgrade</h2>
+                <p>Fly in style! Upgrade to Business Class on all flights to New York and receive a complimentary airport lounge pass. Limited time offer!</p>
+                <a href="#" class="btn">Upgrade Now</a>
+            </div>
+        </div>
+
+        <!-- Special Offers Section 4 -->
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="assets/akihabara-tokyo.jpg" alt="Family Vacation in Tokyo">
+            </div>
+            <div class="offer-details">
+                <h2>Family Vacation in Tokyo</h2>
+                <p>Take the family on an unforgettable trip to Tokyo with up to 20% off family packages. Includes airfare, hotel, and theme park tickets!</p>
+                <a href="#" class="btn">Discover More</a>
+            </div>
+        </div>
+
+        <!-- Animated Special Offer Section 5 -->
+        <div class="offer-card animated-offer">
+            <div class="offer-image">
+                <img src="assets/caribbean-beach-gvr6v8w4fmuv50xc.webp" alt="Last-Minute Caribbean Getaway">
+            </div>
+            <div class="offer-details">
+                <h2>Last-Minute Caribbean Getaway</h2>
+                <p>Escape to the Caribbean with our last-minute deals. Save up to 50% on resorts, flights, and activities. Hurry, offers are limited!</p>
+                <a href="#" class="btn">Book Your Escape</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add JavaScript for Animation -->
+    <script>
+        // Toggle dropdown on click for Flight Details and Services
+        document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.classList.toggle('show');
+                
+                // Toggle 'active' class on the toggle link
+                this.classList.toggle('active');
+                
+                // Close other open dropdowns
+                document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                    }
+                });
+                
+                // Remove 'active' class from other toggles
+                document.querySelectorAll('.dropdown-toggle').forEach(function(otherToggle) {
+                    if (otherToggle !== toggle) {
+                        otherToggle.classList.remove('active');
+                    }
+                });
+            });
+        });
+    
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+                    menu.classList.remove('show');
+                });
+                document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+                    toggle.classList.remove('active');
+                });
+            }
+        });
+    </script>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
+                <h3>Sunshine</h3>
+                <p>
+                    Where Excellence Takes Flight. With a strong commitment to customer
+                    satisfaction and a passion for air travel, Sunshine Airlines offers
+                    exceptional service and seamless journeys.
+                </p>
+                <p>
+                    From friendly smiles to state-of-the-art aircraft, we connect the
+                    world, ensuring safe, comfortable, and unforgettable experiences.
+                </p>
+            </div>
+
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <p>Home</p>
+                <p>Special Offers</p>
+                <p>Manage Booking</p>
+                <p>Contact Us</p>
+                <p>About Us</p>
+            </div>
+
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p>Email: info@sunshineairline.com</p>
+                <p>Phone: 1-800-555-0199</p>
+                <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+            <div class="socials">
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

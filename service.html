@@ -52,11 +52,11 @@
 
         /* Image Styles */
         .service-image {
-            width: 100%;
-            max-height: 700px;
-            object-fit: cover;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 30px 0;
+            background-color: white;
             border-radius: 10px;
-            transition: transform 0.4s ease;
         }
 
         .service-image:hover {
@@ -191,13 +191,64 @@
 </head>
 
 <body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+              Flight Details <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>  
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>           
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>        
+              <li><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
 
     <div class="container">
         <h1>Our Premium Services</h1>
 
         <h2>Flight Booking</h2>
-        <img src="assets/flightbook.jpg" alt="Flight Booking" class="service-image">
-        <p>We offer a seamless and user-friendly flight booking experience, whether you're traveling domestically or internationally. Enjoy exclusive deals on airfares, real-time price comparisons, and flexible ticket options for economy, business, and first-class flights.</p>
+        <img src="assets/flightbook.jpg" alt="Flight Booking" class="service-image" 
+        style="display: block; margin: 0 auto; width: 800px; height: 500px;">
+           <p>We offer a seamless and user-friendly flight booking experience, whether you're traveling domestically or internationally. Enjoy exclusive deals on airfares, real-time price comparisons, and flexible ticket options for economy, business, and first-class flights.</p>
         <ul>
             <li><strong><b>Special Discounts</b>:</strong> Unlock special offers and discounts available only through our platform.</li>
             <li><strong><b>Multiple Payment Options</b>:</strong> Pay using credit cards, digital wallets, or net banking for maximum convenience.</li>
@@ -205,8 +256,9 @@
         </ul>
 
         <h2>Hotel Reservations</h2>
- <img src="assets/a1f0ea0f2e11b42aaeee9257dfade63d.jpg" alt="Visa Assistance" class="service-image" width="1000" height="2500">
-
+        <img src="assets/a1f0ea0f2e11b42aaeee9257dfade63d.jpg" alt="Flight Booking" class="service-image" 
+        style="display: block; margin: 0 auto; width:800px; height:500px;">
+   
         <p>We partner with top hotels around the world to offer a wide selection of accommodations. Whether you're looking for luxury suites, boutique hotels, or budget-friendly stays, our system provides options tailored to your preferences.</p>
         <ul>
             <li><strong>Best Price Guarantee:</strong> We ensure competitive pricing across all hotel options.</li>
@@ -215,8 +267,9 @@
         </ul>
 
         <h2>Car Rentals</h2>
-        <img src="assets/MicrosoftTeams-image - 2024-09-30T142450.235.png"Car Rentals" class="service-image">
-        <p>Travel at your own pace with our trusted car rental partners. We offer an extensive range of vehicles, from economy cars to luxury SUVs, at competitive rates to make your road trip or business travel comfortable.</p>
+        <img src="assets/MicrosoftTeams-image - 2024-09-30T142450.235.png" alt="Flight Booking" class="service-image" 
+        style="display: block; margin: 0 auto; width: 800px; height: 500px;">
+           <p>Travel at your own pace with our trusted car rental partners. We offer an extensive range of vehicles, from economy cars to luxury SUVs, at competitive rates to make your road trip or business travel comfortable.</p>
         <ul>
             <li><strong>Flexible Pickup Locations:</strong> Choose from multiple pickup and drop-off locations, including airports and city centers.</li>
             <li><strong>Unlimited Mileage:</strong> Enjoy unlimited mileage on most rentals, perfect for long drives.</li>
@@ -224,8 +277,9 @@
         </ul>
 
         <h2>Visa Assistance</h2>
-        <img src="assets/MicrosoftTeams-image - 2024-09-30T143352.248.png" alt="Visa Assistance" class="service-image" width="500" height="2000">>
-        <p>Navigating visa applications can be stressful, but our dedicated visa assistance team simplifies the process. We provide timely and accurate visa consultation and processing services for your travel destination.</p>
+        <img src="assets/MicrosoftTeams-image - 2024-09-30T143352.248.png" alt="Flight Booking" class="service-image" 
+        style="display: block; margin: 0 auto; width:800px; height:500px;">
+           <p>Navigating visa applications can be stressful, but our dedicated visa assistance team simplifies the process. We provide timely and accurate visa consultation and processing services for your travel destination.</p>
         <ul>
             <li><strong>Fast Processing:</strong> Expedite your visa application to avoid delays in your travel plans.</li>
             <li><strong>Document Verification:</strong> Ensure that all your documents meet embassy standards for a smooth application.</li>

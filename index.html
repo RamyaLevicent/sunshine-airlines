@@ -8,35 +8,177 @@
       rel="stylesheet"/>
     <link rel="stylesheet" href="styles.css"/>
     <title>Sunshine Airlines</title>
+    <style>
+     /* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
+
+      /* Existing Styles */
+      
+      /* Rotate the icon when active */
+      .dropdown-toggle.active i {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+      }
+      
+      /* Ensure icons transition smoothly */
+      .dropdown-toggle i {
+        transition: transform 0.3s ease;
+      }
+
+      /* New Styles for "Book Now" Button */
+      .book-now-container {
+        text-align: center;
+        margin: 20px 0;
+        animation: fadeInDown 1s ease-out;
+      }
+
+      .book-now-btn {
+        background-color: #ff9800;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .book-now-btn:hover {
+        background-color: #e68900;
+        transform: scale(1.05);
+      }
+
+      /* Styles for Animated Containers */
+      .animated-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 1s forwards;
+      }
+
+      .container-box {
+        background-color: #f5f5f5;
+        padding: 30px;
+        margin: 0 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .container-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .container-box img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .container-box:hover img {
+        transform: rotate(360deg);
+      }
+
+      .container-box h3 {
+        margin-bottom: 15px;
+        font-size: 1.5em;
+        color: #333;
+      }
+
+      .container-box p {
+        color: #666;
+        font-size: 1em;
+      }
+
+      /* Animation Keyframes */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .animated-container {
+          flex-direction: column;
+        }
+
+        .container-box {
+          margin: 15px 0;
+          width: 80%;
+        }
+      }
+    </style>
+    
   </head>
   <body>
-    <nav>
+   
+     <nav>
       <div class="nav__logo">Sunshine</div>
       <ul class="nav__links">
-        <li class="link"><a href="home.html">Home</a></li>
-        <li class="link"><a href="about.html">About Us</a></li>
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="link"><a href="about.html">About </a></li>
         <li class="link"><a href="specialoffers.html">Offers</a></li>
+        <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+        <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+        <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+        <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
         
         <!-- Flight Details Dropdown -->
         <li class="link dropdown">
-          <a href="flightstatus.html" class="dropdown-toggle">Flight Details</a>
+          <a href="managebooking.html" class="dropdown-toggle">
+            Flight Details <i class="ri-arrow-down-s-line"></i>
+          </a>
           <ul class="dropdown__menu">
-            <li><a href="flightstatus.html">Flight Status</a></li>
-            <li><a href="bookaflight.html">Book Flight</a></li>       
-            <li><a href="checkin.html">Check-In</a></li>
             <li><a href="baggage.html">Baggage</a></li>
+            <li><a href="bookaflight.html">Book Flight</a></li>  
+            <li><a href="checkin.html">Check-In</a></li>
+            <li><a href="flightstatus.html">Flight Status</a></li>           
             <li><a href="managebooking.html">Manage Booking</a></li>
+          
           </ul>
         </li>
         
         <!-- Services Dropdown -->
         <li class="link dropdown">
-          <a href="services.html" class="dropdown-toggle">Services</a>
+          <a href="travelinfo.html" class="dropdown-toggle">
+            Services <i class="ri-arrow-down-s-line"></i>
+          </a>
           <ul class="dropdown__menu">
-            <li><a href="travelinfo.html">Travel Information</a></li>
             <li><a href="customersupport.html">Customer Support</a></li>
-            <li><a href="language.html">Language / Region Selector</a></li>
+            <li class="link"><a href="insurance.html">Insurance</a></li>        
             <li><a href="mobileapp.html">Mobile App</a></li>
+            <li><a href="language.html">Language / Region Selector</a></li> 
+            <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="travelinfo.html">Travel Information</a></li>
           </ul>
         </li>
         
@@ -44,15 +186,33 @@
         <li class="link contact-btn">
           <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
         </li>
+        <!-- <li class="link contact-btn"></li>
+          <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+        </li> -->
       </ul>
     </nav>
-    
-
     <header class="section__container header__container">
       <h1 class="section__header">Find And Book<br/>A Great Experience</h1>
       <img src="assets/header.jpg" alt="header" style="width:100%; height:500px; border:2px solid #ccc; border-radius:5px;" />
     </header>
+<!-- Book Now Button -->
+<div class="book-now-container">
+  <a href="userinfo.html" class="book-now-btn">Click Here to Book Now</a>
+</div>
 
+<!-- Animated Containers -->
+<div class="animated-container">
+  <div class="container-box">
+    <img src="assets/offer1.png" alt="Special Offer 1" />
+    <h3>Exclusive Deals</h3>
+    <p>Take advantage of our limited-time offers and fly to your favorite destinations at unbeatable prices.</p>
+  </div>
+  <div class="container-box">
+    <img src="assets/offer2.png" alt="Special Offer 2" />
+    <h3>Fast Booking</h3>
+    <p>Enjoy a seamless booking experience with our user-friendly platform, ensuring your reservations are quick and easy.</p>
+  </div>
+</div>
     <section class="section__container booking__container">
       <div class="booking__nav">
         <!-- <span>Economy Class</span>
@@ -287,17 +447,17 @@
         </div>
         <div class="footer__col">
           <h4>INFORMATION</h4>
-          <a href="home.html"><p>Home</p></a>
-          <a href="about.html"><p>About</p></a>
-          <a href="specialoffers.html"><p>Special Offers</p></a>
+          <a href="index.html"><p>Home</p></a>
+          <a href="about.html"><p>About</p></a>          
           <a href="service.html"><p>Services</p></a>
-   
-          <a href="flightstatus.html"><p>Flight Status</p></a>
+          <a href="privacypolicy.html"><p>Privacy Policy</p></a>
+<!--    
+          <a href="flightstatus.html"><p>Flight Status</p></a> -->
   </div>
         <div class="footer__col">
             <a href="contact.html"> <h4>CONTACT</h4></a>
-          <a href="customers.html"><p>Customers Support</p></a>
-          <a href="mobileapp.html"><p>Mobile App</p></a>
+          <a href="customersupport.html"><p>Customers Support</p></a>
+          <a href="userinfo.html"><p>User Details</p></a>
           <a href="travelinfo.html"><p>Travel Informations</p></a>
    
    
@@ -314,6 +474,8 @@
       </div>
     </footer>
     <script>
+      
+      
       // Toggle dropdown on click for touch devices
       document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(event) {
@@ -338,6 +500,7 @@
           });
         }
       });
+    
     </script>
     
   </body>

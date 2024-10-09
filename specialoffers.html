@@ -52,10 +52,11 @@
         }
 
         .offer-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* This centers the image horizontally */
+}
 
         .offer-details {
             padding: 20px;
@@ -201,43 +202,114 @@
                 grid-template-columns: 1fr; /* Stack footer columns on smaller screens */
             }
         }
+          /* Dropdown Menu Styles */
+          .dropdown__menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown__menu.show {
+            display: block;
+        }
+
+        .dropdown__menu li {
+            padding: 10px 20px;
+        }
+
+        .dropdown__menu li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown__menu li a:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Rotate the icon when active */
+        .dropdown-toggle.active i {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+
+        /* Ensure icons transition smoothly */
+        .dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Positioning for dropdown */
+        .dropdown {
+            position: relative;
+        }
+        /* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
     </style>
 </head>
 <body>
     <nav>
         <div class="nav__logo">Sunshine</div>
         <ul class="nav__links">
-          <li class="link"><a href="home.html">Home</a></li>
-          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
           <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
           
-          <!-- Flight Details Dropdown -->
-          <li class="link dropdown">
-            <a href="flightdetails.html" class="dropdown-toggle">Flight Details</a>
-            <ul class="dropdown__menu">
-              <li><a href="flightstatus.html">Flight Status</a></li>
-              <li><a href="bookaflight.html">Book Flight</a></li>       
-              <li><a href="checkin.html">Check-In</a></li>
-              <li><a href="baggage.html">Baggage</a></li>
-              <li><a href="managebooking.html">Manage Booking</a></li>
-            </ul>
-          </li>
-          
-          <!-- Services Dropdown -->
-          <li class="link dropdown">
-            <a href="services.html" class="dropdown-toggle">Services</a>
-            <ul class="dropdown__menu">
-              <li><a href="travelinfo.html">Travel Information</a></li>
-              <li><a href="customersupport.html">Customer Support</a></li>
-              <li><a href="language.html">Language / Region Selector</a></li>
-              <li><a href="mobileapp.html">Mobile App</a></li>
-            </ul>
-          </li>
+            <!-- Flight Details Dropdown -->
+            <li class="link dropdown">
+                <a href="managebooking.html" class="dropdown-toggle">
+                    Flight Details <i class="fa fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown__menu">
+                    <li><a href="baggage.html">Baggage</a></li>
+                    <li><a href="bookaflight.html">Book Flight</a></li>  
+                    <li><a href="checkin.html">Check-In</a></li>
+                    <li><a href="flightstatus.html">Flight Status</a></li>
+                    <li><a href="managebooking.html">Manage Booking</a></li>
+                </ul>
+            </li>
+            
+            <!-- Services Dropdown -->
+            <li class="link dropdown">
+                <a href="travelinfo.html" class="dropdown-toggle">
+                    Services <i class="fa fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown__menu">
+                    <li><a href="customersupport.html">Customer Support</a></li>
+                    <li><a href="insurance.html">Insurance</a></li>        
+                    <li><a href="mobileapp.html">Mobile App</a></li>
+                    <li><a href="language.html">Language / Region Selector</a></li> 
+                    <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                    <li><a href="travelinfo.html">Travel Information</a></li>
+                </ul>
+            </li>
           
           <!-- Contact Button -->
           <li class="link contact-btn">
             <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
           </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
         </ul>
       </nav>
     <div class="container">

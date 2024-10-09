@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Sunshine Airlines</title>
+    <!-- <title>Personalization Through Localization</title> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d0c5c5;
+            transition: all 0.3s ease;
+        }
+
+        header {
+            background-color: #5d5f60;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 2em;
+            margin: 1em;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.8s ease-in-out;
+        }
+
+        h2 {
+            color: #002855;
+            margin-top: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .image-section {
+            text-align: center;
+            margin: 2em 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 1em;
+        }
+
+        form {
+            margin-top: 1.1em;
+            text-align: center;
+        }
+
+        /* Submit Button Styling */
+        button[type="submit"] {
+            background-color: #002855;
+            color: white;
+            border: none;
+            padding: 1em 2em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 1.5em;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ffdd57;
+            color: #002855;
+            transform: scale(1.05);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.8em;
+            margin-bottom: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 1.5em;
+            }
+
+            img {
+                height: auto;
+            }
+        }
+        /* Dropdown Toggle Styles */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align text and icon */
+}
+
+.dropdown-toggle i {
+    margin-left: 5px; /* Space between text and icon */
+    font-size: 14px; /* Icon size */
+    color: #333; /* Icon color */
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+/* Rotate the icon when dropdown is active */
+.dropdown-toggle.active i {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu Styles */
+.dropdown__menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    min-width: 160px;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown__menu.show {
+    display: block; /* Show when active */
+}
+
+.dropdown__menu li {
+    padding: 12px 16px;
+}
+
+.dropdown__menu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown__menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Positioning Dropdown Relative to Parent */
+.dropdown {
+    position: relative;
+}
+
+/* Adjusting Dropdown Position */
+.dropdown__menu {
+    top: 100%;
+    left: 0;
+}
+
+    </style>
+</head>
+
+<body>
+<nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="flightstatus.html" class="dropdown-toggle">
+              Flight Details <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="flightstatus.html">Flight Status</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>       
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="services.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="travelinfo.html">Travel Information</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li>
+              <li><a href="mobileapp.html">Mobile App</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+        </ul>
+      </nav>
+
+    <header>
+        <h1>Language/Region Selector: Personalization Through Localization</h1>
+    </header>    
+   
+    
+    <div class="container">
+        <!-- Multilingual Support Section -->
+        <section>
+            <h2>Multilingual Support: Speaking the Passenger’s Language</h2>
+            <h3>1. Language Customization</h3>
+            <p>Airlines recognize the diversity of their passengers and offer multilingual support in their mobile apps. Major global languages such as English, Spanish, French, Chinese, Arabic, Japanese, and others are often available.</p>
+            <h3>2. Localized User Interface</h3>
+            <p>Localization goes beyond text translation. Airlines also adapt visual layouts and content to match cultural norms.</p>
+            <h3>3. Localized Offers and Promotions</h3>
+            <p>Regional preferences play a significant role in how promotions and deals are displayed.</p>
+        </section>
+
+        <div class="image-section">
+            <img src="assets/mulitilagual.jpeg" alt="Multilingual Support">
+        </div>
+
+        <!-- AI and Chatbot Section -->
+        <section>
+            <h2>Chatbots and Multilingual Customer Support</h2>
+            <h3>1. AI-Powered Chatbots</h3>
+            <p>Airlines incorporate AI-driven chatbots to offer real-time assistance, communicating in multiple languages.</p>
+            <h3>2. Speech Recognition and NLP</h3>
+            <p>Airlines have introduced speech-to-text capabilities, allowing passengers to speak their requests.</p>
+        </section>
+
+        <div class="image-section">
+            <img src="assets/airline service.jpeg" alt="Customer Support">
+        </div>
+
+        <!-- Regional Customization Section -->
+        <section>
+            <h2>Regional Customization: Tailoring the Experience to Local Needs</h2>
+            <h3>1. Payment Systems</h3>
+            <p>Airline apps support region-specific payment gateways, ensuring a smooth checkout experience.</p>
+            <h3>2. Cultural Preferences and Travel Regulations</h3>
+            <p>Airlines recognize that passengers from different regions may have different travel preferences.</p>
+            <h3>3. Localized Emergency Alerts</h3>
+            <p>The app’s push notifications deliver localized alerts during emergencies.</p>
+        </section>
+
+        <div class="image-section">
+            <img src="assets/region ser.jpeg" alt="Regional Customization">
+        </div>
+
+        <!-- Accessibility and Inclusivity Section -->
+        <section>
+            <h2>Accessibility and Inclusivity Across Regions</h2>
+            <h3>1. Offline Capabilities for Low-Bandwidth Regions</h3>
+            <p>Airline apps provide offline functionalities where internet connectivity is limited.</p>
+            <h3>2. Support for Passengers with Disabilities</h3>
+            <p>The app is designed with accessibility features, ensuring easy navigation for all passengers.</p>
+        </section>
+
+        <!-- Customer Support Section with Form -->
+        <section>
+            <h2>24/7 Customer Support</h2>
+            <p>At Sunshine Airlines, we offer round-the-clock customer support in multiple languages, making sure that you receive the help you need whenever you need it.</p>
+
+            <!-- Customer Support Form -->
+            <form action="/submit_support" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+    <script>
+        // Toggle dropdown on click for touch devices
+        document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.classList.toggle('show');
+                
+                // Toggle 'active' class on the toggle link
+                this.classList.toggle('active');
+                
+                // Close other open dropdowns
+                document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                    }
+                });
+                
+                // Remove 'active' class from other toggles
+                document.querySelectorAll('.dropdown-toggle').forEach(function(otherToggle) {
+                    if (otherToggle !== toggle) {
+                        otherToggle.classList.remove('active');
+                    }
+                });
+            });
+        });
+    
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+                    menu.classList.remove('show');
+                });
+                document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+                    toggle.classList.remove('active');
+                });
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

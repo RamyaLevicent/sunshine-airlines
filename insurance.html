@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Insurance for Flight Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: navy;
+           
+        }
+
+        h3 {
+            color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefit-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .benefit-list li:hover {
+            transform: scale(1.02);
+        }
+
+        .icon {
+            margin-right: 10px;
+            color: #007BFF;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color:navy;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color:orange;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .benefit-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .benefit-list li .icon {
+                margin-bottom: 5px;
+            }
+        }
+         /* Dropdown Menu Styles */
+         .dropdown__menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown__menu.show {
+            display: block;
+        }
+
+        .dropdown__menu li {
+            padding: 10px 20px;
+        }
+
+        .dropdown__menu li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown__menu li a:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Rotate the icon when active */
+        .dropdown-toggle.active i {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+
+        /* Ensure icons transition smoothly */
+        .dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Positioning for dropdown */
+        .dropdown {
+            position: relative;
+        }
+        /* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
+/* Footer Styles */
+footer {
+            background-color: #004080;
+            color: white;
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 5rem;
+            padding: 20px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer__col p:hover {
+            color: #dddddd;
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #cccccc;
+        }
+
+        .footer__bar p {
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+          
+           <!-- Flight Details Dropdown -->
+           <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+                Flight Details <i class="fa fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown__menu">
+                <li><a href="baggage.html">Baggage</a></li>
+                <li><a href="bookaflight.html">Book Flight</a></li>  
+                <li><a href="checkin.html">Check-In</a></li>
+                <li><a href="flightstatus.html">Flight Status</a></li>
+                <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+        </li>
+        
+        <!-- Services Dropdown -->
+        <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+                Services <i class="fa fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown__menu">
+                <li><a href="customersupport.html">Customer Support</a></li>
+                <li><a href="insurance.html">Insurance</a></li>        
+                <li><a href="mobileapp.html">Mobile App</a></li>
+                <li><a href="language.html">Language / Region Selector</a></li> 
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+        </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
+<div class="container">
+    <h1>Travel Insurance for Flight Travel</h1>
+    <div class="image-container">
+        <img src="assets/travel insurance.png"
+        style="display: block; 
+               margin: 0 auto; 
+              
+               max-width: 400px; /* Ensure it doesn't exceed the original size */
+               height: 300px; /* Maintain aspect ratio */
+               border-radius: 10px; 
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+               transition: transform 0.3s ease-in-out;">
+</div>
+
+    <p>At Sunshine Airlines, we want to ensure that your journey is as smooth and worry-free as possible. That’s why we offer flexible Travel Insurance options to protect you from unforeseen circumstances during your travels. Whether you’re looking for basic coverage, a more comprehensive plan, or protection against trip cancellations, we have you covered.</p>
+
+    <h2>1. Basic Coverage</h2>
+    <p>Our Basic Travel Insurance is designed to provide essential protection, offering peace of mind without breaking the bank. It covers common travel issues and ensures you’re not left unprotected during your trip.</p>
+
+    <h3>Key Benefits</h3>
+    <ul class="benefit-list">
+        <li><i class="fas fa-plus-circle icon"></i><strong></strong> Coverage for emergency medical treatments or hospital visits during your trip, including necessary medications.</li>
+        <li><i class="fas fa-suitcase-rolling icon"></i><strong></strong> Compensation for baggage that is lost, stolen, or delayed for more than 12 hours, ensuring you can purchase essentials until your baggage is returned.</li>
+        <li><i class="fas fa-clock icon"></i><strong></strong> Reimbursement for meals, accommodations, or transport costs in case of long flight delays, allowing you to manage unexpected situations without stress.</li>
+        <li><i class="fas fa-phone-alt icon"></i><strong></strong> Access to a dedicated hotline for emergencies, providing assistance when you need it the most.</li>
+    </ul>
+    <p><strong><i class="fas fa-hands-helping"></i>Who Is It For?</strong> This plan is ideal for travelers who want affordable protection for basic travel risks and minimal coverage. Perfect for short trips and weekend getaways.</p>
+
+    <h2>2. Comprehensive Coverage</h2>
+    <p>For travelers who want all-around protection, our Comprehensive Travel Insurance offers extensive coverage for a wide range of travel-related issues. It’s perfect for international travelers or those embarking on long trips where more risks are involved.</p>
+
+    <h3>Key Benefits</h3>
+    <ul class="benefit-list">
+        <li><i class="fas fa-hospital icon"></i><strong></strong> Full coverage for medical emergencies, including hospital stays, medications, and emergency evacuations, ensuring you receive the care you need, wherever you are.</li>
+        <li><i class="fas fa-plane-slash icon"></i><strong></strong> Reimbursement for unused travel and accommodation costs if your trip is cut short due to illness, injury, or other covered reasons, safeguarding your financial investment.</li>
+        <li><i class="fas fa-luggage-cart icon"></i><strong></strong> Extended coverage for lost, stolen, or damaged baggage, including coverage for valuable items like electronics and jewelry.</li>
+        <li><i class="fas fa-headset icon"></i><strong></strong> 24/7 access to global assistance services for medical and legal emergencies, providing peace of mind knowing help is just a call away.</li>
+        <li><i class="fas fa-clock icon"></i><strong></strong> Compensation for additional costs incurred due to flight delays, cancellations, or missed connections, helping you cover unexpected expenses.</li>
+        <li><i class="fas fa-user-shield icon"></i><strong></strong> Coverage for legal liability in case you cause damage or injury to others during your trip, protecting you from unforeseen legal costs.</li>
+    </ul>
+    <p><strong><i class="fas fa-hands-helping"></i>Who Is It For?</strong> This plan is ideal for those who want extensive coverage, including medical, personal liability, and travel disruption protection. It’s recommended for international travelers, families, and anyone seeking more security during their trip.</p>
+
+    <h2>3. Cancellation Coverage</h2>
+    <p>Our Cancellation Travel Insurance protects you financially in case you need to cancel your trip due to unforeseen circumstances. Whether it’s due to personal emergencies, medical reasons, or other covered events, this plan ensures you won’t lose your investment.</p>
+
+    <h3>Key Benefits</h3>
+    <ul class="benefit-list">
+        <li><i class="fas fa-times-circle icon"></i><strong></strong> Reimbursement of non-refundable travel costs if you need to cancel your flight for a covered reason (e.g., illness, injury, death of a family member, or other emergencies).</li>
+        <li><i class="fas fa-calendar-alt icon"></i><strong></strong> If something goes wrong before your trip starts (like a sudden illness or job loss), you can cancel your flight and receive reimbursement for the costs.</li>
+        <li><i class="fas fa-undo-alt icon"></i><strong></strong> Coverage for cancellations due to unexpected events like natural disasters, travel bans, or sudden work obligations, giving you the flexibility you need.</li>
+        <li><i class="fas fa-copy icon"></i><strong></strong> Ability to cancel parts of your trip (like a hotel stay) while keeping others intact, allowing for more control over your plans.</li>
+    </ul>
+    <p><strong><i class="fas fa-hands-helping"></i>Who Is It For?</strong> This plan is perfect for travelers who want to protect their investment and reduce financial risks in case of unexpected trip cancellations. It’s especially recommended for those booking in advance or during uncertain times.</p>
+
+    <h2>Why Choose Sunshine Airlines Travel Insurance?</h2>
+    <h3>Key Benefits</h3>
+
+    <ul class="benefit-list">
+        <li><i class="fas fa-tags icon"></i><strong></strong> Choose from a variety of coverage levels to suit your budget and travel needs, ensuring you find a plan that fits your lifestyle.</li>
+        <li><i class="fas fa-file-alt icon"></i><strong></strong> Our claims process is straightforward, ensuring you can get the assistance and reimbursement you need quickly without unnecessary complications.</li>
+        <li><i class="fas fa-headset icon"></i><strong></strong> Access to emergency support services at any time, from anywhere in the world, ensuring help is available when you need it most.</li>
+        <li><i class="fas fa-cog icon"></i><strong></strong> Customize your insurance package to include specific benefits that align with your travel plans and personal needs.</li>
+        <li><i class="fas fa-plane icon"></i><strong></strong> With Sunshine Airlines Travel Insurance, focus on creating wonderful travel memories, knowing you have the protection and support you need for a travel with Peace of mind.</li>
+    </ul>
+
+    <a href="#" class="button">Get Insured Now!</a>
+</div>
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__col">
+            <h3>Sunshine</h3>
+            <p>
+                Where Excellence Takes Flight. With a strong commitment to customer
+                satisfaction and a passion for air travel, Sunshine Airlines offers
+                exceptional service and seamless journeys.
+            </p>
+            <p>
+                From friendly smiles to state-of-the-art aircraft, we connect the
+                world, ensuring safe, comfortable, and unforgettable experiences.
+            </p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Quick Links</h4>
+            <p>Home</p>
+            <p>Special Offers</p>
+            <p>Manage Booking</p>
+            <p>Contact Us</p>
+            <p>About Us</p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>Email: info@sunshineairline.com</p>
+            <p>Phone: 1-800-555-0199</p>
+            <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+        </div>
+    </div>
+    <div class="footer__bar">
+        <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+        <div class="socials">
+            <span>Facebook</span>
+            <span>Twitter</span>
+            <span>Instagram</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

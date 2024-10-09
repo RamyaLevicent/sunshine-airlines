@@ -354,7 +354,7 @@
         }
 
         .faq-item strong {
-            color:darkviolet;
+            color:rgb(15, 60, 82);
         }
 
         /* Tips Section */
@@ -478,7 +478,7 @@
 
             margin: 30px 0;
 
-            background-color: white;
+            background-color:#004080;
 
             border-radius: 10px;
 
@@ -598,6 +598,57 @@
                 font-size: 20px;
             }
         }
+        /* Footer Styles */
+ footer {
+            background-color: #004080;
+            color: white;
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 5rem;
+            padding: 20px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer__col p:hover {
+            color: #dddddd;
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #cccccc;
+        }
+
+        .footer__bar p {
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+        }
     </style>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -609,30 +660,41 @@
     <nav>
         <div class="nav__logo">Sunshine</div>
         <ul class="nav__links">
-          <li class="link"><a href="home.html">Home</a></li>
-          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
           <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
           
           <!-- Flight Details Dropdown -->
           <li class="link dropdown">
-            <a href="flightdetails.html" class="dropdown-toggle">Flight Details</a>
+            <a href="managebooking.html" class="dropdown-toggle">
+              Flight Details <i class="ri-arrow-down-s-line"></i>
+            </a>
             <ul class="dropdown__menu">
-              <li><a href="flightstatus.html">Flight Status</a></li>
-              <li><a href="bookaflight.html">Book Flight</a></li>       
-              <li><a href="checkin.html">Check-In</a></li>
               <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>  
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>           
               <li><a href="managebooking.html">Manage Booking</a></li>
+            
             </ul>
           </li>
           
           <!-- Services Dropdown -->
           <li class="link dropdown">
-            <a href="services.html" class="dropdown-toggle">Services</a>
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
             <ul class="dropdown__menu">
-              <li><a href="travelinfo.html">Travel Information</a></li>
               <li><a href="customersupport.html">Customer Support</a></li>
-              <li><a href="language.html">Language / Region Selector</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>        
               <li><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
             </ul>
           </li>
           
@@ -640,6 +702,9 @@
           <li class="link contact-btn">
             <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
           </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
         </ul>
       </nav>
     <div class="book-flight-container">
@@ -681,7 +746,7 @@
                 
             </div>
         </div>
-        <a href="#" class="btn">Book Now</a>
+        <a href="userinfo.html" class="btn">Book Now</a>
 
         <!-- Flight Booking Steps -->
         <section class="flight-steps">
@@ -833,7 +898,7 @@
                 </div>
             </div>
         </section>
-        <img src="assets/client-4.jpg" style="width: 800px; height: 600px; display: block; margin: auto;" />
+        <!-- <img src="assets/client-4.jpg" style="width: 800px; height: 600px; display: block; margin: auto;" /> -->
         <!-- FAQs Section -->
         <section class="faqs-section">
             <h2>FAQs</h2>
@@ -889,8 +954,7 @@
         });
     </script>
     
-    <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="footer__container">
             <div class="footer__col">
                 <h3>Sunshine</h3>
@@ -904,28 +968,29 @@
                     world, ensuring safe, comfortable, and unforgettable experiences.
                 </p>
             </div>
+  
             <div class="footer__col">
-                <h4>INFORMATION</h4>
-                <a href="home.html"><p>Home</p></a>
-                <a href="about.html"><p>About</p></a>
-                <a href="specialoffers.html"><p>Special Offers</p></a>
-                <a href="service.html"><p>Services</p></a>
-                <a href="flightstatus.html"><p>Flight Status</p></a>
+                <h4>Quick Links</h4>
+                <p>Home</p>
+                <p>Special Offers</p>
+                <p>Manage Booking</p>
+                <p>Contact Us</p>
+                <p>About Us</p>
             </div>
+  
             <div class="footer__col">
-                <a href="contact.html"> <h4>CONTACT</h4></a>
-                <a href="customers.html"><p>Customers Support</p></a>
-                <a href="mobileapp.html"><p>Mobile App</p></a>
-                <a href="travelinfo.html"><p>Travel Informations</p></a>
+                <h4>Contact Us</h4>
+                <p>Email: info@sunshineairline.com</p>
+                <p>Phone: 1-800-555-0199</p>
+                <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
             </div>
         </div>
         <div class="footer__bar">
-            <p>&copy; 2024 Sunshine Airlines. All rights reserved.</p>
+            <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
             <div class="socials">
-                <span><i class="fab fa-facebook-f"></i></span>
-                <span><i class="fab fa-twitter"></i></span>
-                <span><i class="fab fa-instagram"></i></span>
-                <span><i class="fab fa-youtube"></i></span>
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
             </div>
         </div>
     </footer>

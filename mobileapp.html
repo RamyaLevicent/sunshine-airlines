@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Sunshine Airlines</title>
+    <style>
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f0f8ff, #e6eff7);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(191, 183, 183, 0.9);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            transform: translateY(50px);
+            animation: slideUp 1s ease-in-out forwards;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .intro h1 {
+            font-size: 36px;
+            color: #002855;
+        }
+
+        .intro p {
+            font-size: 18px;
+            color: #2d2b2b;
+        }
+
+        .book-button {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .book-button a {
+            background-color: #002855;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .book-button a:hover {
+            background-color: #ffdd57;
+            transform: scale(1.1);
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .image-section img {
+            width: 30%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .steps {
+            margin-bottom: 40px;
+        }
+
+        .steps h2 {
+            font-size: 28px;
+            color: #002855;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.5s ease-in-out;
+        }
+
+        .step h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .important-info {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .important-info h2 {
+            font-size: 26px;
+            color: #002851;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .important-info p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .revolutionizing {
+            margin-top: 40px;
+            background-color: #f7f9fc;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in;
+        }
+
+        .revolutionizing h2 {
+            font-size: 26px;
+            color: #002855;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .revolutionizing p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-section img {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .container {
+                transform: translateY(0);
+            }
+        }
+        /* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
+/* Footer Styles */
+footer {
+            background-color: #004080;
+            color: white;
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 5rem;
+            padding: 20px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer__col p:hover {
+            color: #dddddd;
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #cccccc;
+        }
+
+        .footer__bar p {
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+              Flight Details <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>  
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>           
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>        
+              <li><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
+<div class="container">
+
+    <section class="intro">
+        <h1>Welcome to Our Mobile App</h1>
+        <p>Manage your travel anytime, anywhere with our user-friendly mobile app. Explore the benefits, features, and how to use it below!</p>
+    </section>
+
+    <!-- Image Section -->
+    <section class="image-section">
+        <img src="assets/Mobileapp2.png" alt="Flight Booking Process">
+        <img src="assets/contact.1.jpg" alt="In-Flight Services">
+        <img src="assets/mobile app3.png" alt="Real-time Updates">
+      
+    </section>
+
+    <!-- Step-by-Step Process -->
+    <section class="steps">
+        <h2>How to Book a Flight & Check Your Flight Status</h2>
+
+        <div class="step">
+            <h3>Step 1: Open the App</h3>
+            <p>Download the Sunshine Airlines app from your app store and open it. Log in using your credentials or create a new account if you're a first-time user.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Search for a Flight</h3>
+            <p>Enter your departure and destination airports, select your travel dates, and click ‘Search Flights’ to view available options.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Select Your Flight</h3>
+            <p>Choose the flight that best suits your schedule. You can view flight details, including available seats, fare types, and more.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Complete Booking</h3>
+            <p>Proceed to payment, select add-ons like extra baggage or meals, and confirm your booking. You will receive an e-ticket and confirmation via email and the app.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 5: Check Flight Status</h3>
+            <p>To check your flight status, go to the ‘Flight Status’ section, enter your flight number or route, and view real-time updates on delays, gate changes, and more.</p>
+        </div>
+         <!-- Book Here Button in the middle -->
+    <div class="book-button">
+        <a href="#">Book Here</a>
+    </div>
+    </section>
+
+    <!-- Important Information about Services and Benefits -->
+    <section class="important-info">
+        <h2>Why Choose the Sunshine Airlines Mobile App?</h2>
+        <p><strong>Seamless Experience:</strong> From booking your tickets to boarding your flight, the Sunshine Airlines mobile app makes your journey easy and convenient.</p>
+        <p><strong>Real-Time Notifications:</strong> Get instant updates on flight schedules, gate changes, and more to ensure you're always in the loop.</p>
+        <p><strong>Exclusive Deals:</strong> Enjoy discounts and promotions available only to app users.</p>
+        <p><strong>In-App Services:</strong> Pre-order meals, choose seats, and book lounges all through the app. Plus, access entertainment options and other in-flight services with ease.</p>
+        <p><strong>24/7 Customer Support:</strong> Have questions or need help? Our customer support team is just a tap away, ready to assist you anytime.</p>
+
+    </section>
+
+    <!-- Revolutionizing Travel -->
+    <section class="revolutionizing">
+        <h2>Revolutionizing the Way You Travel</h2>
+        <p>With the Sunshine Airlines mobile app, your next adventure is only a few taps away. Manage your bookings, check-in online, and enjoy a more streamlined travel experience wherever you are!</p>
+        <p>The Sunshine Airlines mobile app not only simplifies the booking process but also enhances the overall travel experience through personalized services, real-time updates, and user-friendly interfaces.</p>
+    </section>
+
+</div>
+<script>    
+    // Toggle dropdown on click for touch devices
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+toggle.addEventListener('click', function(event) {
+ event.preventDefault(); // Prevent default link behavior
+ const dropdownMenu = this.nextElementSibling;
+ dropdownMenu.classList.toggle('show');
+ 
+ // Toggle 'active' class on the toggle link
+ this.classList.toggle('active');
+ 
+ // Close other open dropdowns
+ document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+   if (menu !== dropdownMenu) {
+     menu.classList.remove('show');
+   }
+ });
+ 
+ // Remove 'active' class from other toggles
+ document.querySelectorAll('.dropdown-toggle').forEach(function(otherToggle) {
+   if (otherToggle !== toggle) {
+     otherToggle.classList.remove('active');
+   }
+ });
+});
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(event) {
+if (!event.target.closest('.dropdown')) {
+ document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+   menu.classList.remove('show');
+ });
+ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+   toggle.classList.remove('active');
+ });
+}
+});
+</script>
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__col">
+            <h3>Sunshine</h3>
+            <p>
+                Where Excellence Takes Flight. With a strong commitment to customer
+                satisfaction and a passion for air travel, Sunshine Airlines offers
+                exceptional service and seamless journeys.
+            </p>
+            <p>
+                From friendly smiles to state-of-the-art aircraft, we connect the
+                world, ensuring safe, comfortable, and unforgettable experiences.
+            </p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Quick Links</h4>
+            <p>Home</p>
+            <p>Special Offers</p>
+            <p>Manage Booking</p>
+            <p>Contact Us</p>
+            <p>About Us</p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>Email: info@sunshineairline.com</p>
+            <p>Phone: 1-800-555-0199</p>
+            <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+        </div>
+    </div>
+    <div class="footer__bar">
+        <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+        <div class="socials">
+            <span>Facebook</span>
+            <span>Twitter</span>
+            <span>Instagram</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

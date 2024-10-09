@@ -142,48 +142,60 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        /* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
     </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
+      <nav>
         <div class="nav__logo">Sunshine</div>
         <ul class="nav__links">
-            <li class="link"><a href="home.html">Home</a></li>
-            <li class="link"><a href="about.html">About Us</a></li>
-            <li class="link"><a href="specialoffers.html">Offers</a></li>
-
-            <!-- Flight Details Dropdown -->
-            <li class="link dropdown">
-                <a href="flightstatus.html" class="dropdown-toggle">Flight Details</a>
-                <ul class="dropdown__menu">
-                    <li><a href="flightstatus.html">Flight Status</a></li>
-                    <li><a href="bookaflight.html">Book Flight</a></li>
-                    <li><a href="checkin.html">Check-In</a></li>
-                    <li><a href="baggage.html">Baggage</a></li>
-                    <li><a href="managebooking.html">Manage Booking</a></li>
-                </ul>
-            </li>
-
-            <!-- Services Dropdown -->
-            <li class="link dropdown">
-                <a href="services.html" class="dropdown-toggle">Services</a>
-                <ul class="dropdown__menu">
-                    <li><a href="travelinfo.html">Travel Information</a></li>
-                    <li><a href="customersupport.html">Customer Support</a></li>
-                    <li><a href="language.html">Language / Region Selector</a></li>
-                    <li><a href="mobileapp.html">Mobile App</a></li>
-                </ul>
-            </li>
-
-            <!-- Contact Button -->
-            <li class="link contact-btn">
-                <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
-            </li>
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="flightstatus.html" class="dropdown-toggle">
+              Flight Details <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="flightstatus.html">Flight Status</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>       
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="travelinfo.html">Travel Information</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li>
+              <li><a href="mobileapp.html">Mobile App</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
         </ul>
-    </nav>
-
+      </nav>
     <!-- Header Section -->
     <header>
         <h1>Business Class Ticket Booking with Sunshine Airlines</h1>
@@ -196,7 +208,7 @@
 
 <div class="container">
     <div class="image-container">
-        <img src="assets for classes/business class.avif" alt="Luxury Business Class">
+        <img src="assets/business class.avif" alt="Luxury Business Class">
     </div>
 
     <h2>Experience the Luxury of Business Class</h2>
@@ -214,7 +226,7 @@
         <li><strong>Additional Luggage Allowance:</strong> Enjoy the convenience of extra luggage allowance compared to economy class passengers.</li>
         <li><strong>On-Demand Entertainment:</strong> Enjoy the flexibility of on-demand entertainment options.</li>
     </ul>
-    <img src="assets for classes/business class 1.webp" style="width: 100%;  height: auto; display: block; margin: auto;" />
+    <img src="assets/business class 1.webp" style="width: 100%;  height: auto; display: block; margin: auto;" />
 
     <h2>How to Book Your Business Class Tickets</h2>
     <ol>
@@ -247,7 +259,7 @@
     </blockquote>
 
     <div class="image-container">
-        <img src="assets for classes/happy passengers.webp" alt="Relaxing in Business Class">
+        <img src="assets/happy passengers.webp" alt="Relaxing in Business Class">
     </div>
     <!-- <div class="image-container">
         <img src="assets for classes/business class 4.webp" alt="Relaxing in Business Class">
@@ -256,5 +268,44 @@
         <p>&copy; 2024 Sunshine Airlines. All Rights Reserved.</p>
     </footer> -->
 </div>
+<script>    
+    // Toggle dropdown on click for touch devices
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+toggle.addEventListener('click', function(event) {
+ event.preventDefault(); // Prevent default link behavior
+ const dropdownMenu = this.nextElementSibling;
+ dropdownMenu.classList.toggle('show');
+ 
+ // Toggle 'active' class on the toggle link
+ this.classList.toggle('active');
+ 
+ // Close other open dropdowns
+ document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+   if (menu !== dropdownMenu) {
+     menu.classList.remove('show');
+   }
+ });
+ 
+ // Remove 'active' class from other toggles
+ document.querySelectorAll('.dropdown-toggle').forEach(function(otherToggle) {
+   if (otherToggle !== toggle) {
+     otherToggle.classList.remove('active');
+   }
+ });
+});
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(event) {
+if (!event.target.closest('.dropdown')) {
+ document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+   menu.classList.remove('show');
+ });
+ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+   toggle.classList.remove('active');
+ });
+}
+});
+</script>
 </body>
 </html>

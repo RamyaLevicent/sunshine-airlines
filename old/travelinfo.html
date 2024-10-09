@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css"/>
+   
+    <title>Travel Informations - Sunshine Airlines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        header {
+            
+            color: rgb(82, 9, 82);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            animation: slide-in 1s ease-out;
+        }
+
+        @keyframes slide-in {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+            animation: fade-in 1s ease-in;
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button {
+            background-color: #002855;
+            color:white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffdd57;
+        }
+
+        .section button {
+            display: block;
+            margin: 20px auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .content {
+                padding: 15px;
+                text-align: center; /* Center-align text inside the container */
+            }
+
+            header h1 {
+                font-size: 24px;
+                text-align: center; /* Center-align heading */
+            }
+
+            h2 {
+                font-size: 20px;
+                text-align: center; /* Center-align subheading */
+            }
+
+            p {
+                font-size: 0.9rem;
+                text-align: center; /* Center-align paragraphs */
+            }
+
+            button {
+                padding: 10px 15px;
+                font-size: 14px;
+                display: inline-block; /* Ensure button is treated as inline */
+                margin: 0 auto; /* Center-align button */
+            }
+
+            .section img {
+                max-height: 300px;
+                display: block; /* Center-align image */
+                margin: 0 auto; /* Ensure it's centered */
+            }
+        }
+        /* Rotate the icon when active */
+.dropdown-toggle.active i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
+    </style>
+</head>
+<body>
+ 
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About Us</a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="flightstatus.html" class="dropdown-toggle">
+              Flight Details <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="flightstatus.html">Flight Status</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>       
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="services.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="travelinfo.html">Travel Information</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li>
+              <li><a href="mobileapp.html">Mobile App</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+        </ul>
+      </nav>
+   
+          <center> <h1>Travel Informations for a Smooth Journey</h1></center>
+    <div class="content">
+        
+     
+        <div class="section">
+            <h2>1. Baggage Allowance & Guidelines</h2>
+            <img src="assets/luggage in airport.avif" alt="Baggage Image">
+            <p><strong>Carry-On Baggage:</strong></p>
+            <p>Each passenger is allowed one carry-on bag and one personal item (such as a briefcase, laptop bag, or purse). Carry-on baggage should not exceed 22 x 14 x 9 inches in size and must fit in the overhead bin.</p>
+
+            <p><strong>Checked Baggage:</strong></p>
+            <p>Each passenger is allowed one checked bag that does not exceed 50 lbs in weight or 62 linear inches in size. Additional fees apply for excess baggage.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Check-In & Boarding Process</h2>
+            <img src="assets/digital boarding pass.jpg" alt="Check-In Image">
+            <p><strong>Online Check-In:</strong></p>
+            <p>Skip the queues at the airport by using our convenient online check-in service, available 24 to 48 hours before your flight departure.</p>
+
+            <p><strong>Airport Check-In:</strong></p>
+            <p>Arrive at least 2 hours prior to departure for domestic flights and 3 hours prior for international flights.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. In-Flight Services</h2>
+            <img src="assets/passenger-meals.webp" alt="In-Flight Image">
+            <p><strong>Meals & Snacks:</strong></p>
+            <p>On flights over 2 hours, we offer complimentary meals, snacks, and beverages tailored to your dietary preferences.</p>
+
+            <p><strong>In-Flight Entertainment:</strong></p>
+            <p>Stay entertained with our selection of the latest movies, TV shows, and music. Wi-Fi services are available on most routes.</p>
+        </div>
+
+        <div class="section">
+            <h2>4. Travel Documentation & Visa Information</h2>
+            <img src="assets/check in counter.jpg" alt="Travel Documentation Image">
+            <p><strong>Domestic Flights:</strong></p>
+            <p>All passengers over the age of 18 are required to present a valid government-issued photo ID for domestic flights.</p>
+
+            <p><strong>International Flights:</strong></p>
+            <p>All passengers must have a valid passport with at least 6 months validity beyond their intended date of travel. Visa requirements vary by destination.</p>
+        </div>
+
+        <div class="section">
+            <h2>5. Health & Safety Guidelines</h2>
+            <img src="assets/passengers with masks.jpg" alt="Health and Safety Image">
+            <p>Your safety is our priority. All Sunshine Airlines aircraft are thoroughly cleaned and sanitized between flights, following strict health protocols.</p>
+            <button>Learn More</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Sunshine Airlines. All Rights Reserved.</p>
+    </footer>
+    <script>    
+        // Toggle dropdown on click for touch devices
+ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+   toggle.addEventListener('click', function(event) {
+     event.preventDefault(); // Prevent default link behavior
+     const dropdownMenu = this.nextElementSibling;
+     dropdownMenu.classList.toggle('show');
+     
+     // Toggle 'active' class on the toggle link
+     this.classList.toggle('active');
+     
+     // Close other open dropdowns
+     document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+       if (menu !== dropdownMenu) {
+         menu.classList.remove('show');
+       }
+     });
+     
+     // Remove 'active' class from other toggles
+     document.querySelectorAll('.dropdown-toggle').forEach(function(otherToggle) {
+       if (otherToggle !== toggle) {
+         otherToggle.classList.remove('active');
+       }
+     });
+   });
+ });
+ 
+ // Close dropdowns when clicking outside
+ document.addEventListener('click', function(event) {
+   if (!event.target.closest('.dropdown')) {
+     document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+       menu.classList.remove('show');
+     });
+     document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+       toggle.classList.remove('active');
+     });
+   }
+ });
+  </script>
+</body>
+</html>
