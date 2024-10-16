@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css"/>
+
+    <title>Family Vacation in Tokyo - Sunshine Airlines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color:white;
+        }
+
+        h1, h2, h3, h4 {
+            text-align: center;
+            animation: slideIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color:black;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #4682b4; /* SteelBlue */
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        h4 {
+            font-size: 1.3em;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        p, ul, ol {
+            text-align: left; /* Align text to the left for readability */
+            font-size: 1.1em;
+            color: #333;
+            margin: 10px 0;
+            line-height: 1.5; /* Improve line spacing */
+        }
+
+        ul, ol {
+            padding-left: 20px; /* Indent lists for clarity */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3, h4 {
+                font-size: 1.3em;
+            }
+
+            p, ul, ol {
+                font-size: 1em;
+            }
+        }
+        .dropdown-arrow {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 5px; /* Space between text and arrow */
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid black; /* Change color as needed */
+        vertical-align: middle; /* Align with text */
+    }
+
+    .dropdown {
+        position: relative; /* Required for absolute positioning of dropdown menu */
+    }
+
+    .dropdown__menu {
+        display: none; /* Hide dropdown by default */
+        position: absolute;
+        background-color: white; /* Background color of the dropdown */
+        border: 1px solid #ddd; /* Border of the dropdown */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    .dropdown:hover .dropdown__menu {
+        display: block; /* Show dropdown on hover */
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+          
+<!-- Flight Details Dropdown -->
+<li class="link dropdown">
+    <a href="managebooking.html" class="dropdown-toggle">
+        Book a Flight <span class="dropdown-arrow"></span>
+    </a>
+    <ul class="dropdown__menu">
+        <li><a href="bookaflight.html">Booking</a></li>                     
+        <li><a href="checkin.html">Check-In</a></li>
+        <li><a href="flightstatus.html">Flight Status</a></li>   
+        <li><a href="baggage.html">Luggage</a></li>          
+        <li><a href="managebooking.html">Manage Booking</a></li>         
+    </ul>
+</li>
+ 
+        <!-- Services Dropdown -->
+        <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+                Services <i class="fa fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown__menu">
+                <li><a href="customersupport.html">Customer Support</a></li>
+                <li><a href="insurance.html">Insurance</a></li>        
+                <li><a href="mobileapp.html">Mobile App</a></li>
+                <li><a href="language.html">Language / Region Selector</a></li> 
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+        </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
+
+    <div class="container">
+        <h1>Plan Your Family Vacation in Tokyo with Sunshine Airlines!</h1>
+        <h2>Special Offer: Up to 20% Off on Family Packages!</h2>
+        <p>Create unforgettable memories with your family in the vibrant city of Tokyo! Our exclusive family vacation packages include everything you need for an amazing getaway.</p>
+
+        <h3>Package Details:</h3>
+        <ul>
+            <li><strong>What’s Included:</strong></li>
+            <li><strong>Round-Trip Airfare:</strong> Fly to Tokyo with Sunshine Airlines, ensuring comfort and convenience.</li>
+            <li><strong>Hotel Accommodation:</strong> Stay in family-friendly hotels located in the heart of Tokyo, with easy access to attractions and local culture.</li>
+            <li><strong>Theme Park Tickets:</strong> Enjoy entry to popular attractions like Tokyo Disneyland and DisneySea, plus other exciting parks like Fuji-Q Highland!</li>
+        </ul>
+
+        <h3>Pricing:</h3>
+        <ul>
+            <li><strong>Family Package Prices:</strong> Starting from just $XXX per person (prices may vary based on travel dates and availability).</li>
+            <li><strong>Special Discount:</strong> Book now and get up to <strong>20% off</strong> your total package price!</li>
+        </ul>
+
+        <h3>Sample Itineraries:</h3>
+        <h4>7-Day Family Adventure in Tokyo</h4>
+        <ol>
+            <li><strong>Day 1:</strong> Arrive in Tokyo, check into your hotel, and explore nearby attractions.</li>
+            <li><strong>Day 2:</strong> Visit Tokyo Disneyland – a magical experience for the whole family!</li>
+            <li><strong>Day 3:</strong> Day trip to Mount Fuji with scenic views and outdoor activities.</li>
+            <li><strong>Day 4:</strong> Explore Akihabara, the center of Japanese pop culture.</li>
+            <li><strong>Day 5:</strong> Visit Ueno Zoo and the National Museum of Nature and Science.</li>
+            <li><strong>Day 6:</strong> Spend a day at Tokyo DisneySea, known for its unique attractions.</li>
+            <li><strong>Day 7:</strong> Last-minute shopping in Shibuya and Harajuku before departure.</li>
+        </ol>
+        <img src="assets/family tour-tokyo.webp" 
+        style="display: block;
+               margin: 0 auto;
+               width: 100%; /* Make the image responsive */
+               max-width: 800px; /* Ensure it doesn't exceed the original size */
+               height: auto; /* Maintain aspect ratio */
+               border-radius: 10px;
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+               transition: transform 0.3s ease-in-out;"
+   >
+
+        <h3>Flight Durations:</h3>
+        <ul>
+            <li><strong>Flight Duration:</strong> Approximately XX hours from major departure cities (duration may vary based on your location).</li>
+            <li><strong>Best Travel Seasons:</strong> Spring (March to May) for cherry blossoms or Autumn (September to November) for beautiful fall foliage.</li>
+        </ul>
+
+        <h3>Booking Process:</h3>
+        <ol>
+            <li><strong>Visit Our Website:</strong> Go to the Sunshine Airlines ticket booking system.</li>
+            <li><strong>Select Your Package:</strong> Choose the "Family Vacation to Tokyo" package.</li>
+            <li><strong>Choose Travel Dates:</strong> Input your preferred travel dates for the best prices.</li>
+            <li><strong>Review Options:</strong> Look through available hotels and theme park tickets.</li>
+            <li><strong>Confirm Your Booking:</strong> Complete the payment process to secure your family adventure!</li>
+        </ol>
+
+        <h3>Terms & Conditions:</h3>
+        <ul>
+            <li><strong>Limited Time Offer:</strong> Discounts are valid for bookings made by [specific date].</li>
+            <li><strong>Availability:</strong> Package prices and availability are subject to change.</li>
+            <li><strong>Family Size:</strong> Packages designed for families of up to 4 members. Additional charges may apply for extra guests.</li>
+        </ul>
+
+        <h3>Don’t Miss Out!</h3>
+        <p><strong>Make your dream family vacation a reality!</strong> Book your family package to Tokyo today and take advantage of our exclusive discounts. Explore the wonders of Japan together and create memories that will last a lifetime!</p>
+    </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
+                <h3>Sunshine</h3>
+                <p>
+                    Where Excellence Takes Flight. With a strong commitment to customer
+                    satisfaction and a passion for air travel, Sunshine Airlines offers
+                    exceptional service and seamless journeys.
+                </p>
+                <p>
+                    From friendly smiles to state-of-the-art aircraft, we connect the
+                    world, ensuring safe, comfortable, and unforgettable experiences.
+                </p>
+            </div>
+  
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <p>Home</p>
+                <p>Special Offers</p>
+                <p>Manage Booking</p>
+                <p>Contact Us</p>
+                <p>About Us</p>
+            </div>
+  
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p>Email: info@sunshineairline.com</p>
+                <p>Phone: 1-800-555-0199</p>
+                <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+            <div class="socials">
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

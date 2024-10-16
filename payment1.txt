@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airline Payment System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    h2, h3 {
+      text-align: center;
+      color: #1f3ad4;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .form-group {
+      flex: 1 1 48%;
+      margin-bottom: 10px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+    }
+    button {
+      padding: 12px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .results, .how-to-pay, .cancellation-refund {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .accepted-logos {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .accepted-logos img {
+      width: 50px;
+    }
+    .how-to-pay .step, .cancellation-refund .step {
+      margin-bottom: 15px;
+    }
+    .image-placeholder {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .image-placeholder img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .form-group {
+        flex: 1 1 100%;
+      }
+      button {
+        width: 48%;
+      }
+      .accepted-logos img {
+        width: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Airline Booking and Payment System</h2>
+    <form id="bookingForm">
+      <!-- First Line: Trip Type - Passengers -->
+      <div class="form-group">
+        <label for="tripType">Trip Type</label>
+        <select id="tripType">
+          <option value="one-way">Business Class Trip</option>
+          <option value="economy">Economy Class Trip</option>
+          <option value="first-class">First Class Trip</option>
+          <option value="group-booking">Group Booking</option>
+          <option value="multi-city">Multi-City Trip</option>
+          <option value="one-way">One-Way</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="passengers">Passengers</label>
+        <select id="passengers" onchange="showMoreOptions()">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="more">More</option>
+        </select>
+      </div>
+      
+      <!-- Hidden dropdown for more passengers -->
+      <div class="form-group" id="morePassengers" style="display:none;">
+        <label for="morePassengersSelect">Select number of passengers</label>
+        <select id="morePassengersSelect">
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+
+      <!-- Second Line: From - To -->
+      <div class="form-group">
+        <label for="from">From</label>
+        <select id="from">
+          <option value="abu-dhabi">Abu Dhabi, UAE (INL)</option>
+          <option value="agra">Agra, Uttar Pradesh (Domestic)</option>
+          <option value="amsterdam">Amsterdam, Netherlands (INL)</option>
+          <option value="athens">Athens, Greece (INL)</option>
+          <option value="auckland">Auckland, New Zealand (INL)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="to">To</label>
+        <select id="to">
+          <option value="abu-dhabi">Abu Dhabi, UAE (INL)</option>
+          <option value="agra">Agra, Uttar Pradesh (Domestic)</option>
+          <option value="amsterdam">Amsterdam, Netherlands (INL)</option>
+          <option value="athens">Athens, Greece (INL)</option>
+          <option value="auckland">Auckland, New Zealand (INL)</option>
+        </select>
+      </div>
+
+      <!-- Third Line: Departure Date - Return Date -->
+      <div class="form-group">
+        <label for="departureDate">Departure Date</label>
+        <input type="date" id="departureDate" style="width: 100%;">
+      </div>
+
+      <div class="form-group" id="returnDateGroup">
+        <label for="returnDate">Return Date</label>
+        <input type="date" id="returnDate" style="width: 100%;">
+      </div>
+
+      <!-- Fourth Line: Price -->
+      <div class="form-group">
+        <label for="price">Price per day (in $)</label>
+        <input type="text" id="price" placeholder="Enter price per day">
+      </div>
+
+      <div class="buttons">
+        <button type="button" onclick="calculateTotal()">Calculate Total</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+
+    <!-- Placeholder for calculation results -->
+    <div class="results">
+      <h3>Payment Summary</h3>
+      <p id="totalAmount">Total: $0</p>
+    </div>
+
+    <div class="how-to-pay">
+      <h3>How to Pay</h3>
+      <p>Step 1: Select your trip type, dates, and other details.</p>
+      <p>Step 2: Choose your preferred payment method.</p>
+      <p>Step 3: Confirm your booking and proceed with the payment.</p>
+    </div>
+
+    <div class="cancellation-refund">
+      <h3>Cancellation and Refund Policy</h3>
+      <p>Step 1: Contact our support for cancellations.</p>
+      <p>Step 2: A refund will be processed within 7 working days after the request.</p>
+    </div>
+
+    <div class="accepted-logos">
+      <img src="visa.png" alt="Visa">
+      <img src="mastercard.png" alt="MasterCard">
+      <img src="paypal.png" alt="PayPal">
+      <img src="americanexpress.png" alt="American Express">
+    </div>
+
+    <div class="image-placeholder">
+      <img src="airplane.jpg" alt="Airplane Image">
+    </div>
+  </div>
+
+  <script>
+    // Show more options for passengers
+    function showMoreOptions() {
+      const passengers = document.getElementById("passengers").value;
+      const morePassengers = document.getElementById("morePassengers");
+      if (passengers === "more") {
+        morePassengers.style.display = "block";
+      } else {
+        morePassengers.style.display = "none";
+      }
+    }
+
+    // Calculate total price based on input
+    function calculateTotal() {
+      const passengers = document.getElementById("passengers").value === "more" ? document.getElementById("morePassengersSelect").value : document.getElementById("passengers").value;
+      const pricePerDay = document.getElementById("price").value;
+      const departureDate = new Date(document.getElementById("departureDate").value);
+      const returnDate = new Date(document.getElementById("returnDate").value);
+
+      // Calculate number of days
+      const timeDifference = returnDate - departureDate;
+      const numberOfDays = timeDifference / (1000 * 3600 * 24);
+
+      // Calculate total price
+      const total = passengers * pricePerDay * numberOfDays;
+
+      // Display total amount
+      document.getElementById("totalAmount").innerText = "Total: $" + total;
+    }
+  </script>
+</body>
+</html>

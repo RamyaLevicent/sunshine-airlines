@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+          href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+          rel="stylesheet"/>
+          <link rel="stylesheet" href="styles.css"/>
+  <title>Sunshine Airlines - Flight Availability</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 15px'arial', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f9fc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url ('https://www.yourimageurl.com'); /* Add your background image */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 1000px;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .tab-group {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      width: 50%;
+      padding: 15px;
+      cursor: pointer;
+      border: none;
+      background-color: #f1f1f1;
+      font-weight: bold;
+      font-size: 20px;
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tab.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    /* Icons for Flight & Hotel */
+    .tab img {
+      width: 20px;
+      margin-right: 8px;
+    }
+
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .form-group input, .form-group select {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 48%;
+      background-color: #f7f9fc;
+      color: #333;
+      font-size: 20px;
+    }
+
+    /* Radio Buttons */
+    .form-group-radio {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .form-group-radio label {
+      font-size: 25px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    /* Search Button */
+    .search-btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Multi-city Fields */
+    .multi-city {
+      display: none;
+      margin-bottom: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .form-group {
+        flex-direction: column;
+      }
+
+      .form-group input, .form-group select {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Check Flight & Hotel Availability</h1>
+    
+    <!-- Flight and Hotel Tabs -->
+    <div class="tab-group">
+      <button class="tab active" id="flight-tab">
+        <img src="https://cdn-icons-png.flaticon.com/512/3172/3172567.png" alt="Flight Icon"> Flights
+      </button>
+      <button class="tab" id="hotel-tab">
+        <img src="https://cdn-icons-png.flaticon.com/512/2356/2356794.png" alt="Hotel Icon"> Hotels
+      </button>
+    </div>
+
+    <!-- Flight Type Radio Buttons -->
+    <div class="form-group-radio">
+      <label><input type="radio" name="flight-type" checked id="one-way"> One Way</label>
+      <label><input type="radio" name="flight-type" id="round-trip"> Round Trip</label>
+      <label><input type="radio" name="flight-type" id="multi-city"> Multi City</label>
+    </div>
+
+    <!-- Input Fields -->
+    <div class="form-group" id="one-way-trip">
+      <input type="text" placeholder="From (City/Airport)" id="from">
+      <input type="text" placeholder="To (City/Airport)" id="to">
+    </div>
+
+    <!-- Multi-City Form Group -->
+    <div class="multi-city" id="multi-city-group">
+      <div class="form-group">
+        <input type="text" placeholder="City 1 (From)" id="city-1-from">
+        <input type="text" placeholder="City 1 (To)" id="city-1-to">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="City 2 (From)" id="city-2-from">
+        <input type="text" placeholder="City 2 (To)" id="city-2-to">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="date" id="departure-date">
+      <input type="date" id="return-date" disabled>
+    </div>
+
+    <!-- Travelers and Class -->
+    <div class="form-group">
+      <select id="travelers">
+        <option value="1">1 Traveler</option>
+        <option value="2">2 Travelers</option>
+        <option value="3">3 Travelers</option>
+      </select>
+      <select id="class">
+        <option value="Economy">Economy</option>
+        <option value="Premium Economy">Premium Economy</option>
+        <option value="Business">Business</option>
+      </select>
+    </div>
+
+    <!-- Search Button -->
+    <button class="search-btn" onclick="searchFlights()">Search Flights</button>
+  </div>
+
+  <script>
+    // Tab Switching between Flights and Hotels
+    const flightTab = document.getElementById('flight-tab');
+    const hotelTab = document.getElementById('hotel-tab');
+
+    flightTab.addEventListener('click', function() {
+      flightTab.classList.add('active');
+      hotelTab.classList.remove('active');
+    });
+
+    hotelTab.addEventListener('click', function() {
+      hotelTab.classList.add('active');
+      flightTab.classList.remove('active');
+    });
+
+    // Search functionality
+    function searchFlights() {
+      const from = document.getElementById('from').value;
+      const to = document.getElementById('to').value;
+      const departureDate = document.getElementById('departure-date').value;
+      const returnDate = document.getElementById('return-date').value;
+
+      if (!from || !to || !departureDate) {
+        alert('Please fill in all required fields.');
+      } else {
+        alert(`Searching for flights from ${from} to ${to} on ${departureDate}.`);
+      }
+    }
+
+    // Enable/Disable Return Date for Round Trip
+    document.getElementById('round-trip').addEventListener('click', function() {
+      document.getElementById('return-date').disabled = false;
+      document.getElementById('multi-city-group').style.display = 'none';
+    });
+
+    document.getElementById('one-way').addEventListener('click', function() {
+      document.getElementById('return-date').disabled = true;
+      document.getElementById('return-date').value = '';
+      document.getElementById('multi-city-group').style.display = 'none';
+    });
+
+    document.getElementById('multi-city').addEventListener('click', function() {
+      document.getElementById('return-date').disabled = true;
+      document.getElementById('return-date').value = '';
+      document.getElementById('multi-city-group').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>

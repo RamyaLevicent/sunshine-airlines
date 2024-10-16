@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+    <title>Sunshine Airline - Affordable Travel</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f7f7f7;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(to right, #007BFF, #007BFF);
+            color: white;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin: 0;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Image Section */
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            animation: zoomIn 1.2s ease-in-out;
+        }
+
+        /* Promotion Section */
+        .promotion {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .promotion h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .promotion p {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #615e5c;
+            color: white;
+            border-radius: 10px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .why-choose-us h2 {
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .why-choose-us ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .why-choose-us ul li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+        }
+
+        .testimonials .testimonial-item {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .testimonial-item p {
+            font-size: 18px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .testimonial-item span {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: #0c0c0e;
+        }
+
+        /* Call to Action Section */
+        .call-to-action {
+            margin-top: 40px;
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(to right, hsl(45, 4%, 64%), #a8a8a7);
+            color: white;
+            border-radius: 10px;
+            animation: fadeInUp 1.8s ease-out;
+        }
+
+        .call-to-action h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: white;
+            color: #164172;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-to-action a:hover {
+            background-color: #94938f;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .promotion h2, .why-choose-us h2, .testimonials h2, .call-to-action h2 {
+                font-size: 28px;
+            }
+
+            .promotion p, .why-choose-us ul li, .testimonial-item p {
+                font-size: 16px;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+         /* Footer Styles */
+ footer {
+            background-color: #3D5CB8;
+            color: white;
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 5rem;
+            padding: 20px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer__col p:hover {
+            color: #dddddd;
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #cccccc;
+        }
+
+        .footer__bar p {
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .values-section, .culture-card {
+                flex-direction: column;
+            }
+
+            .purpose, .values, .culture-item {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+         
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+             Book a Flight <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="bookaflight.html">Booking</a></li>                     
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>   
+              <li><a href="baggage.html">Luggage</a></li>          
+              <li><a href="managebooking.html">Manage Booking</a></li>         
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li class="link"><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>                   
+              <li><a href="language.html">Language / Region Selector</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Welcome to Sunshine Airline</h1>
+            <p>Your trusted partner for affordable, quality travel.</p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="assets/sunshine airline images.png" alt="Affordable Airline Travel" style="display: block; margin: 0 auto; width: 100%; height: 500px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        </div>
+
+        <!-- Promotion Section -->
+        <div class="promotion">
+            <h2>Exclusive Promotions & Deals</h2>
+            <p>From discounted ticket prices to exclusive promotions and deals, we prioritize affordability without compromising on quality.</p>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <div class="why-choose-us">
+            <h2>Why Choose Sunshine Airline?</h2>
+            <ul>
+                <li>Best-in-class customer service, available 24/7 to assist with all your travel needs.</li>
+                <li>Exclusive discounts for loyal customers and special offers for early bookings.</li>
+                <li>Flexible flight options, ensuring you have more control over your travel plans.</li>
+                <li>Access to luxurious in-flight amenities and entertainment at no extra cost.</li>
+            </ul>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials">
+            <h2>What Our Customers Say</h2>
+
+            <div class="testimonial-item">
+                <p>"Sunshine Airline made my trip stress-free and affordable. I’ll definitely fly with them again!"</p>
+                <span>- Jessica M.</span>
+            </div>
+
+            <div class="testimonial-item">
+                <p>"The best airline experience I've ever had! Great deals, top-notch service, and comfortable seating."</p>
+                <span>- Mark T.</span>
+            </div>
+
+            <div class="testimonial-item">
+                <p>"From booking to landing, everything was smooth and easy. Highly recommend Sunshine Airline!"</p>
+                <span>- Priya K.</span>
+            </div>
+        </div>
+
+        <!-- Call to Action Section -->
+<div class="call-to-action" style="margin-bottom: 40px;"> <!-- Added margin-bottom for spacing -->
+    <h2>Ready to Fly?</h2>
+    <a href="userinfo.html">Book Your Flight Now</a>
+</div>
+
+<footer class="footer" style="padding: 20px; background-color: #3D5CB8; border-radius: 10px;"> <!-- Added padding and background color -->
+    <div class="footer__container">
+        <div class="footer__col">
+            <h3>Sunshine</h3>
+            <p>
+                Where Excellence Takes Flight. With a strong commitment to customer
+                satisfaction and a passion for air travel, Sunshine Airlines offers
+                exceptional service and seamless journeys.
+            </p>
+            <p>
+                From friendly smiles to state-of-the-art aircraft, we connect the
+                world, ensuring safe, comfortable, and unforgettable experiences.
+            </p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Quick Links</h4>
+            <p>Home</p>
+            <p>Special Offers</p>
+            <p>Manage Booking</p>
+            <p>Contact Us</p>
+            <p>About Us</p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>Email: info@sunshineairline.com</p>
+            <p>Phone: 1-800-555-0199</p>
+            <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+        </div>
+    </div>
+    <div class="footer__bar">
+        <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+        <div class="socials">
+            <span>Facebook</span>
+            <span>Twitter</span>
+            <span>Instagram</span>
+        </div>
+    </div>
+</footer>
+    </div>
+</body>
+</html>

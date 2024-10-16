@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Preferences</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-image: url('https://via.placeholder.com/1920x1080/cccccc/ffffff?text=Airline+Meal+Background'); /* Use your own background image */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+        }
+        header {
+            background-color: #FF5722;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            width: 50px;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #FF5722;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #FF5722;
+            box-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
+        }
+        textarea {
+            height: 100px;
+        }
+        .btn-submit {
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #E64A19;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://via.placeholder.com/50" alt="Airline Logo">
+    <h1>Airline Meal Preferences</h1>
+</header>
+
+<div class="content">
+    <h2>Tailor Your In-Flight Dining</h2>
+    <p>At [Your Airline], we believe that dining should be an enjoyable part of your travel experience. That's why we’re committed to providing a wide variety of meal options tailored to suit your dietary preferences and needs. Whether you follow a specific diet, have food allergies, or simply want to indulge in something delicious, our diverse selection of meals is designed to make your journey both tasty and worry-free.</p>
+
+    <h2>Our Meal Options</h2>
+    <p>We offer an extensive range of meal choices to cater to different dietary requirements and personal tastes. Here’s what you can look forward to:</p>
+    
+    <h3>Standard Meal:</h3>
+    <p>Enjoy a hearty and balanced meal specially tailored to your route and flight duration. Our standard meal options include a mix of proteins, carbohydrates, and vegetables, ensuring a satisfying in-flight dining experience.</p>
+
+    <h3>Vegetarian Meal:</h3>
+    <p>Our vegetarian meal features a variety of delicious plant-based dishes, perfect for those who prefer vegetarian cuisine. From flavorful pasta to hearty salads, these meals are packed with nutrition and taste.</p>
+
+    <h3>Vegan Meal:</h3>
+    <p>Our fully plant-based vegan meal is crafted without any animal products, ensuring a delightful dining experience for those following a vegan lifestyle. Each meal is designed to be flavorful and nourishing, utilizing fresh fruits, vegetables, grains, and legumes.</p>
+
+    <h3>Gluten-Free Meal:</h3>
+    <p>Specially prepared for passengers with gluten sensitivities or celiac disease, our gluten-free meal options allow you to enjoy your meal without worry. These meals are crafted with gluten-free ingredients to ensure your safety and satisfaction.</p>
+
+    <h3>Diabetic Meal:</h3>
+    <p>For those managing diabetes, we offer a balanced meal with lower sugar content. Our diabetic meal options are designed to provide essential nutrients while keeping carbohydrate levels in check.</p>
+
+    <h3>Kosher Meal:</h3>
+    <p>Prepared in accordance with Jewish dietary laws, our kosher meal options meet the strictest standards of kashrut. These meals are thoughtfully crafted to ensure both flavor and adherence to dietary guidelines.</p>
+
+    <h3>Halal Meal:</h3>
+    <p>Our halal meal options are prepared according to Islamic dietary requirements, ensuring a delicious meal that meets your religious practices. Each meal is carefully curated to ensure authenticity and flavor.</p>
+
+    <h3>Child Meal:</h3>
+    <p>Designed specifically for our younger passengers, our child meal options are fun and nutritious. We aim to provide meals that are both healthy and appealing to children, making their in-flight experience enjoyable.</p>
+
+    <h3>Low-Sodium/Low-Fat Meals:</h3>
+    <p>For passengers on a special heart-healthy diet, we offer low-sodium and low-fat meals. These meals are crafted to promote better health while still delivering great taste.</p>
+
+    <h2>How to Select Your Meal</h2>
+    <p>Selecting your preferred meal type is easy, and you can do it at various stages of your travel planning:</p>
+    
+    <ul>
+        <li><strong>During Booking:</strong> You can select your meal during the booking process by choosing from our meal options provided on the booking page. Make your choice based on your dietary needs or preferences to enhance your flying experience.</li>
+        <li><strong>Post-Booking:</strong> If you’ve already booked your flight, don’t worry! You can update your meal preference through the "Manage Booking" section of our website. Simply log in to your account, navigate to your booking, and select your desired meal option.</li>
+        <li><strong>Last-Minute Changes:</strong> While we strive to accommodate all meal requests, please note that meal preferences cannot be guaranteed if requested within 48 hours of departure. If you have last-minute changes or concerns, please reach out to our customer service team for assistance.</li>
+    </ul>
+
+    <h2>Allergy Information</h2>
+    <p>At [Your Airline], we strive to accommodate passengers with food allergies to the best of our ability. However, please be aware that we cannot guarantee an allergen-free environment on our flights. Here are some important points to consider:</p>
+    
+    <ul>
+        <li><strong>Inform Us in Advance:</strong> If you have severe allergies, we recommend informing our staff well in advance of your flight. This will help us prepare and accommodate your needs as much as possible.</li>
+        <li><strong>Bring Necessary Medications:</strong> We advise all passengers with food allergies to carry any necessary medications, such as an epinephrine auto-injector, in case of accidental exposure to allergens.</li>
+        <li><strong>Consult Our Staff:</strong> Our cabin crew is trained to handle allergy-related inquiries, and they will do their best to assist you during your flight. Please don’t hesitate to reach out if you have any concerns or require further information.</li>
+    </ul>
+
+    <form action="#" method="POST">
+        <label for="meal-type">Preferred Meal Type:</label>
+        <select id="meal-type" name="meal-type" required>
+            <option value="">-- Select Meal Type --</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="non-vegetarian">Non-Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="kosher">Kosher</option>
+            <option value="halal">Halal</option>
+            <option value="gluten-free">Gluten-Free</option>
+        </select>
+
+        <label>Do you have any allergies? (Select all that apply)</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="allergy" value="peanuts"> Peanuts</label>
+            <label><input type="checkbox" name="allergy" value="dairy"> Dairy</label>
+            <label><input type="checkbox" name="allergy" value="seafood"> Seafood</label>
+            <label><input type="checkbox" name="allergy" value="gluten"> Gluten</label>
+            <label><input type="checkbox" name="allergy" value="soy"> Soy</label>
+            <label><input type="checkbox" name="allergy" value="other"> Other</label>
+        </div>
+
+        <label for="meal-preference-notes">Additional Meal Preferences or Notes:</label>
+        <textarea id="meal-preference-notes" name="meal-preference-notes" placeholder="Any other meal requests or preferences"></textarea>
+
+        <button type="submit" class="btn-submit">Submit Meal Preferences</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Your Airline. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

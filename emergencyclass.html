@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link
+              href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+              rel="stylesheet"/>
+            <link rel="stylesheet" href="styles.css"/>
+    <title>Emergency Class Ticketing - Sunshine Airlines</title>
+    <style>
+        
+ nav {
+  display: flex;
+  justify-content: center; /* Centers the nav items horizontally */
+  align-items: center;     /* Centers the nav items vertically */
+  padding: 20px 0;
+  background-color: #fff;  /* Change as needed */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ 
+.nav__logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 50px; /* Space between logo and navigation links */
+}
+ 
+.nav__links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+ 
+.nav__links li {
+  position: relative; /* For positioning dropdown menus */
+  margin: 0 15px;     /* Spacing between navigation items */
+}
+ 
+.nav__links a {
+  text-decoration: none;
+  color: blue;
+  font-size: 16px;
+  padding: 4px 6px;
+  transition: color 0.3s ease;
+}
+ 
+.nav__links a:hover {
+  color: #007BFF; /* Highlight color on hover */
+}
+ 
+/* Dropdown Menu Styling */
+.dropdown__menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;     /* Positions the dropdown below the parent */
+  left: 0;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1000;
+}
+ 
+.dropdown__menu li {
+  margin: 0;
+}
+ 
+.dropdown__menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+ 
+.dropdown__menu a:hover {
+  background-color: #f1f1f1;
+}
+ 
+/* Show dropdown on hover */
+.link.dropdown:hover .dropdown__menu {
+  display: block;
+}
+ 
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            animation: slideIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color:navy;  /* Tomato */
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: navy; /* SteelBlue */
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        p, ul, ol {
+            text-align: left; /* Align text to the left for readability */
+            font-size: 1.1em;
+            color: #333;
+            margin: 10px 0;
+            line-height: 1.5; /* Improve line spacing */
+        }
+
+        ul, ol {
+            padding-left: 20px; /* Indent lists for clarity */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+
+            p, ul, ol {
+                font-size: 1em;
+            }
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 5rem;
+            padding: 20px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer__col p:hover {
+            color: #dddddd;
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #cccccc;
+        }
+
+        .footer__bar p {
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .values-section, .culture-card {
+                flex-direction: column;
+            }
+
+            .purpose, .values, .culture-item {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+              Book a Flight<i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>  
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>           
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>        
+              <li><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
+    
+    <div class="container">
+        <h1>Emergency Class Ticketing</h1>
+        <h2>Flexible Travel Options for Urgent Needs</h2>
+        <p>Sunshine Airlines understands that unexpected travel situations can arise. Our Emergency Class ticketing option is designed to provide you with flexibility and convenience during urgent travel needs.</p>
+
+        <h3>Who Can Benefit from Emergency Class Ticket Booking?</h3>
+        <ul>
+            <li><strong>Medical Emergencies:</strong> For urgent medical procedures or to support family members in medical crises.</li>
+            <li><strong>Business Professionals:</strong> Immediate travel for last-minute meetings or decisions.</li>
+            <li><strong>Families in Crisis:</strong> Quick travel during personal emergencies like funerals or sudden illnesses.</li>
+            <li><strong>Diplomatic and Government Personnel:</strong> Urgent travel for missions or high-priority assignments.</li>
+        </ul>
+
+        <h3>Booking Procedures for Emergency Class Tickets</h3>
+        <ol>
+            <li><strong>Visit the Sunshine Airlines Website:</strong> Go to our official website or use our mobile app.</li>
+            <li><strong>Select "Emergency Class":</strong> Navigate to the ticket booking section and choose the "Emergency Class" option.</li>
+            <li><strong>Enter Travel Details:</strong> Fill in departure and arrival cities, travel dates, and number of passengers.</li>
+            <li><strong>Search for Flights:</strong> Click "Search Flights" to view available options.</li>
+            <li><strong>Choose Your Flight:</strong> Select your preferred flight and review the details.</li>
+            <li><strong>Enter Passenger Information:</strong> Provide necessary passenger information and any special requests.</li>
+            <li><strong>Payment Process:</strong> Complete the payment process and confirm your booking.</li>
+            <li><strong>Receive Confirmation:</strong> You will receive a confirmation email with your itinerary.</li>
+            <li><strong>Check-In:</strong> Use online check-in or visit our designated counters at the airport.</li>
+            <li><strong>Customer Support:</strong> Our team is available 24/7 for assistance.</li>
+        </ol>
+
+        
+        <p>Sunshine Airlines is committed to meeting your emergency travel needs with urgency and care. Book your Emergency Class ticket today and travel with peace of mind!</p>
+    </div>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color:navy;
+            margin: 20px 0;
+            transition: transform 0.3s, color 0.3s;
+        }
+        h2:hover, h3:hover {
+            transform: scale(1.05);
+            color: #d45d00;
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .advantage {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        .advantage:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .cta {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2, h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+
+</header>
+
+<section>
+    <img src="assets/last minute.jpg"
+    style="display: block; 
+           margin: 0 auto; 
+           width: 100%; /* Make the image responsive */
+           max-width: 700px; /* Ensure it doesn't exceed the original size */
+           height: 400px; /* Maintain aspect ratio */
+           border-radius: 10px; 
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+           transition: transform 0.3s ease-in-out;">
+
+
+    <h2>Advantages </h2>
+    
+    <div class="advantage">
+        <h3>1. Time-Sensitive Availability</h3>
+        <p>The most significant advantage of emergency class booking is that it allows passengers to secure tickets at the last minute, avoiding the stress of unavailable seats during critical situations.</p>
+    </div>
+
+    <div class="advantage">
+        <h3>2. Priority Handling</h3>
+        <p>Travelers using emergency class services often get priority over regular passengers, ensuring that their needs are met swiftly. From faster boarding to dedicated customer service, emergency class offers extra care during urgent situations.</p>
+    </div>
+
+    <div class="advantage">
+        <h3>3. Flexibility and Convenience</h3>
+        <p>Emergency bookings typically offer more flexible terms compared to standard tickets, giving passengers the ability to change, cancel, or upgrade their bookings with minimal penalties.</p>
+    </div>
+
+    <div class="advantage">
+        <h3>4. Minimized Hassle</h3>
+        <p>Emergencies already come with stress and urgency. The streamlined nature of emergency ticket booking systems reduces the hassle of the traditional booking process, allowing passengers to focus on the emergency at hand rather than worrying about travel logistics.</p>
+    </div>
+
+    <div class="advantage">
+        <h3>5. Added Security and Assurance</h3>
+        <p>Knowing that there are reserved seats for emergencies or that flexible bookings are available offers travelers peace of mind. Emergency ticket services ensure that, even in the most unexpected circumstances, people can travel to where they are needed most.</p>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__col">
+            <h3>Sunshine</h3>
+            <p>
+                Where Excellence Takes Flight. With a strong commitment to customer
+                satisfaction and a passion for air travel, Sunshine Airlines offers
+                exceptional service and seamless journeys.
+            </p>
+            <p>
+                From friendly smiles to state-of-the-art aircraft, we connect the
+                world, ensuring safe, comfortable, and unforgettable experiences.
+            </p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Quick Links</h4>
+            <p>Home</p>
+            <p>Special Offers</p>
+            <p>Manage Booking</p>
+            <p>Contact Us</p>
+            <p>About Us</p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>Email: info@sunshineairline.com</p>
+            <p>Phone: 1-800-555-0199</p>
+            <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+        </div>
+    </div>
+    <div class="footer__bar">
+        <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+        <div class="socials">
+            <span>Facebook</span>
+            <span>Twitter</span>
+            <span>Instagram</span>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
+
+</body>
+</html>

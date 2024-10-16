@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learn More – Sunshine Airline</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <style>
+            /* Basic styling */
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: #f4f4f4;
+                color: #333;
+            }
+
+            /* Bold black text for headings */
+            h1, h2, h3 {
+                font-weight: bold;
+                color: #000;
+            }
+
+            /* Navigation Styling */
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #002855;
+                padding: 10px 20px;
+                color: #fff;
+            }
+
+            .nav__logo {
+                font-size: 1.8em;
+                font-weight: bold;
+            }
+
+            .nav__links {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .nav__links .link a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1em;
+            }
+
+            .nav__links .link a:hover {
+                color: #ffdd57;
+            }
+
+            .nav__links .dropdown {
+                position: relative;
+            }
+
+            .dropdown-toggle::after {
+                content: ' ▼';
+                font-size: 0.6em;
+            }
+
+            .dropdown__menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #002855;
+                list-style: none;
+                padding: 10px 0;
+                min-width: 150px;
+                z-index: 1000;
+            }
+
+            .dropdown:hover .dropdown__menu {
+                display: block;
+            }
+
+            .dropdown__menu li {
+                padding: 10px 20px;
+            }
+
+            .dropdown__menu li a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown__menu li a:hover {
+                background-color: #ffdd57;
+                color: #002855;
+            }
+
+            .contact-btn .btn {
+                background-color: #ffdd57;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+
+            .contact-btn .btn:hover {
+                background-color: #ffd700;
+            }
+
+            /* Container */
+            .about-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            /* Header Section */
+            .about-header {
+                text-align: center;
+                padding: 20px;
+                background-color: #f3f1ea;
+                color: #000;
+                animation: fadeInDown 2s ease;
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .about-header h1 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+
+            .about-header p {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+            }
+
+            .about-header img {
+                width: 100%;
+                max-height: 300px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            /* Sections */
+            .section {
+                width: 100%;
+                padding: 30px 0;
+                background-color: #fff;
+                margin: 20px 0;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .section h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #002855;
+            }
+
+            .section-content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-around;
+            }
+
+            .section-item {
+                flex: 1 1 45%;
+                padding: 20px;
+                background: #f9f9f9;
+                border-radius: 10px;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .section-item:hover {
+                transform: translateY(-5px);
+            }
+
+            /* .section-item img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            } */
+
+            .section-item h3 {
+                margin-bottom: 10px;
+                color: #002855;
+            }
+
+            .section-item p {
+                line-height: 1.6;
+            }
+
+            /* Footer */
+            footer.footer {
+                background-color: #1e1e1f;
+                color: white;
+                padding: 40px 20px;
+            }
+
+            .footer__container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .footer__col {
+                flex: 1 1 200px;
+                margin: 20px;
+            }
+
+            .footer__col h3, .footer__col h4 {
+                margin-bottom: 15px;
+                color: #ffdd57;
+            }
+
+            .footer__col p, .footer__col a p {
+                color: #ccc;
+                margin-bottom: 10px;
+                font-size: 0.9em;
+            }
+
+            .footer__col a p:hover {
+                color: #ffdd57;
+            }
+
+            .footer__bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid #444;
+                padding-top: 20px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+
+            .footer__bar p {
+                margin: 0;
+                font-size: 0.9em;
+            }
+
+            .socials span {
+                margin: 0 5px;
+                cursor: pointer;
+                color: #fff;
+                font-size: 1.2em;
+                transition: color 0.3s ease;
+            }
+
+            .socials span:hover {
+                color: #ffdd57;
+            }
+
+            /* Animation effects */
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .fade-in {
+                opacity: 0;
+                animation: fadeIn 2s forwards;
+                animation-delay: 0.5s;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            /* Responsive layout */
+            @media (max-width: 768px) {
+                .section-content {
+                    flex-direction: column;
+                }
+
+                .section-item {
+                    flex: 1 1 100%;
+                }
+
+                .footer__container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .footer__col {
+                    margin: 10px 0;
+                }
+
+                .footer__bar {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .socials {
+                    margin-top: 10px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav__logo">Sunshine</div>
+            <ul class="nav__links">
+                <li class="link"><a href="home.html">Home</a></li>
+                <li class="link"><a href="about.html">About Us</a></li>
+                <li class="link"><a href="specialoffers.html">Offers</a></li>
+
+                <!-- Flight Details Dropdown -->
+                <li class="link dropdown">
+                    <a href="flightdetails.html" class="dropdown-toggle">Flight Details</a>
+                    <ul class="dropdown__menu">
+                        <li><a href="flightstatus.html">Flight Status</a></li>
+                        <li><a href="bookaflight.html">Book Flight</a></li>
+                        <li><a href="checkin.html">Check-In</a></li>
+                        <li><a href="baggage.html">Baggage</a></li>
+                        <li><a href="managebooking.html">Manage Booking</a></li>
+                    </ul>
+                </li>
+
+                <!-- Services Dropdown -->
+                <li class="link dropdown">
+                    <a href="services.html" class="dropdown-toggle">Services</a>
+                    <ul class="dropdown__menu">
+                        <li><a href="travelinfo.html">Travel Information</a></li>
+                        <li><a href="customersupport.html">Customer Support</a></li>
+                        <li><a href="language.html">Language / Region Selector</a></li>
+                        <li><a href="mobileapp.html">Mobile App</a></li>
+                    </ul>
+                </li>
+
+                <!-- Contact Button -->
+                <li class="link contact-btn">
+                    <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="about-container">
+            <!-- Header Section -->
+            <section class="about-header">
+                <h1>Learn More About Sunshine Airlines</h1>
+                <p>Dive deeper into our mission, values, history, and the initiatives that make Sunshine Airlines a leader in the aviation industry.</p>
+                <img src="assets/learn more main.webp" alt="Business Class" class="baggage-image" 
+                style="display: block; 
+                       margin: 0 auto; 
+                       width: 100%; /* Make the image responsive */
+                       max-width: 800px; /* Ensure it doesn't exceed the original size */
+                       height: auto; /* Maintain aspect ratio */
+                       border-radius: 10px; 
+                       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                       transition: transform 0.3s ease-in-out;"
+           >
+           
+            </section>
+
+            <!-- Our Mission and Vision -->
+            <section class="section">
+                <h2>Our Mission and Vision</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Our Mission</h3>
+                     <p>Our mission is to provide safe, reliable, and comfortable air travel experiences, connecting people and places with exceptional service and innovation.We believe that flying should be more than just a means of transportation; it should be an enjoyable journey that leaves lasting memories.</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Our Vision</h3>
+                        
+             <p>At Sunshine Airlines, we aspire to be the most trusted and preferred airline globally, renowned for our commitment to excellence, sustainability, and customer satisfaction. We understand that achieving this vision requires continuous effort, innovation, and dedication to our values. Here’s how we aim to realize this vision:
+
+             </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our History and Growth -->
+            <section class="section">
+                <h2>Our History and Growth</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Founding and Early Years</h3>
+                    
+                        <p>In our inaugural year, our focus was clear: to establish a strong foundation built on safety, trust, and customer satisfaction. We recognized the need for a reliable air travel option, and our commitment to excellence resonated with travelers seeking dependable service. Our first flight marked the beginning of a transformative journey in the aviation industry.
+
+                        </p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Expansion and Milestones</h3>
+                
+                        <p>Over the decades, Sunshine Airlines has transformed from a single-aircraft operation into a global leader in air travel. Our commitment to excellence and customer satisfaction has fueled our growth, enabling us to expand our fleet and reach over 100 cities worldwide.
+
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <img src="assets/learn more 1.avif" 
+            style="display: block; 
+                   margin: 0 auto; 
+                   width: 100%; /* Make the image responsive */
+                   max-width: 800px; /* Ensure it doesn't exceed the original size */
+                   height: auto; /* Maintain aspect ratio */
+                   border-radius: 10px; 
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                   transition: transform 0.3s ease-in-out;"
+       >
+
+            <!-- Safety & Reliability -->
+            <section class="section">
+                <h2>Safety & Reliability</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Commitment to Safety</h3>
+                    
+                        <p>Safety is our top priority. We understand that flying can be a complex endeavor, and we are dedicated to ensuring the highest standards of safety for our passengers and crew. Our commitment to safety encompasses every aspect of our operations, from our rigorous training programs to the meticulous maintenance of our fleet.
+
+</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Reliable Operations</h3>
+        
+                        <p>With on-time performance rates exceeding industry averages, Sunshine Airlines is dedicated to ensuring your journeys are punctual and stress-free. We understand that timely arrivals and departures are crucial for our passengers, whether for business commitments or personal travel. Our meticulous scheduling, efficient operations, and proactive management of potential delays allow us to consistently deliver a reliable travel experience. You can trust us to get you to your destination on time, so you can focus on enjoying your journey.</p>
+                    </div>
+                </div>
+            </section>
+ 
+
+            <!-- Sustainability Initiatives -->
+            <section class="section">
+                <h2>Sustainability Initiatives</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Eco-Friendly Fleet</h3>
+                        
+                        <p>Our modern fleet consists of fuel-efficient aircraft designed to reduce emissions and minimize environmental impact. By incorporating the latest technology and aerodynamic designs, we strive to operate in a more sustainable manner while maintaining the highest levels of comfort and safety for our passengers. This commitment to environmental responsibility not only enhances our operational efficiency but also reflects our dedication to preserving the planet for future generations. With Sunshine Airlines, you can travel with peace of mind, knowing that your journey contributes to a greener, more sustainable world.</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Carbon Offset Programs</h3>
+                        
+                        <p>We offer carbon offset options for our passengers, allowing you to contribute to environmental projects with every flight. By participating in our carbon offset program, you can help fund initiatives such as reforestation, renewable energy, and conservation efforts that actively combat climate change. This initiative empowers you to make a positive impact on the environment, turning your travel experience into a step toward a more sustainable future. At Sunshine Airlines, we believe that every journey can be part of the solution, and we invite you to join us in our commitment to protecting the planet.</p>
+                    </div>
+                </div>
+            </section>
+            <img src="assets/learn more- eco.png" 
+            style="display: block; 
+                   margin: 0 auto; 
+                   width: 100%; /* Make the image responsive */
+                   max-width: 600px; /* Ensure it doesn't exceed the original size */
+                   height: 400px; /* Maintain aspect ratio */
+                   border-radius: 10px; 
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                   transition: transform 0.3s ease-in-out;"
+       >
+
+
+            <!-- Customer Service Excellence -->
+            <section class="section">
+                <h2>Customer Service Excellence</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Award-Winning Service</h3>
+                        
+                        <p>Our dedication to customer satisfaction has earned us multiple awards, recognizing our exceptional service and hospitality. We believe that every passenger deserves an outstanding travel experience, and our team goes above and beyond to ensure that your needs are met at every stage of your journey. From the warmth of our cabin crew to the efficiency of our ground staff, we are committed to creating a welcoming atmosphere that makes you feel valued. These accolades are a testament to our relentless pursuit of excellence and our unwavering commitment to providing the highest level of service in the airline industry.</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Personalized Experience</h3>
+                        
+                        <p>We tailor our services to meet individual needs, ensuring a comfortable and memorable journey for every passenger. By offering personalized options, from seating preferences to in-flight amenities, we aim to enhance your travel experience and cater to your unique requirements. Our attentive staff is trained to recognize and respond to the diverse needs of our passengers, creating an environment where you feel valued and cared for. Whether you’re traveling for business or leisure, our commitment to customization allows us to provide a journey that aligns with your expectations, making every flight with Sunshine Airlines truly special.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fleet Information -->
+            <section class="section">
+                <h2>Fleet Information</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Modern Aircraft</h3>
+                        
+                        <p>Our fleet includes the latest Boeing and Airbus models, equipped with advanced technology for enhanced safety and comfort. Each aircraft features state-of-the-art systems that prioritize passenger well-being, from improved air quality and noise reduction to cutting-edge navigation and safety features. These modern planes are designed not only to provide a smoother flying experience but also to ensure that every journey adheres to the highest safety standards. With spacious seating, modern amenities, and in-flight entertainment options, we strive to make your travel experience as enjoyable and relaxing as possible. At Sunshine Airlines, we are committed to investing in our fleet to bring you the best in aviation technology.</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Comfort and Amenities</h3>
+                        
+                        <p>Experience spacious seating, in-flight entertainment, and premium amenities that make your flight truly enjoyable. Our carefully designed cabin interiors provide ample legroom and comfort, allowing you to relax during your journey. Enjoy a wide selection of movies, TV shows, and music through our advanced entertainment systems, ensuring there’s never a dull moment in the air. Additionally, our premium amenities, including complimentary meals and beverages, are crafted to enhance your travel experience, making each flight not just a trip but a delightful part of your journey. At Sunshine Airlines, we believe that every detail contributes to a memorable experience in the sky.</p>
+                    </div>
+                </div>
+            </section>
+            <img src="assets/learn more-community.avif" 
+            style="display: block; 
+                   margin: 0 auto; 
+                   width: 100%; /* Make the image responsive */
+                   max-width: 800px; /* Ensure it doesn't exceed the original size */
+                   height: auto; /* Maintain aspect ratio */
+                   border-radius: 10px; 
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                   transition: transform 0.3s ease-in-out;"
+       >
+
+
+            <!-- Community Engagement -->
+            <section class="section">
+                <h2>Community Engagement</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Charitable Programs</h3>
+                        
+    <p> We actively support various charitable initiatives, contributing to education, health, and disaster relief efforts worldwide. At Sunshine Airlines, we believe in giving back to the communities we serve and making a positive impact on global challenges. Through partnerships with reputable organizations, we engage in projects that promote access to education, improve healthcare services, and provide essential aid in times of crisis. Our commitment to social responsibility reflects our values and the belief that together, we can create meaningful change. By choosing to fly with us, you join our mission to support these vital initiatives and help make a difference in the lives of others.</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Local Partnerships</h3>
+                        
+                        <p>Collaborating with local organizations, we strive to make a positive impact in the communities we serve. By partnering with grassroots initiatives, we focus on addressing the unique needs of each community, whether it’s supporting local education programs, promoting environmental sustainability, or aiding in health services. These partnerships enable us to leverage our resources and expertise effectively, ensuring that our contributions are both meaningful and sustainable. At Sunshine Airlines, we believe that fostering strong community ties not only enriches the lives of those we serve but also enhances the overall travel experience for our passengers, creating a sense of connection that extends beyond the flight.</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Awards and Recognition -->
+            <section class="section">
+                <h2>Awards and Recognition</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Industry Awards</h3>
+                        
+                        <p>Sunshine Airlines has been honored with numerous industry awards for excellence in service, safety, and sustainability. These accolades reflect our unwavering commitment to providing the highest standards in air travel, recognizing our efforts to create a safe and enjoyable experience for every passenger. From customer service excellence to our initiatives aimed at reducing environmental impact, each award underscores our dedication to continuous improvement and innovation. We take pride in these achievements, as they not only validate our hard work but also inspire us to set even higher standards in the aviation industry, ensuring that we remain a leader in providing exceptional travel experiences..</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Customer Choice Awards</h3>
+                
+                        <p>Our commitment to customer satisfaction has been recognized through multiple Customer Choice Awards, a testament to our dedication to delivering outstanding service. These awards reflect the positive feedback we receive from our passengers, highlighting our efforts to understand and meet their needs at every touchpoint. We prioritize creating memorable travel experiences, from the moment you book your flight to the time you arrive at your destination. Each award motivates us to continue enhancing our services and reinforces our mission to ensure that every journey with Sunshine Airlines is exceptional. Your satisfaction is our greatest achievement, and we are honored to be recognized by those we serve.</p>
+                    </div>
+                </div>
+            </section>
+                        <img src="assets/learn more 4.webp" 
+            style="display: block; 
+                   margin: 0 auto; 
+                   width: 100%; /* Make the image responsive */
+                   max-width: 800px; /* Ensure it doesn't exceed the original size */
+                   height: auto; /* Maintain aspect ratio */
+                   border-radius: 10px; 
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                   transition: transform 0.3s ease-in-out;"
+       >
+
+            <!-- Innovations and Technology -->
+            <section class="section">
+                <h2>Innovations and Technology</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>Advanced Booking Systems</h3>
+                        
+                        <p>Our state-of-the-art booking platforms ensure a seamless and efficient reservation process for our passengers. Designed with user-friendly interfaces, our systems allow travelers to easily search for flights, compare options, and make reservations with just a few clicks. Whether you’re booking through our website or mobile app, you can expect a smooth experience that saves you time and enhances convenience. Additionally, our platforms provide real-time updates on flight availability, pricing, and special offers, empowering you to make informed decisions. At Sunshine Airlines, we are committed to leveraging technology to make your travel planning as straightforward and enjoyable as possible.</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>In-Flight Entertainment</h3>
+                    
+                        <p>Enjoy a wide range of entertainment options with our cutting-edge in-flight entertainment systems. Designed to enhance your travel experience, our systems offer a diverse selection of movies, TV shows, music, and games to keep you entertained throughout your journey. With intuitive interfaces and personal screens, you can easily browse and choose your favorite content, ensuring that time flies while you're in the air. Whether you're in the mood for a blockbuster film or relaxing with soothing music, our in-flight entertainment options cater to all preferences, making every flight with Sunshine Airlines enjoyable and engaging.</p>
+                    </div>
+                </div>
+            </section>
+            
+
+
+            <!-- Future Plans -->
+            <section class="section">
+                <h2>Future Plans</h2>
+                <div class="section-content">
+                    <div class="section-item fade-in">
+                        <h3>New Destinations</h3>
+                        
+                        <p>We are expanding our network with new routes to emerging destinations, providing more travel options for our passengers. By identifying key markets and popular travel spots, we aim to connect you to exciting locations that were previously underserved. This growth not only enhances your travel choices but also opens up opportunities for cultural exploration and adventure. Whether you're seeking a hidden gem or a bustling city, our expanded routes make it easier than ever to reach your desired destination. At Sunshine Airlines, we’re committed to evolving our network to meet your travel needs and inspire your wanderlust.</p>
+                    </div>
+                    <div class="section-item fade-in">
+                        <h3>Fleet Expansion</h3>
+                
+                        <p>Plans are underway to add more modern and eco-friendly aircraft to our fleet, enhancing our service capabilities while furthering our commitment to sustainability. By investing in cutting-edge, fuel-efficient models, we aim to reduce our carbon footprint and minimize environmental impact, all while providing our passengers with the latest in comfort and technology. These new aircraft will not only improve operational efficiency but also allow us to offer an even more enjoyable travel experience. At Sunshine Airlines, we believe that the future of aviation lies in balancing exceptional service with environmental responsibility, and we are excited to lead the way in this important endeavor.</p>
+                    </div>
+                </div>
+            </section>
+            <img src="assets/learn more 3.jpg" 
+            style="display: block; 
+                   margin: 0 auto; 
+                   width: 100%; /* Make the image responsive */
+                   max-width: 800px; /* Ensure it doesn't exceed the original size */
+                   height: auto; /* Maintain aspect ratio */
+                   border-radius: 10px; 
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                   transition: transform 0.3s ease-in-out;"
+       >
+            <!-- Call to Action Section -->
+            <section class="cta-section">
+                <h2>Join the Sunshine Experience</h2>
+                <p>Embark on a journey of comfort, safety, and innovation with Sunshine Airlines. From the moment you book your flight to the time you arrive at your destination, we are dedicated to providing an exceptional travel experience. With our modern fleet, personalized services, and commitment to customer satisfaction, every aspect of your journey is designed to exceed your expectations. Book your flight today and discover the difference that sets Sunshine Airlines apart. Whether for business or leisure, we look forward to welcoming you on board and ensuring your travels are nothing short of remarkable!</p>
+                <a href="bookaflight.html">Book Now</a>
+            </section>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__col">
+                    <h3>Sunshine</h3>
+                    <p>
+                        Where Excellence Takes Flight. With a strong commitment to customer
+                        satisfaction and a passion for air travel, Sunshine Airlines offers
+                        exceptional service and seamless journeys.
+                    </p>
+                    <p>
+                        From friendly smiles to state-of-the-art aircraft, we connect the
+                        world, ensuring safe, comfortable, and unforgettable experiences.
+                    </p>
+                </div>
+                <div class="footer__col">
+                    <h4>INFORMATION</h4>
+                    <a href="home.html"><p>Home</p></a>
+                    <a href="about.html"><p>About</p></a>
+                    <a href="specialoffers.html"><p>Special Offers</p></a>
+                    <a href="services.html"><p>Services</p></a>
+                    <a href="flightstatus.html"><p>Flight Status</p></a>
+                </div>
+                <div class="footer__col">
+                    <h4>CONTACT</h4>
+                    <a href="contact.html"><p>Customer Support</p></a>
+                    <a href="mobileapp.html"><p>Mobile App</p></a>
+                    <a href="travelinfo.html"><p>Travel Information</p></a>
+                </div>
+            </div>
+            <div class="footer__bar">
+                <p>Copyright © 2024 Sunshine Airlines. All rights reserved.</p>
+                <div class="socials">
+                    <span><i class="fa-brands fa-facebook-f"></i></span>
+                    <span><i class="fa-brands fa-twitter"></i></span>
+                    <span><i class="fa-brands fa-instagram"></i></span>
+                    <span><i class="fa-brands fa-youtube"></i></span>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

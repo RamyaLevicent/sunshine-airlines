@@ -267,19 +267,77 @@ footer {
           <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
           <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
           
-          <!-- Flight Details Dropdown -->
-          <li class="link dropdown">
-            <a href="managebooking.html" class="dropdown-toggle">
-                Flight Details <i class="fa fa-chevron-down"></i>
-            </a>
-            <ul class="dropdown__menu">
-                <li><a href="baggage.html">Baggage</a></li>
-                <li><a href="bookaflight.html">Book Flight</a></li>  
-                <li><a href="checkin.html">Check-In</a></li>
-                <li><a href="flightstatus.html">Flight Status</a></li>
-                <li><a href="managebooking.html">Manage Booking</a></li>
-            </ul>
-        </li>
+<!-- Flight Details Dropdown -->
+<li class="link dropdown">
+    <a href="managebooking.html" class="dropdown-toggle">
+        Book a Flight <span class="dropdown-arrow"></span>
+    </a>
+    <ul class="dropdown__menu">
+        <li><a href="bookaflight.html">Booking</a></li>                     
+        <li><a href="checkin.html">Check-In</a></li>
+        <li><a href="flightstatus.html">Flight Status</a></li>   
+        <li><a href="baggage.html">Luggage</a></li>          
+        <li><a href="managebooking.html">Manage Booking</a></li>         
+    </ul>
+</li>
+
+<style>
+    .dropdown-arrow {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 5px; /* Space between text and arrow */
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid blue;/* Change color as needed */
+        vertical-align: middle; /* Align with text */
+    }
+
+    .dropdown {
+        position: relative; /* Required for absolute positioning of dropdown menu */
+    }
+
+    .dropdown__menu {
+        display: none; /* Hide dropdown by default */
+        position: absolute;
+        background-color: white; /* Background color of the dropdown */
+        border: 1px solid #ddd; /* Border of the dropdown */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    .dropdown:hover .dropdown__menu {
+        display: block; /* Show dropdown on hover */
+    }
+</style>
+
+<style>
+    .dropdown-arrow {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 5px; /* Space between text and arrow */
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #000; /* Change color as needed */
+        vertical-align: middle; /* Align with text */
+    }
+
+    .dropdown {
+        position: relative; /* Required for absolute positioning of dropdown menu */
+    }
+
+    .dropdown__menu {
+        display: none; /* Hide dropdown by default */
+        position: absolute;
+        background-color: white; /* Background color of the dropdown */
+        border: 1px solid #ddd; /* Border of the dropdown */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    .dropdown:hover .dropdown__menu {
+        display: block; /* Show dropdown on hover */
+    }
+</style>
         
         <!-- Services Dropdown -->
         <li class="link dropdown">
@@ -376,7 +434,7 @@ footer {
             <h2>5. Health & Safety Guidelines</h2>
             <img src="assets/passengers with masks.jpg" alt="Health and Safety Image">
             <p>Your safety is our priority. All Sunshine Airlines aircraft are thoroughly cleaned and sanitized between flights, following strict health protocols.</p>
-            <button>Learn More</button>
+            <a href="learnmore.html" target="_blank"><button class="btn">Learn More</button></a>
         </div>
     </div>
 

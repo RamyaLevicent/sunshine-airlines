@@ -649,6 +649,31 @@
         .socials span {
             font-size: 1.2rem;
         }
+          /* Styling for the container */
+          .container {
+            text-align: center; /* Center-align the button */
+            margin-top: 20px; /* Add some space above the container */
+        }
+
+        /* Styling for the button */
+        .button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text color */
+            padding: 15px 30px; /* Padding inside the button */
+            font-size: 16px; /* Button font size */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove the underline from the link */
+            display: inline-block; /* Keep the button inline */
+            border-radius: 8px; /* Rounded corners */
+            border: none; /* Remove border */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+        }
+
+        /* Hover effect for the button */
+        .button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
     </style>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -671,7 +696,7 @@
           <!-- Flight Details Dropdown -->
           <li class="link dropdown">
             <a href="managebooking.html" class="dropdown-toggle">
-              Flight Details <i class="ri-arrow-down-s-line"></i>
+              Book a Flight <i class="ri-arrow-down-s-line"></i>
             </a>
             <ul class="dropdown__menu">
               <li><a href="baggage.html">Baggage</a></li>
@@ -746,7 +771,12 @@
                 
             </div>
         </div>
-        <a href="userinfo.html" class="btn">Book Now</a>
+        <section>
+            <div class="container">
+                <a href="tracking.html" class="button">Tracking a Map</a>
+            </div>
+            </section>
+        <!-- <a href="mapinfo.html" class="btn">Tracking a Map</a> -->
 
         <!-- Flight Booking Steps -->
         <section class="flight-steps">
@@ -785,6 +815,11 @@
                 </div>
 
             </div>
+        </section>
+        <section>
+        <div class="container">
+            <a href="userinfo.html" class="button">Book Now</a>
+        </div>
         </section>
         <img src="assets/flight-booking-2.jpg" style="width: 800px; height: 400px; display: block; margin: auto;" />
 

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Get Boarding Pass </title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #2970ce;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 1000px;
+            box-shadow: 0 4px 8px rgba(247, 246, 246, 0.1);
+        }
+
+        .container {
+            margin-top: 40px;
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .boarding-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px white;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 12px;
+            background-color: navy;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff7b00;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-section {
+            margin-top: 40px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .info-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        ul {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        ul li strong {
+            color: #1856a7;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .boarding-form {
+                padding: 20px;
+            }
+
+            input[type="submit"] {
+                font-size: 1rem;
+            }
+        }
+         /* Footer Styles */
+.footer {
+  background-color: var(--primary-color);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  gap: 5rem;
+}
+
+.footer__col h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer__col h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer__col p {
+  color: var(--extra-light);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: var(--white);
+}
+
+.footer__bar {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--extra-light);
+}
+
+.footer__bar p {
+  font-size: 0.9rem;
+  color: var(--extra-light);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials span {
+  font-size: 1.2rem;
+  color: var(--extra-light);
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+
+            <!-- Flight Details Dropdown -->
+            <li class="link dropdown">
+                <a href="managebooking.html" class="dropdown-toggle">
+                 Book a Flight <i class="ri-arrow-down-s-line"></i>
+                </a>
+                <ul class="dropdown__menu">
+                  <li><a href="bookaflight.html">Booking</a></li>                     
+                  <li><a href="checkin.html">Check-In</a></li>
+                  <li><a href="flightstatus.html">Flight Status</a></li>   
+                  <li><a href="baggage.html">Luggage</a></li>          
+                  <li><a href="managebooking.html">Manage Booking</a></li>         
+                </ul>
+              </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>        
+              <li><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
+    <header>
+        <h1>Get Your Boarding Pass</h1>
+    </header>
+
+    <div class="container">
+        <p>Welcome to Sunshine Airlines! Enter your details below to easily get your boarding pass and enjoy a hassle-free journey.</p>
+
+        <div class="boarding-form">
+            <input type="text" placeholder="Enter your Booking Reference" required>
+            <input type="email" placeholder="Enter your Email Address" required>
+            <input type="number" placeholder="Enter your Flight Number" required>
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+
+    <div class="image-section">
+        <img src="assets/tr.jpg" alt="Boarding Pass Example">
+    </div>
+
+    <div class="info-section">
+        <h2>Why Choose Online Boarding Pass?</h2>
+        <p>With Sunshine Airlines, getting your boarding pass online offers convenience and speed. Here's why you should opt for an online boarding pass:</p>
+        <ul>
+            <li><strong>Quick and Easy:</strong> Skip the lines and avoid the hassle of printing your boarding pass at the airport. Simply download it to your phone or print it at home.</li>
+            <li><strong>24/7 Availability:</strong> Access your boarding pass anytime, anywhere before your flight. No more waiting for kiosks or counters.</li>
+            <li><strong>Environmentally Friendly:</strong> Go paperless and contribute to a greener planet by using a digital boarding pass.</li>
+            <li><strong>Flight Updates:</strong> Get instant updates about your flight schedule and gate changes directly on your mobile device.</li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+        <h2>How to Use Your Boarding Pass</h2>
+        <p>Once you retrieve your boarding pass, here’s how to use it efficiently:</p>
+        <ul>
+            <li>Have your boarding pass ready on your phone or print it before arriving at the airport.</li>
+            <li>At security checkpoints, simply show the QR code or barcode on your pass for scanning.</li>
+            <li>Present it at the boarding gate to gain entry to your flight. If needed, keep your photo ID handy.</li>
+            <li>Stay updated with real-time information by keeping the boarding pass open on your mobile device.</li>
+        </ul>
+        <p>Remember, Sunshine Airlines is dedicated to providing you a smooth and efficient flying experience. Enjoy your journey with us!</p>
+    </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
+                <h3>Sunshine</h3>
+                <p>
+                    Where Excellence Takes Flight. With a strong commitment to customer
+                    satisfaction and a passion for air travel, Sunshine Airlines offers
+                    exceptional service and seamless journeys.
+                </p>
+                <p>
+                    From friendly smiles to state-of-the-art aircraft, we connect the
+                    world, ensuring safe, comfortable, and unforgettable experiences.
+                </p>
+            </div>
+  
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <p>Home</p>
+                <p>Special Offers</p>
+                <p>Manage Booking</p>
+                <p>Contact Us</p>
+                <p>About Us</p>
+            </div>
+  
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p>Email: info@sunshineairline.com</p>
+                <p>Phone: 1-800-555-0199</p>
+                <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+            <div class="socials">
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

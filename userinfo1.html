@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 25px;
+        }
+        table {
+            width: 70%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 0.5px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        label {
+            display: block;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 50%; 
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box; 
+        }
+        textarea {
+            resize: vertical; 
+        }
+        button {
+            background-color: #002855;
+        
+            color:white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ffdd57;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>Passenger Information</h2>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Input</th>
+    </tr>
+    <tr>
+        <td><label for="fullName">Full Name</label></td>
+        <td><input type="text" id="fullName" name="fullName" required></td>
+    </tr>
+    <tr>
+        <td><label for="age">Age</label></td>
+        <td><input type="number" id="age" name="age" required></td>
+    </tr>
+    <tr>
+        <td><label for="gender">Gender</label></td>
+        <td>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="class">Type</label></td>
+        <td>
+            <select id="class" name="class" required>
+                <option value="">Select</option>
+                <option value="male">Adult</option>
+                <option value="female">Child</option>
+                <option value="other">Infant</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td><label for="nationality">Nationality</label></td>
+        <td><input type="text" id="nationality" name="nationality" required></td>
+    </tr>
+    <tr>
+        <td><label for="passportNumber">Passport Number</label></td>
+        <td><input type="text" id="passportNumber" name="passportNumber" required></td>
+    </tr>
+    <tr>
+        <td><label for="passportExpiration">Passport Expiration Date</label></td>
+        <td><input type="date" id="passportExpiration" name="passportExpiration" required></td>
+    </tr>
+    <tr>
+        <td><label for="passportIssuance">Country of Issuance</label></td>
+        <td><input type="text" id="passportIssuance" name="passportIssuance" required></td>
+    </tr>
+    <tr>
+        <tr>
+            <td><label for="visaNumber">Visa Number</label></td>
+            <td><input type="text" id="visaNumber" name="visaNumber" required></td>
+        </tr>
+    
+        <td><label for="contactNumber">Contact Number</label></td>
+        <td><input type="tel" id="contactNumber" name="contactNumber" required></td>
+    </tr>
+    <tr>
+        <td><label for="email">Email Address</label></td>
+        <td><input type="email" id="email" name="email" required></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+
+    </tr>
+</table>
+<a href="learnmore.html" target="_blank"><button class="btn">Next</button></a>
+
+</body>
+</html>

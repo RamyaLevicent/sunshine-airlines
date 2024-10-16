@@ -809,7 +809,7 @@ nav {
   color: #125aa8; /* Blue color for the links */
   font-weight: bold;
   margin: 0 15px;
-  padding: 10px 20px;
+  padding: 2px 1px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
@@ -827,3 +827,150 @@ nav {
 }
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 10px 15px;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.tab-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-container {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.radio-group input[type="radio"], 
+.radio-group label, 
+.radio-group select, 
+.radio-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.radio-group label {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-group input, 
+.input-group select {
+  flex: 1 1 100%; /* Make them take full width on mobile */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button-group .btn {
+  flex: 1 1 48%; /* Each button will take almost half of the container on mobile */
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-group .btn.blue {
+  background-color: #007bff;
+  color: white;
+}
+
+.button-group .btn {
+  background-color: #f1f1f1;
+}
+
+@media (min-width: 768px) {
+  /* For tablets and larger screens */
+  .radio-group, .input-group {
+      flex-wrap: nowrap;
+  }
+
+  .input-group input, .input-group select {
+      flex: 1; /* Distribute evenly on larger screens */
+  }
+
+  .radio-group {
+      gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* For mobile screens */
+  .radio-group {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .radio-group input[type="checkbox"] {
+      margin-top: 10px;
+  }
+
+  .input-group input, .input-group select {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .button-group .btn {
+      width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Specifically for very small screens (320px) */
+  .radio-group label {
+      display: block;
+      width: 100%;
+  }
+
+  .radio-group input[type="checkbox"] {
+      margin-top: 10px;
+  }
+}

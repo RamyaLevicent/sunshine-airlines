@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="styles.css"/>
 
-    <title>Business Class Ticket Booking - Sunshine Airlines</title>
+    <title>Business Class Ticket Booking </title>
 
     <style>
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -43,7 +44,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #003b73;
+            background-color: white;
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -65,7 +66,7 @@
         }
 
         .nav__links a {
-            color: white;
+            color: black;
             text-decoration: none;
             font-size: 1rem;
             padding: 10px 15px;
@@ -81,7 +82,7 @@
         .dropdown__menu {
             display: none;
             position: absolute;
-            background-color: #003b73;
+            background-color:white;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
             list-style: none;
@@ -97,7 +98,7 @@
         }
 
         .dropdown__menu li a {
-            color: white;
+            color: black;
             text-decoration: none;
         }
 
@@ -118,8 +119,8 @@
         }
 
         .btn:hover {
-            background-color: #002855;
-            color: white;
+            background-color: white;
+            color: black;
         }
 
         /* Responsive header styles */
@@ -142,6 +143,54 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+/* Dropdown Menu Styles */
+.dropdown__menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown__menu.show {
+            display: block;
+        }
+
+        .dropdown__menu li {
+            padding: 10px 20px;
+        }
+
+        .dropdown__menu li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown__menu li a:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Rotate the icon when active */
+        .dropdown-toggle.active i {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+
+        /* Ensure icons transition smoothly */
+        .dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Positioning for dropdown */
+        .dropdown {
+            position: relative;
+        }
         /* Rotate the icon when active */
 .dropdown-toggle.active i {
   transform: rotate(180deg);
@@ -152,6 +201,7 @@
 .dropdown-toggle i {
   transition: transform 0.3s ease;
 }
+
     </style>
 </head>
 
@@ -164,31 +214,33 @@
           <li class="link"><a href="specialoffers.html">Offers</a></li>
           
           <!-- Flight Details Dropdown -->
-          <li class="link dropdown">
-            <a href="flightstatus.html" class="dropdown-toggle">
-              Flight Details <i class="ri-arrow-down-s-line"></i>
+        <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+             Book a Flight <i class="ri-arrow-down-s-line"></i>
             </a>
             <ul class="dropdown__menu">
-              <li><a href="flightstatus.html">Flight Status</a></li>
-              <li><a href="bookaflight.html">Book Flight</a></li>       
+              <li><a href="bookaflight.html">Booking</a></li>                     
               <li><a href="checkin.html">Check-In</a></li>
-              <li><a href="baggage.html">Baggage</a></li>
-              <li><a href="managebooking.html">Manage Booking</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>   
+              <li><a href="baggage.html">Luggage</a></li>          
+              <li><a href="managebooking.html">Manage Booking</a></li>         
             </ul>
           </li>
-          
-          <!-- Services Dropdown -->
-          <li class="link dropdown">
-            <a href="travelinfo.html" class="dropdown-toggle">
-              Services <i class="ri-arrow-down-s-line"></i>
-            </a>
-            <ul class="dropdown__menu">
-              <li><a href="travelinfo.html">Travel Information</a></li>
-              <li><a href="customersupport.html">Customer Support</a></li>
-              <li><a href="language.html">Language / Region Selector</a></li>
-              <li><a href="mobileapp.html">Mobile App</a></li>
-            </ul>
-          </li>
+      
+      <!-- Services Dropdown -->
+      <li class="link dropdown">
+        <a href="travelinfo.html" class="dropdown-toggle">
+          Services <i class="ri-arrow-down-s-line"></i>
+        </a>
+        <ul class="dropdown__menu">
+          <li><a href="customersupport.html">Customer Support</a></li>
+          <li class="link"><a href="insurance.html">Insurance</a></li>        
+          <li><a href="mobileapp.html">Mobile App</a></li>
+          <li><a href="language.html">Language / Region Selector</a></li> 
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="travelinfo.html">Travel Information</a></li>
+        </ul>
+      </li>
           
           <!-- Contact Button -->
           <li class="link contact-btn">
@@ -208,7 +260,17 @@
 
 <div class="container">
     <div class="image-container">
-        <img src="assets/business class.avif" alt="Luxury Business Class">
+        <img src="assets/business class.avif" alt="Business Class" class="baggage-image"
+        style="display: block;
+               margin: 0 auto;
+               width: 100%; /* Make the image responsive */
+               max-width: 800px; /* Ensure it doesn't exceed the original size */
+               height: auto; /* Maintain aspect ratio */
+               border-radius: 10px;
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+               transition: transform 0.3s ease-in-out;"
+   >
+ 
     </div>
 
     <h2>Experience the Luxury of Business Class</h2>
@@ -226,7 +288,16 @@
         <li><strong>Additional Luggage Allowance:</strong> Enjoy the convenience of extra luggage allowance compared to economy class passengers.</li>
         <li><strong>On-Demand Entertainment:</strong> Enjoy the flexibility of on-demand entertainment options.</li>
     </ul>
-    <img src="assets/business class 1.webp" style="width: 100%;  height: auto; display: block; margin: auto;" />
+    <img src="assets/business class 1.webp" alt="Business Class" class="baggage-image"
+    style="display: block;
+           margin: 0 auto;
+           width: 100%; /* Make the image responsive */
+           max-width: 800px; /* Ensure it doesn't exceed the original size */
+           height: auto; /* Maintain aspect ratio */
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           transition: transform 0.3s ease-in-out;"
+>
 
     <h2>How to Book Your Business Class Tickets</h2>
     <ol>
@@ -259,7 +330,27 @@
     </blockquote>
 
     <div class="image-container">
-        <img src="assets/happy passengers.webp" alt="Relaxing in Business Class">
+        <img src="assets/business class relax.jpeg" alt="Business Class" class="baggage-image"
+
+        style="display: block;
+   
+               margin: 0 auto;
+   
+               width: 100%; /* Make the image responsive */
+   
+               max-width: 800px; /* Ensure it doesn't exceed the original size */
+   
+               height: auto; /* Maintain aspect ratio */
+   
+               border-radius: 10px;
+   
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+               transition: transform 0.3s ease-in-out;"
+   
+   >
+   
+   
     </div>
     <!-- <div class="image-container">
         <img src="assets for classes/business class 4.webp" alt="Relaxing in Business Class">

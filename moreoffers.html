@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Special Offers on Paris Journey | Sunshine Airlines</title>
+    <style>
+                    nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            
+                padding: 10px 20px;
+                color: black;
+            }
+
+            .nav__logo {
+                font-size: 1.8em;
+                font-weight: bold;
+            }
+
+            .nav__links {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .nav__links .link a {
+                color:black;
+                text-decoration: none;
+                font-size: 1em;
+            }
+
+         .nav__links .dropdown {
+                position: relative;
+            }
+
+            .dropdown-toggle::after {
+                content: ' ▼';
+                font-size: 0.6em;
+            }
+
+            .dropdown__menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                list-style: none;
+                padding: 10px 0;
+                min-width: 150px;
+                z-index: 1000;
+            }
+
+            .dropdown:hover .dropdown__menu {
+                display: block;
+            }
+
+            .dropdown__menu li {
+                padding: 10px 20px;
+            }
+
+            .dropdown__menu li a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown__menu li a:hover {
+                background-color: white;
+                color: black;
+            }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: black;
+        }
+        
+        header {
+            background-image: url('header-image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            padding: 60px 20px;
+            text-align: center;
+            color: navy;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 20px;
+            color: navy;
+        }
+
+        .offer {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .offer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .responsive-img {
+            width: 60%; /* Full width */
+            height: 500px; /* Maintain aspect ratio */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            transition: transform 0.3s ease-in-out; /* Smooth transformation */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .offer {
+                padding: 15px;
+                margin: 10px 0;
+            }
+
+            .footer__container {
+                grid-template-columns: 1fr; /* Stack footer columns on small screens */
+            }
+
+            .footer__bar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 20px;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer__col p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer__col p:hover {
+            color: #dddddd;
+        }
+
+        .footer__bar {
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid #cccccc;
+        }
+
+        .footer__bar p {
+            font-size: 0.9rem;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .socials span {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About</a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+              Book a Flight <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>  
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>           
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            </ul>
+          </li>
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>        
+              <li><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="language.html">Language / Region Selector</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+          </li>
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Special Offers on Paris Journey</h1>
+        <h2>with Sunshine Airlines</h2>
+    </header>
+
+    <section>
+        <div class="offer">
+            <h3>Early Bird Special</h3>
+            <p><strong>Price:</strong> Starting at $599 (round trip)</p>
+            <p><strong>Duration:</strong> 7 days</p>
+            <p><strong>Includes:</strong> Round trip airfare, 3-star hotel accommodation, and breakfast.</p>
+            <p><strong>Booking Period:</strong> Book 3 months in advance to avail of this offer.</p>
+        </div>
+
+        <div class="offer">
+            <h3>Weekend Getaway Package</h3>
+            <p><strong>Price:</strong> Starting at $349 (round trip)</p>
+            <p><strong>Duration:</strong> 3 days/2 nights</p>
+            <p><strong>Includes:</strong> Round trip airfare and hotel stay.</p>
+            <p><strong>Booking Period:</strong> Valid for Friday to Sunday trips. Limited availability.</p>
+        </div>
+
+        <img src="assets/special offers -paris.png" class="responsive-img" />
+
+        <div class="offer">
+            <h3>Family Fun Deal</h3>
+            <p><strong>Price:</strong> $1,899 for 4 travelers (round trip)</p>
+            <p><strong>Duration:</strong> 5 days</p>
+            <p><strong>Includes:</strong> Round trip airfare, 4-star hotel, and tickets to Disneyland Paris.</p>
+            <p><strong>Booking Period:</strong> Book for travel during school holidays.</p>
+        </div>
+
+        <div class="offer">
+            <h3>Cultural Experience Offer</h3>
+            <p><strong>Price:</strong> Starting at $749 (round trip)</p>
+            <p><strong>Duration:</strong> 6 days</p>
+            <p><strong>Includes:</strong> Round trip airfare, guided city tours, and museum passes.</p>
+            <p><strong>Booking Period:</strong> Valid for travel in off-peak seasons.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Important Places to Visit in Paris</h2>
+        <ul>
+            <li><strong>Eiffel Tower:</strong> Iconic symbol of Paris offering stunning views from its observation decks.</li>
+            <li><strong>Louvre Museum:</strong> Home to thousands of works of art, including the Mona Lisa and the Venus de Milo.</li>
+            <li><strong>Notre-Dame Cathedral:</strong> A masterpiece of French Gothic architecture, renowned for its intricate façade and stunning stained glass.</li>
+            <li><strong>Montmartre and Sacré-Cœur Basilica:</strong> A historic district known for its bohemian charm and the breathtaking basilica at its summit.</li>
+            <li><strong>Champs-Élysées and Arc de Triomphe:</strong> A famous avenue lined with shops and cafés leading to the monumental arch.</li>
+            <li><strong>Palace of Versailles:</strong> A short trip from Paris, this opulent palace and its gardens are a UNESCO World Heritage site.</li>
+            <li><strong>Seine River Cruise:</strong> Enjoy picturesque views of Paris’s landmarks from the water, especially beautiful at sunset.</li>
+        </ul>
+        <p>Book your tickets today and embark on an unforgettable journey to the City of Lights!</p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
+                <h3>Sunshine</h3>
+                <p>
+                    Where Excellence Takes Flight. With a strong commitment to customer
+                    satisfaction and a passion for air travel, Sunshine Airlines offers
+                    exceptional service and seamless journeys.
+                </p>
+                <p>
+                    From friendly smiles to state-of-the-art aircraft, we connect the
+                    world, ensuring safe, comfortable, and unforgettable experiences.
+                </p>
+            </div>
+
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <p>Home</p>
+                <p>Special Offers</p>
+                <p>Manage Booking</p>
+                <p>Contact Us</p>
+                <p>About Us</p>
+            </div>
+
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p>Email: info@sunshineairline.com</p>
+                <p>Phone: 1-800-555-0199</p>
+                <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+            <div class="socials">
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

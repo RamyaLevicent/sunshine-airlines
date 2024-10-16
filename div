@@ -1,0 +1,295 @@
+<!-- <div class="container">
+        <div class="tabs">
+          
+            <a href="#" class="tab-btn active">Flights</a>
+<a href="#" class="tab-btn">Hotels</a>
+<a href="#" class="tab-btn">Flight + Hotel</a>
+<a href="#" class="tab-btn">Car rental</a>
+
+        </div>
+
+        <div class="form-container">
+            <form id="flight-search">
+                <div class="radio-group">
+                    <input type="radio" id="return" name="trip-type" checked>
+                    <label for="return">Return</label>
+
+                    <input type="radio" id="one-way" name="trip-type">
+                    <label for="one-way">One way</label>
+
+                    <input type="radio" id="multi-city" name="trip-type">
+                    <label for="multi-city">Multi-city</label>
+
+                    <select id="class-selection">
+                        <option value="economy">Economy</option>
+                        <option value="business">Business</option>
+                    </select>
+
+                    <input type="checkbox" id="direct-flights">
+                    <label for="direct-flights">Direct flights</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="from" placeholder="Where from?" required>
+                    <input type="text" id="to" placeholder="Where to?" required>
+                    <input type="date" id="departure" placeholder="Departure" required>
+                    <input type="date" id="return-date" placeholder="Return">
+                    <select id="passengers">
+                        <option value="1">1 traveller</option>
+                        <option value="2">2 travellers</option>
+                        <option value="3">3 travellers</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn blue">Search Flight + Hotel</button>
+                    <button type="submit" class="btn">Search Flights</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script> -->
+
+    
+    <!-- FLIGHT AVAILABILITY - YUVA -->
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" id="flight-tab">Flights</button>
+            <button class="tab-btn" id="hotel-tab">Hotels</button>
+            <button class="tab-btn" id="flight-hotel-tab">Flight + Hotel</button>
+            <button class="tab-btn" id="car-rental-tab">Car Rental</button>
+        </div>
+        <div class="form-container">
+            <!-- Flight Booking Form -->
+            <form id="flight-search" class="form-section active">
+                <div class="radio-group">
+                    <input type="radio" id="round-trip" name="trip-type" checked>
+                    <label for="round-trip">Round Trip</label>
+                    <input type="radio" id="one-way" name="trip-type">
+                    <label for="one-way">One Way</label>
+                    <input type="radio" id="multi-city" name="trip-type">
+                    <label for="multi-city">Multi-City</label>
+                    <select id="class-selection">
+                        <option value="business">Business</option>
+                        <option value="economy">Economy</option>
+                        <option value="business">Emergency</option>
+                        <option value="premiumeconomy">Premium</option>                       
+                    </select>
+                    <input type="checkbox" id="direct-flights">
+                    <label for="direct-flights">Direct Flights</label>
+                </div>
+                 <!-- Round Trip Section -->
+    <div class="form-section active" id="round-trip-section">
+        <div class="input-group">
+            <input type="text" id="from" placeholder="Where from?" required>
+            <input type="text" id="to" placeholder="Where to?" required>
+            <input type="date" id="departure" placeholder="Departure" required>
+            <input type="date" id="return-date" placeholder="Return">
+            <select id="passengers">
+                <option value="1">1 traveller</option>
+                <option value="2">2 travellers</option>
+                <option value="3">3 travellers</option>
+            </select>
+        </div>
+    </div>
+    <!-- One Way Section -->
+    <div class="form-section" id="one-way-section">
+        <div class="input-group">
+            <input type="text" id="from-oneway" placeholder="Where from?" required>
+            <input type="text" id="to-oneway" placeholder="Where to?" required>
+            <input type="date" id="departure-oneway" placeholder="Departure" required>
+            <select id="passengers-oneway">
+                <option value="1">1 traveller</option>
+                <option value="2">2 travellers</option>
+                <option value="3">3 travellers</option>
+                <option value="4">4 travellers</option>
+            </select>
+        </div>
+    </div>
+    <!-- Multi-City Section -->
+    <div class="form-section" id="multi-city-section">
+        <div class="input-group">
+            <input type="text" id="from-multi1" placeholder="Where from?" required>
+            <input type="text" id="to-multi1" placeholder="Where to?" required>
+            <input type="date" id="departure-multi1" placeholder="Departure" required>
+        </div>
+        <div class="input-group">
+            <input type="text" id="from-multi2" placeholder="Second destination from?" required>
+            <input type="text" id="to-multi2" placeholder="Where to?" required>
+            <input type="date" id="departure-multi2" placeholder="Second departure" required>
+        </div>
+        <div class="input-group">
+            <input type="text" id="from-multi3" placeholder="3rd destination from?" required>
+            <input type="text" id="to-multi3" placeholder="Where to?" required>
+            <input type="date" id="departure-multi3" placeholder="3rd departure" required>
+        </div>
+        <select id="passengers-multi" style="margin-bottom: 20px;">
+            <option value="1">1 traveller</option>
+            <option value="2">2 travellers</option>
+            <option value="3">3 travellers</option>
+        </select>
+    </div>
+                <div class="button-group">
+                    <button type="submit" class="btn blue">Search Flights</button>
+                    <button type="submit" class="btn blue">Check Availability</button>
+                </div>
+            </form>
+            <!-- Hotel Booking Form -->
+            <form id="hotel-search" class="form-section">
+                <div class="input-group">
+                    <input type="text" id="hotel-destination" placeholder="Destination" required>
+                    <input type="date" id="hotel-checkin" placeholder="Check-in" required>
+                    <input type="date" id="hotel-checkout" placeholder="Check-out" required>
+                    <select id="hotel-guests">
+                        <option value="1">Single Room - 2 People</option>
+                        <option value="2">Double Room - 4 People</option>
+                        <option value="3">Suite</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn blue">Search Hotels</button>
+                </div>
+            </form>
+  
+            <!-- Flight + Hotel Booking Form -->
+            <form id="flight-hotel-search" class="form-section">
+                <div class="input-group">
+                    <input type="text" id="flight-hotel-from" placeholder="Where from?" required>
+                    <input type="text" id="flight-hotel-to" placeholder="Where to?" required>
+                    <input type="date" id="flight-hotel-departure" placeholder="Departure" required>
+                    <input type="date" id="flight-hotel-return" placeholder="Return" required>
+                    <select id="flight-hotel-passengers">
+                        <option value="1">1 traveller</option>
+                        <option value="2">2 travellers</option>
+                        <option value="3">3 travellers</option>
+                    </select>
+                    <select id="hotel-rooms">
+                        <option value="1">Single Room</option>
+                        <option value="2">Double Room</option>
+                        <option value="3">Suite Room</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn blue">Search Flight + Hotel</button>
+                </div>
+            </form>
+  
+            <!-- Car Rental Form -->
+            <form id="rental-car-search" class="form-section">
+                <div class="input-group">
+                    <input type="text" id="car-pickup" placeholder="Pick-up Location" required>
+                    <input type="text" id="car-dropoff" placeholder="Drop-off Location" required>
+                    <input type="date" id="car-pickup-date" placeholder="Pick-up Date" required>
+                    <input type="date" id="car-dropoff-date" placeholder="Drop-off Date" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn blue">Search Car Rentals</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+    <script>
+        const flightTab = document.getElementById('flight-tab');
+        const hotelTab = document.getElementById('hotel-tab');
+        const flightHotelTab = document.getElementById('flight-hotel-tab');
+        const carRentalTab = document.getElementById('car-rental-tab');
+  
+        const flightForm = document.getElementById('flight-search');
+        const hotelForm = document.getElementById('hotel-search');
+        const flightHotelForm = document.getElementById('flight-hotel-search');
+        const carRentalForm = document.getElementById('rental-car-search');
+        // Get references to radio buttons
+  const roundTripRadio = document.getElementById('round-trip');
+  const oneWayRadio = document.getElementById('one-way');
+  const multiCityRadio = document.getElementById('multi-city');
+  
+  // Get references to form sections
+  const roundTripSection = document.getElementById('round-trip-section');
+  const oneWaySection = document.getElementById('one-way-section');
+  const multiCitySection = document.getElementById('multi-city-section');
+  
+  // Event listeners for radio buttons
+  roundTripRadio.addEventListener('change', () => {
+    if (roundTripRadio.checked) {
+        roundTripSection.style.display = 'block';
+        oneWaySection.style.display = 'none';
+        multiCitySection.style.display = 'none';
+    }
+  });
+  
+  oneWayRadio.addEventListener('change', () => {
+    if (oneWayRadio.checked) {
+        roundTripSection.style.display = 'none';
+        oneWaySection.style.display = 'block';
+        multiCitySection.style.display = 'none';
+    }
+  });
+  
+  multiCityRadio.addEventListener('change', () => {
+    if (multiCityRadio.checked) {
+        roundTripSection.style.display = 'none';
+        oneWaySection.style.display = 'none';
+        multiCitySection.style.display = 'block';
+    }
+  });
+  
+  // Initial state
+  document.addEventListener('DOMContentLoaded', () => {
+    roundTripSection.style.display = 'block';  // Show Round Trip by default
+    oneWaySection.style.display = 'none';
+    multiCitySection.style.display = 'none';
+  });
+        // Show only the relevant form when a tab is clicked
+        flightTab.addEventListener('click', () => {
+            setActiveTab(flightTab, flightForm);
+        });
+  
+        hotelTab.addEventListener('click', () => {
+            setActiveTab(hotelTab, hotelForm);
+        });
+  
+        flightHotelTab.addEventListener('click', () => {
+            setActiveTab(flightHotelTab, flightHotelForm);
+        });
+  
+        carRentalTab.addEventListener('click', () => {
+            setActiveTab(carRentalTab, carRentalForm);
+        });
+        function setActiveTab(tab, form) {
+            // Remove 'active' class from all tabs and forms
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.form-section').forEach(form => form.classList.remove('active'));
+            // Add 'active' class to the clicked tab and corresponding form
+            tab.classList.add('active');
+            form.classList.add('active');
+        }
+  
+        
+   // Toggle dropdown on click for touch devices
+   document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        const dropdownMenu = this.nextElementSibling;
+        dropdownMenu.classList.toggle('show');
+        
+        // Close other open dropdowns
+        document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+          if (menu !== dropdownMenu) {
+            menu.classList.remove('show');
+          }
+        });
+      });
+    });
+  
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown__menu').forEach(function(menu) {
+          menu.classList.remove('show');
+        });
+      }
+    });
+    </script>
+      
