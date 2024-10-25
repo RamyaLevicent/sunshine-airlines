@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Sunshine Airlines - Flight Search</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Internal CSS */
+        * {
+            margin: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f7;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        header {
+            background-color: #003366;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .search-bar {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex; 
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1c86e0;
+        }
+
+        #flight-results {
+            margin-top: 20px;
+        }
+
+        .Sort By {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .Sort By
+         h2 {
+            margin-right: 15px;
+        }
+
+        .filters label {
+            margin-right: 15px;
+        }
+
+        .flight-card {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .flight-info {
+            margin-bottom: 10px;
+        }
+
+        .flight-price {
+            text-align: right;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .flight-details {
+            font-size: 14px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .input-group {
+                width: 100%;
+            }
+
+            .search-bar {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-plane-departure"></i> Sunshine Airlines</h1>
+        <p>Your gateway to the world!</p>
+    </header>
+
+    <!-- Search Bar Section -->
+    <div class="search-bar">
+        <div class="input-group">
+            <!-- <label for="tripType">Trip Type:</label>
+            <select id="tripType">
+                <option>One Way</option>
+                <option>Round Trip</option>
+                <option>Multi City</option>
+            </select> -->
+        </div>
+        <div class="input-group">
+            <label for="triptype">Trip Type</label>
+            <input type="text" id="triptype" value="One Way">
+        </div>
+
+        <div class="input-group">
+            <label for="from">From:</label>
+            <input type="text" id="from" value="New York, US">
+        </div>
+        <div class="input-group">
+            <label for="to">To:</label>
+            <input type="text" id="to" value="New Delhi, India">
+        </div>
+        <div class="input-group">
+            <label for="passengers">Passengers:</label>
+            <input type="number" id="passengers" value="1">
+        </div>
+        <div class="input-group">
+            <button id="searchButton">Search</button>
+        </div>
+    </div>
+
+    <!-- Flight Results Section -->     
+        <!-- < id="flight-results"> -->
+               <h2>Available Flights</h2>
+               <div class="filters">
+                   <h3>Filters</h3>
+                   <label><input type="checkbox"><i class="fa-solid fa-plane Departure"></i> Non Stop</label>
+                   <label><input type="checkbox"><i class="fa-solid fa-sun"></i> Morning Departures</label>
+                   <label><input type="checkbox"><i class="fa-solid fa-stop"></i> 1 Stop</label>
+               </div>
+          <!-- International-National  Flights -->
+          <h2>International-National Flights</h2>
+
+          <div class="flight-card">
+              <div class="flight-info">
+                  <p><i class="fa-solid fa-plane"></i><strong>Emirates EK 500</strong> | Flight QR 305</p>
+                  <p class="flight-details">Departure:9:30 AM <strong></strong> | Duration: <strong>3 hours 15 minutes</strong> | Arrival: <strong>02:45 PM</strong></p>
+                  <p class="flight-details">From: <strong>Dubai</strong> - <strong>To</strong> - <strong>Mumbai</strong></p>
+              </div>
+              <div class="flight-price">
+                  <p>$ USD 950</p>
+                  <button>Book Now</button>
+              </div>
+            </div>
+              <div class="flight-card">
+                <div class="flight-info">
+                    <p><i class="fa-solid fa-plane"></i><strong>SriLankan Airlines</strong> | Flight UL 121</p>
+                    <p class="flight-details">Departure:9:30AM <strong></strong> | Duration: <strong>1 hour 30 minutes</strong> | Arrival: <strong>11:00 AM</strong></p>
+                    <p class="flight-details">From: <strong>Colombo (Sri Lanka)</strong> - <strong>To</strong> - <strong>Chennai(India)</strong></p>
+                </div>
+                <div class="flight-price">
+                    <p>$ USD 950</p>
+                    <button>Book Now</button>
+                </div>
+                <div class="flight-card">
+                    <div class="flight-info">
+                        <p><i class="fa-solid fa-plane"></i><strong>Air India</strong> | AI 216</p>
+                        <p class="flight-details">Departure:12:00PM <strong></strong> | Duration: <strong>1 hour 45 minutes</strong> | Arrival: <strong>13:45 PM</strong></p>
+                        <p class="flight-details">From: <strong>Kathmandu (Nepal)</strong> - <strong>To</strong> - <strong>Delhi(India)</strong></p>
+                    </div>
+                    <div class="flight-price">
+                        <p>$ USD 950</p>
+                        <button>Book Now</button>
+                    </div>
+                </div>
+            </div>
+                    
+                    <div class="flight-card">
+                        <div class="flight-info">
+                            <p><i class="fa-solid fa-plane"></i><strong>IndiGo</strong> | 6E 1764</p>
+                            <p class="flight-details">Departure:14:30PM <strong></strong> | Duration: <strong>2 hours 30 minutes</strong> | Arrival: <strong>17:00 PM</strong></p>
+                            <p class="flight-details">From: <strong>Male (Maldives)</strong> - <strong>To</strong> - <strong>Bengaluru(India)</strong></p>
+                        </div>
+                        <div class="flight-price">
+                            <p>$ USD 950</p>
+                            <button>Book Now</button>
+                        </div>
+                    <div class="flight-card">
+                            <div class="flight-info">
+                                <p><i class="fa-solid fa-plane"></i><strong>Thai Airways</strong> | TG 313</p>
+                                <p class="flight-details">Departure:07:15 AM <strong></strong> | Duration: <strong>1 hour 15 minutes</strong> | Arrival: <strong>8:30 AM</strong></p>
+                                <p class="flight-details">From: <strong>Bangkok (Thailand)</strong> - <strong>To</strong> - <strong>Kolkata(India)</strong></p>
+                            </div>
+                            <div class="flight-price">
+                                <p>$ USD 950</p>
+                                <button>Book Now</button>
+                            </div>
+                    </div>
+                    </div>
+              <!--National  Flights -->
+              <h2>National Flights</h2>
+              <div class="flight-card">
+                <div class="flight-info">
+                    <p><i class="fa-solid fa-plane"></i><strong>IndiGo</strong> |6E 185</p>
+                    <p class="flight-details">Departure:06:00 AM <strong></strong> | Duration: <strong>2 hours 15 minutes</strong> | Arrival: <strong>08:15 AM</strong></p>
+                    <p class="flight-details">From: <strong>Mumbai</strong> - <strong>To</strong> - <strong>Delhi</strong></p>
+                </div>
+                <div class="flight-price">
+                    <p>INR Rs.5,200/-</p>
+                    <button>Book Now</button>
+                </div>
+             </div>
+  <div class="flight-card">
+    <div class="flight-info">
+        <p><i class="fa-solid fa-plane"></i><strong>SpiceJet </strong>SG 109 |</p>
+        <p class="flight-details">Departure:12:30 PM <strong></strong> | Duration: <strong>1 hour 10 minutes</strong> | Arrival: <strong>13:40 PM</strong></p>
+        <p class="flight-details">From: <strong> Bengaluru</strong> - <strong>To</strong> - <strong>Hyderabad</strong></p>
+    </div>
+</div>
+    <div class="flight-price">
+        <p>INR Rs.3,400/-</p>
+        <button>Book Now</button>
+</div>
+<div class="flight-card">
+    <div class="flight-info">
+        <p><i class="fa-solid fa-plane"></i><strong>AirIndia </strong>AI 765 |</p>
+        <p class="flight-details">Departure:10:15 AM <strong></strong> | Duration: <strong>2 hours 30 minutes</strong> | Arrival: <strong>12:45 PM</strong></p>
+        <p class="flight-details">From: <strong>Chennai</strong> - <strong>To</strong> - <strong>Kolkata</strong></p>
+    </div>
+    <div class="flight-price">
+        <p>INR Rs.8,400/-</p>
+        <button>Book Now</button>
+</div>
+</div>
+
+<div class="flight-card">
+    <div class="flight-info">
+        <p><i class="fa-solid fa-plane"></i><strong>Vistara </strong>UK 612 |</p>
+        <p class="flight-details">Departure:07:45 AM <strong></strong> | Duration: <strong>1 hour 00 minutes</strong> | Arrival: <strong>08:45 AM</strong></p>
+        <p class="flight-details">From: <strong>Dehi</strong> - <strong>To</strong> - <strong>Jaipur</strong></p>
+    </div>
+    <div class="flight-price">
+        <p>INR Rs.2,900/-</p>
+        <button>Book Now</button>
+</div>
+</div>
+<div class="flight-card">
+    <div class="flight-info">
+        <p><i class="fa-solid fa-plane"></i><strong>Go First</strong>GA 375|</p>
+        <p class="flight-details">Departure:16:00 PM <strong></strong> | Duration: <strong>2 hours 00 minutes</strong> | Arrival: <strong>18:00 PM</strong></p>
+        <p class="flight-details">From: <strong>Ahmedabad</strong> - <strong>To</strong> - <strong>Goa</strong></p>
+    </div>
+    <div class="flight-price">
+        <p>INR Rs.6,200/-</p>
+        <button>Book Now</button>
+</div>
+</div>
+              <!--International  Flights -->
+              <h2>International Flights</h2>
+              <div class="flight-card">
+                <div class="flight-info">
+                    <p><i class="fa-solid fa-plane"></i><strong>Oman Air</strong>WY 612|</p>
+                    <p class="flight-details">Departure:08:15 AM <strong></strong> | Duration: <strong> hour 10 minutes</strong> | Arrival: <strong>09:25 AM</strong></p>
+                    <p class="flight-details">From: <strong>Dubai (UAE)</strong> - <strong>To</strong> - <strong>Muscat (Oman)</strong></p>
+                </div>
+                <div class="flight-price">
+                    <p>AED 350-</p>
+                    <button>Book Now</button>
+            </div>
+            </div>
+            <div class="flight-card">
+                <div class="flight-info">
+                    <p><i class="fa-solid fa-plane"></i><strong>Singapore Airlines</strong>SQ 979</p>
+                    <p class="flight-details">Departure:08:30 AM <strong></strong> | Duration: <strong>2 hours 25 minutes</strong> | Arrival: <strong>11:55 AM</strong></p>
+                    <p class="flight-details">From: <strong>Bangkok (Thailand)</strong> - <strong>To</strong> - <strong>Singapore (Singapore)</strong></p>
+                </div>
+                <div class="flight-price">
+                    <p>THB Rs.5,500/-</p>
+                    <button>Book Now</button>
+            </div>
+            </div>
+        </div>
+
+ <div class="flight-card">
+              <div class="flight-info">
+                  <p><i class="fa-solid fa-plane"></i><strong>Korean Air</strong> KE 704 </p>
+                  <p class="flight-details">Departure:13:00PM <strong></strong> | Duration: 02 hours 30 minutes<strong></strong> | Arrival: <strong>15:30 PM</strong></p>
+                  <p class="flight-details">From:></strong>Tokyo(Japan) </strong> - <strong>To:</strong> Seoul(South Korea) <strong></strong></p>
+              </div>
+              <div class="flight-price">
+                  <p>YEN </p>
+                  <button>Book Now</button>
+              </div>
+              <div class="flight-card">
+                <div class="flight-info">
+                    <p><i class="fa-solid fa-plane"></i><strong>British Airways </strong> | Flight BA 304</p>
+                    <p class="flight-details">Departure: <strong>10:00 AM</strong> | Duration: <strong>1 hour 20minutes</strong> | Arrival: <strong>12:20 PM</strong></p>
+                    <p class="flight-details">From: <strong>London(UK)</strong> - <strong>To</strong> - <strong>Paris(France)</strong></p>
+                </div>
+                <div class="flight-price">
+                    <p>$ USD 1,200</p>
+                    <button>Book Now</button>
+                </div>
+          </div>
+    </div>
+          <div class="flight-card">
+            <div class="flight-info">
+                <p><i class="fa-solid fa-plane"></i><strong>Air Canada </strong> | Flight AC 709</p>
+                <p class="flight-details">Departure: <strong>06:00 AM</strong> | Duration: <strong>1 hour 40minutes</strong> | Arrival: <strong>07:40 AM</strong></p>
+                <p class="flight-details">From: <strong>New York (USA)</strong> - <strong>To</strong> - <strong>Toronto(Canada)</p>
+            </div>
+            <div class="flight-price">
+                <p>$ USD 1,200</p>
+                <button>Book Now</button>
+            </div>   
+          </div>
+        </section>
+    <script>
+        // JavaScript functionality
+        document.getElementById("searchButton").addEventListener("click", function() {
+            alert("Flight search initiated! Displaying results...");
+        });
+    </script>
+</body>
+</html>

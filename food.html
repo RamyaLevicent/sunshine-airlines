@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunshine Airlines - In-flight Food & Beverages</title>
+    
+    <style>
+         /* General body styles */
+         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        nav {
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 1080px; /* Set max width to 1080px */
+            margin: 0 auto; /* Center the nav */
+        }
+
+        /* Logo styles */
+        .nav__logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* Navigation links */
+        .nav__links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Individual link styles */
+        .link {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .link a:hover {
+            color: #0056b3; /* Change color on hover */
+        }
+
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown__menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            padding: 10px;
+            list-style: none;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown__menu {
+            display: block; /* Show dropdown on hover */
+        }
+
+        .dropdown__menu li a {
+            padding: 5px 10px;
+            display: block;
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        /* Button styles */
+        .contact-btn .btn {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn .btn:hover {
+            background-color: #003d80; /* Darker blue on hover */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #004080;
+        }
+
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+        }
+
+        .explore-btn {
+            background-color: #008cba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .meal-options ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .meal-options ul li {
+            padding: 5px 0;
+        }
+
+        .order-section, .attendant-section {
+            background-color: #e9f5ff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .order-section h3, .attendant-section h3 {
+            margin-top: 0;
+        }
+
+        .container-short {
+            height: 250px; /* Shortened height */
+            overflow: auto;
+        }
+
+        .container-short p {
+            margin: 0;
+        }
+    
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #004080;
+    }
+    
+    .class-section {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+        color: #004080;
+    }
+    
+    .menu-list {
+        list-style-type: none;
+        padding: 0;
+        display: none; /* Hide menus initially */
+    }
+    
+    .menu-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    button {
+        background-color: #004080;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    button:hover {
+        background-color: #003366;
+    }
+    /* Footer Styles */
+    footer {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+         
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+             Book a Flight <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="bookaflight.html">Booking</a></li>                     
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>   
+              <li><a href="baggage.html">Luggage</a></li>          
+              <li><a href="managebooking.html">Manage Booking</a></li>         
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li class="link"><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>                   
+              <li><a href="language.html">Language / Region Selector</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
+
+<div class="container">
+    <header>
+        <h1>Sunshine Airlines - Food & Beverage Services</h1>
+        <p>Experience a wide range of delicious meals and beverages during your flight. We offer options to suit every taste in Premium Business, Premium, and Economy classes.</p>
+    </header>
+
+    <!-- Premium Business Class Section -->
+    <div class="section container-short">
+        <h2>Premium Business Class</h2>
+        <p>In Premium Business Class, you can indulge in a variety of gourmet dishes crafted by our top chefs, along with an excellent selection of wines and beverages.</p>
+        <div class="meal-options">
+            <ul>
+                <li>Grilled Chicken Breast with Roasted Vegetables</li>
+                <li>Vegetarian Pasta with Pesto Sauce</li>
+                <li>Pan-seared Salmon with Herb Butter</li>
+                <li>Fresh Fruit Platters and Signature Desserts</li>
+            </ul>
+        </div>
+        <button class="explore-btn" onclick="showDetails('premiumBusiness')">Explore Meals</button>
+    </div>
+
+    <!-- Premium Class Section -->
+    <div class="section container-short">
+        <h2>Premium Class</h2>
+        <p>In Premium Class, enjoy a mix of healthy and flavorful meal options, curated to satisfy diverse palates with premium beverages.</p>
+        <div class="meal-options">
+            <ul>
+                <li>Grilled Paneer Wrap with Mint Chutney</li>
+                <li>Chicken Biryani with Raita</li>
+                <li>Vegetable Stir-Fry with Jasmine Rice</li>
+                <li>Assorted Cheeses and Crackers</li>
+            </ul>
+        </div>
+        <button class="explore-btn" onclick="showDetails('premium')">Explore Meals</button>
+    </div>
+
+    <!-- Economy Class Section -->
+    <div class="section container-short">
+        <h2>Economy Class</h2>
+        <p>Our Economy Class menu offers a selection of tasty and hearty meals, perfect for long or short-haul flights.</p>
+        <div class="meal-options">
+            <ul>
+                <li>Chicken Curry with Steamed Rice</li>
+                <li>Vegetarian Lasagna with Side Salad</li>
+                <li>Egg Salad Sandwich with Chips</li>
+                <li>Mini Pancakes with Maple Syrup (for breakfast flights)</li>
+            </ul>
+        </div>
+        <button class="explore-btn" onclick="showDetails('economy')">Explore Meals</button>
+    </div>
+
+    <!-- Order and Selection Process Section -->
+    <div class="section order-section">
+        <h3>How to Select and Order Your Meals</h3>
+        <p>During your booking process, you can choose from the available meal options tailored to your class. Simply select your preference under the ‘Meal Selection’ option while booking or up to 24 hours before departure through ‘Manage Booking’ on our website.</p>
+        <p>For passengers with specific dietary needs, we offer a variety of special meals, including gluten-free, vegan, and child-friendly options.</p>
+    </div>
+
+    <!-- Flight Attendant Assistance Section -->
+    <div class="section attendant-section">
+        <h3>Flight Attendant Assistance</h3>
+        <p>Our friendly flight attendants are available to assist you during the meal service. They can help with meal preferences, additional requests, or if you need assistance with beverages.</p>
+        <p>In Premium and Premium Business classes, enjoy personalized service where attendants will serve your meals course by course, just like in a fine-dining restaurant.</p>
+    </div>
+</div>
+
+
+
+<body>
+    <div class="container">
+        <header>
+            <h1>In-flight Food & Beverages</h1>
+            <p>Enjoy a variety of delectable meals and refreshing drinks on your journey with Sunshine Airlines.</p>
+        </header>
+
+        <!-- Business Class Section -->
+        <div class="class-section" id="business">
+            <h2>Business Class Menu</h2>
+            <button onclick="toggleMenu('business')">Explore Menu</button>
+            <ul class="menu-list" id="businessMenu">
+                <li>Grilled Chicken with Asparagus</li>
+                <li>Seared Salmon with Lemon Butter</li>
+                <li>Pasta Primavera with Seasonal Vegetables</li>
+                <li>Caesar Salad with Grilled Shrimp</li>
+                <li>Cheese Platter with Artisan Crackers</li>
+                <li>Chocolate Mousse</li>
+                <li>Selection of Fine Wines</li>
+                <li>Exotic Fruit Juices</li>
+            </ul>
+        </div>
+
+        <!-- Economy Class Section -->
+        <div class="class-section" id="economy">
+            <h2>Economy Class Menu</h2>
+            <button onclick="toggleMenu('economy')">Explore Menu</button>
+            <ul class="menu-list" id="economyMenu">
+                <li>Chicken Sandwich with Lettuce and Tomato</li>
+                <li>Pasta Salad with Italian Dressing</li>
+                <li>Vegetable Stir-Fry with Rice</li>
+                <li>Mixed Green Salad</li>
+                <li>Fruit Cup</li>
+                <li>Chocolate Chip Cookies</li>
+                <li>Soft Drinks</li>
+                <li>Water Bottles</li>
+            </ul>
+        </div>
+
+        <!-- Premium Class Section -->
+        <div class="class-section" id="premium">
+            <h2>Premium Class Menu</h2>
+            <button onclick="toggleMenu('premium')">Explore Menu</button>
+            <ul class="menu-list" id="premiumMenu">
+                <li>Filet Mignon with Garlic Mashed Potatoes</li>
+                <li>Lobster Tail with Drawn Butter</li>
+                <li>Wild Mushroom Risotto</li>
+                <li>Caprese Salad with Fresh Mozzarella</li>
+                <li>Decadent Cheesecake</li>
+                <li>Champagne Selection</li>
+                <li>Craft Cocktails</li>
+                <li>Herbal Teas</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    </div>
+    
+
+    <script>
+        // Function to change item name to "Unavailable"
+        function markUnavailable(itemId) {
+            const item = document.getElementById(itemId);
+            item.querySelector('span').classList.add('unavailable');
+            item.querySelector('span').innerText = 'Unavailable';
+        }
+
+        
+    </script>
+
+
+<script>
+    function showDetails(classType) {
+        switch(classType) {
+            case 'premiumBusiness':
+                alert('Premium Business Class Meals include gourmet dishes, exclusive wines, and signature desserts.');
+                break;
+            case 'premium':
+                alert('Premium Class Meals feature diverse, flavorful options with premium beverages.');
+                break;
+            case 'economy':
+                alert('Economy Class Meals include hearty options for long and short flights.');
+                break;
+        }
+    }
+    function toggleMenu(classType) {
+    const menu = document.getElementById(`${classType}Menu`);
+    if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "block"; // Show the menu
+    } else {
+        menu.style.display = "none"; // Hide the menu
+    }
+}
+
+</script>
+<footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>Sunshine</h3>
+        <p>
+          Where Excellence Takes Flight. With a strong commitment to customer
+          satisfaction and a passion for air travel, Sunshine Airlines offers
+          exceptional service and seamless journeys.
+        </p>
+        <p>
+          From friendly smiles to state-of-the-art aircraft, we connect the
+          world, ensuring safe, comfortable, and unforgettable experiences.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>INFORMATION</h4>
+        <a href="index.html"><p>Home</p></a>
+        <a href="about.html"><p>About</p></a>          
+        <a href="service.html"><p>Services</p></a>
+        <a href="privacypolicy.html"><p>Privacy Policy</p></a>
+<!--    
+        <a href="flightstatus.html"><p>Flight Status</p></a> -->
+</div>
+      <div class="footer__col">
+          <a href="contact.html"> <h4>CONTACT</h4></a>
+        <a href="customersupport.html"><p>Customers Support</p></a>
+        <a href="userinfo.html"><p>User Details</p></a>
+        <a href="travelinfo.html"><p>Travel Informations</p></a>
+ 
+ 
+      </div>
+    </div>
+    <div class="section__container footer__bar">
+      <p>Copyright © 2024 Sunshine Airlines. All rights reserved.</p>
+      <div class="socials">
+        <span><i class="ri-facebook-fill"></i></span>
+        <span><i class="ri-twitter-fill"></i></span>
+        <span><i class="ri-instagram-line"></i></span>
+        <span><i class="ri-youtube-fill"></i></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

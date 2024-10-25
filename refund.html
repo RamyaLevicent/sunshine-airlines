@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunshine Airlines - Request Refund</title>
+    <style>
+        /* Internal CSS for styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f9fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 30px;
+            text-align: center;
+            color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .refund-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .refund-form:hover {
+            transform: translateY(-5px);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            background-color: #0056b3;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004094;
+        }
+
+        /* Refund Procedures Section */
+        .policy-section {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 5px;
+            background: linear-gradient(90deg, #ffcc00, #0056b3, #00bcd4, #ffcc00);
+            animation: move-gradient 5s linear infinite;
+        }
+
+        @keyframes move-gradient {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .policy-section h2 {
+            color: #0056b3;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .procedure-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .procedure-step {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #e6f2ff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .procedure-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .procedure-step img {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+        }
+
+        .procedure-step div {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .procedure-step div strong {
+            display: block;
+            font-size: 1.2rem;
+            color: #0056b3;
+        }
+
+        .responsive-image {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #ffffff;
+            color: #0056b3;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .refund-form {
+                width: 90%;
+            }
+
+            .policy-section {
+                width: 90%;
+            }
+
+            .procedure-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .procedure-step img {
+                margin-bottom: 10px;
+            }
+            .faq-section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0056b3;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .faq-category {
+            margin-bottom: 40px;
+        }
+
+        .faq-category-title {
+            color: #002952;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #dce6f2;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .faq {
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 15px 20px;
+            background-color: #f1f9ff;
+            color: #003d80;
+            border-left: 5px solid #0056b3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #e1f0ff;
+        }
+
+        .faq-answer {
+            display: none;
+            font-size: 1rem;
+            padding: 15px 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            border-left: 5px solid #0056b3;
+            border-top: 1px solid #e1e1e1;
+            line-height: 1.5;
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .faq-button {
+            padding: 5px 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-button:hover {
+            background-color: #004094;
+        }
+    }
+        footer {
+            background-color: #ffffff;
+            color: #0056b3;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 20px;
+            }
+
+            .faq-category-title {
+                font-size: 1.4rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Request a Refund - Sunshine Airlines</h1>
+    <p>We’re sorry your plans have changed. Submit a refund request for your booking below.</p>
+</header>
+
+<section>
+    <div class="refund-form">
+        <h2>Refund Request Form</h2>
+        <p>Please fill out the form below to submit your refund request.</p>
+        <form id="refundForm">
+            <label for="bookingNumber">Booking Reference Number</label>
+            <input type="text" id="bookingNumber" name="bookingNumber" placeholder="Enter your booking reference" required>
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="reason">Reason for Refund</label>
+            <select id="reason" name="reason" required>
+                <option value="cancellation">Flight Cancellation</option>
+                <option value="scheduleChange">Schedule Change</option>
+                <option value="illness">Personal Illness</option>
+                <option value="baggageIssues">Baggage Issues</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="message">Additional Details</label>
+            <textarea id="message" name="message" placeholder="Provide any additional information" rows="4"></textarea>
+
+            <input type="submit" value="Submit Refund Request">
+        </form>
+    </div>
+</section>
+<img src="refund1.jpg" alt="Travel background" class="responsive-image"style="display: block; margin: 20px auto 40px; width: 700px; border-radius: 8px;">>
+
+<section class="policy-section">
+    <h2>Refund Policy & Procedures</h2>
+    <p>Follow the steps below to ensure your refund request is processed smoothly:</p>
+    <div class="procedure-steps">
+        <div class="procedure-step">
+            <img src="dollar.png" alt="Step 1 Icon">
+            <div>
+                <strong>Check Refund Eligibility</strong>
+                Make sure your booking is eligible for a refund based on the fare type and reason for cancellation.
+            </div>
+        </div>
+        <div class="procedure-step">
+            <img src="cashback (1).png" alt="Step 2 Icon">
+            <div>
+                <strong>Submit Refund Request</strong>
+                Use the form above to submit your refund request with your booking details and reason.
+            </div>
+        </div>
+        <div class="procedure-step">
+            <img src="roi.png/40x40?text=3" alt="Step 3 Icon">
+            <div>
+                <strong>Processing Time</strong>
+                Refund requests are processed within 7-10 business days. You will receive an email once your refund is approved.
+            </div>
+        </div>
+        <div class="procedure-step">
+            <img src="money.png" alt="Step 4 Icon">
+            <div>
+                <strong>Refund Method</strong>
+                Refunds are credited back to the original payment method. Allow time for your bank to process.
+            </div>
+        </div>
+        <div class="procedure-step">
+            <img src="cashback.png" alt="Step 5 Icon">
+            <div>
+                <strong>Contact Support</strong>
+                If you have questions, contact our support team at <a href="mailto:support@sunshineairlines.com">support@sunshineairlines.com</a>.
+            </div>
+        </div>
+    </div>
+</section>
+</head>
+
+<body>
+
+    <title>Sunshine Airlines - FAQ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .faq-container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e4e8;
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            color: #003d80;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: #0056b3;
+        }
+
+        .faq-answer {
+            display: none;
+            font-size: 1rem;
+            color: #333;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .explore-btn {
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #0056b3;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background-color: #003d80;
+        }
+
+        .active .faq-answer {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .faq-container {
+                padding: 15px;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="faq-container">
+        <h2>Frequently Asked Questions - Refund Requests</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I request a refund for my booking?</span>
+                <button class="explore-btn" onclick="toggleAnswer(this)">Explore</button>
+            </div>
+            <div class="faq-answer">
+                You can request a refund by filling out the refund request form on our website. Ensure you provide all necessary details such as your booking reference, reason for the refund, and any additional documentation required.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How long does it take to process a refund?</span>
+                <button class="explore-btn" onclick="toggleAnswer(this)">Explore</button>
+            </div>
+            <div class="faq-answer">
+                Refund processing times depend on the payment method used. For credit card payments, it may take 5-7 business days. For other payment methods, it could take up to 10 business days.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I get a refund if I cancel my flight due to illness?</span>
+                <button class="explore-btn" onclick="toggleAnswer(this)">Explore</button>
+            </div>
+            <div class="faq-answer">
+                Yes, in cases of illness, refunds can be requested. You will need to provide medical documentation to support your claim.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What happens if the airline cancels my flight?</span>
+                <button class="explore-btn" onclick="toggleAnswer(this)">Explore</button>
+            </div>
+            <div class="faq-answer">
+                If the airline cancels your flight, you are entitled to a full refund or the option to reschedule your flight at no additional cost.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I get a refund for non-refundable tickets?</span>
+                <button class="explore-btn" onclick="toggleAnswer(this)">Explore</button>
+            </div>
+            <div class="faq-answer">
+                In some cases, refunds for non-refundable tickets may be issued if the cancellation is due to an emergency or a significant schedule change by the airline.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswer(button) {
+            const faqItem = button.parentElement.parentElement;
+            faqItem.classList.toggle('active');
+
+            // Update button text
+            if (faqItem.classList.contains('active')) {
+                button.textContent = 'Close';
+            } else {
+                button.textContent = 'Explore';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+    
+    
+    
+
+
+   

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Sunshine Airlines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            text-align: center;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            margin-left: 20px;
+        }
+        .input-group input, .input-group textarea {
+            /* width: 800px; */
+            width: calc(100% - 40px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-left: 20px;
+        }
+        .input-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        button {
+            width: 200px;
+            background-color: #0066cc;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #004d99;
+        }
+        .rating-container {
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        .rating-container label {
+            font-size: 18px;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .stars {
+            display: flex;
+            justify-content: space-between;
+            width: 180px;
+        }
+        .stars input[type="radio"] {
+            display: none;
+        }
+        .stars label {
+            font-size: 30px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .stars input[type="radio"]:checked ~ label {
+            color: #0d995f;
+        }
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #004d99;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            
+            }
+            button {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+
+        /* Review section carousel styles */
+        .reviews {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .reviews h3 {
+            text-align: center;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        .carousel {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .review-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .review {
+            min-width: 100%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        .review .reviewer {
+            font-weight: bold;
+            color: #000;
+            font-size: 16px;
+        }
+        .review .location {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .review .stars {
+            color: #28a745;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .review .comment {
+            color: #555;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .prev, .next {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+        .prev:hover, .next:hover {
+            background-color: #004d99;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="about.html">About</a></li>
+            <li class="link"><a href="specialoffers.html">Offers</a></li>
+            <li class="link dropdown">
+                <a href="managebooking.html" class="dropdown-toggle">
+                    Book a Flight <i class="ri-arrow-down-s-line"></i>
+                </a>
+                <ul class="dropdown__menu">
+                    <li><a href="bookaflight.html">Booking</a></li>                     
+                    <li><a href="checkin.html">Check-In</a></li>
+                    <li><a href="flightstatus.html">Flight Status</a></li>   
+                    <li><a href="baggage.html">Luggage</a></li>          
+                    <li><a href="managebooking.html">Manage Booking</a></li>         
+                </ul>
+            </li>
+            <li class="link dropdown">
+                <a href="travelinfo.html" class="dropdown-toggle">
+                    Services <i class="ri-arrow-down-s-line"></i>
+                </a>
+                <ul class="dropdown__menu">
+                    <li><a href="customersupport.html">Customer Support</a></li>
+                    <li class="link"><a href="insurance.html">Insurance</a></li>        
+                    <li><a href="mobileapp.html">Mobile App</a></li>
+                    <li><a href="language.html">Language / Region Selector</a></li> 
+                    <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+                    <li><a href="travelinfo.html">Travel Information</a></li>
+                </ul>
+            </li>
+            <li class="link contact-btn">
+                <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+            </li>
+        </ul>
+    </nav>
+
+<div class="container">
+    <h2>We Value Your Feedback</h2>
+    <form id="feedbackForm">
+        <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <span id="nameError" class="error">Name is required.</span>
+        </div>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <span id="emailError" class="error">Valid email is required.</span>
+        </div>
+        <div class="input-group">
+            <label for="comments">Your Comments</label>
+            <textarea id="comments" name="comments" placeholder="Share your feedback" required></textarea>
+            <span id="commentsError" class="error">Please enter your comments.</span>
+        </div>
+        
+        <div class="rating-container">
+            <label for="rating"> <strong>Rate Your Experience</strong> </label>
+            <div class="stars">
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">&#9733;</label>
+            </div>
+            <span id="ratingError" class="error">Please select a rating.</span>
+        </div>
+
+        
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+<!-- Reviews Section with carousel -->
+<div class="reviews">
+    <h3>What Our Clients Say</h3>
+    <div class="carousel">
+        <div class="review-slides">
+            <div class="review">
+                <span class="reviewer">John Doe</span>
+                <div class="location">(California, USA)</div>
+                <div class="stars" style="margin-left: 470px;">★★★★★</div>
+                <p class="comment">Fantastic experience! The flight was smooth, and the crew was very attentive. Highly recommend Sunshine Airlines.</p>
+            </div>
+            <div class="review">
+                <span class="reviewer">Sarah Adams</span>
+                <div class="location">(Mumbai, India)</div>
+                <div class="stars" style="margin-left: 470px;">★★★★★</div>
+                <p class="comment">Good service overall, though I faced some minor delays. The customer service team was very helpful throughout.</p>
+            </div>
+            <div class="review">
+                <span class="reviewer">Michael Lee</span>
+                <div class="location">(Sydney, Australia)</div>
+                <div class="stars" style="margin-left: 470px;">★★★★★</div>
+                <p class="comment">One of the best airlines I’ve ever flown with. The seats were comfortable, and the in-flight entertainment was great!</p>
+            </div>
+            <div class="review">
+                <span class="reviewer">Neha Kapoor</span>
+                <div class="location">(Bangalore, India)</div>
+                <div class="stars" style="margin-left: 470px;">★★★★★</div>
+                <p class="comment">I had a wonderful flight with Sunshine Airlines. The food was delicious, and the staff was very helpful.</p>
+            </div>
+            <div class="review">
+                <span class="reviewer">Emily Smith</span>
+                <div class="location">(London, UK)</div>
+                <div class="stars" style="margin-left: 470px;">★★★★★</div>
+                <p class="comment">Good experience overall, though I wish the boarding process was a bit faster. The flight was enjoyable.</p>
+            </div>
+            <div class="review">
+                <span class="reviewer">Rajesh Gupta</span>
+                <div class="location">(Chennai, India)</div>
+                <div class="stars" style="margin-left: 470px;">★★★★★</div>
+                <p class="comment">Great experience! The seats were comfortable, and the in-flight entertainment was fantastic. Highly recommend!</p>
+            </div>
+            <div class="review">
+                <span class="reviewer">James Brown</span>
+                <div class="location">(Toronto, Canada)</div>
+                <div class="stars" style="margin-left: 470px;">★★★★★</div>
+                <p class="comment">Amazing service! The food was delicious, and the crew was incredibly friendly. I’ll definitely fly again.</p>
+            </div>
+            <div class="review">
+                <span class="reviewer">Aditi Sharma</span>
+                <div class="location">(Delhi, India)</div>
+                <div class="stars" style="margin-left: 470px;">★★★★★</div>
+                <p class="comment">Excellent service! The cabin crew was very polite, and the flight was on time. Will choose Sunshine Airlines again!</p>
+            </div> 
+        </div>
+    
+        <div class="carousel-buttons">
+            <button class="prev"  style="width: 50px; height: 50px;">&#10094;</button>
+            <button class="next"  style="width: 50px; height: 50px;">&#10095;</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Form validation
+    const form = document.getElementById('feedbackForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const commentsInput = document.getElementById('comments');
+    const ratingInput = document.querySelectorAll('input[name="rating"]');
+    let slideIndex = 0;
+
+    form.addEventListener('submit', function (e) {
+        let valid = true;
+        if (nameInput.value === '') {
+            valid = false;
+            document.getElementById('nameError').style.display = 'block';
+        } else {
+            document.getElementById('nameError').style.display = 'none';
+        }
+
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!emailInput.value.match(emailPattern)) {
+            valid = false;
+            document.getElementById('emailError').style.display = 'block';
+        } else {
+            document.getElementById('emailError').style.display = 'none';
+        }
+
+        if (!Array.from(ratingInput).some(radio => radio.checked)) {
+            valid = false;
+            document.getElementById('ratingError').style.display = 'block';
+        } else {
+            document.getElementById('ratingError').style.display = 'none';
+        }
+
+        if (commentsInput.value === '') {
+            valid = false;
+            document.getElementById('commentsError').style.display = 'block';
+        } else {
+            document.getElementById('commentsError').style.display = 'none';
+        }
+
+        if (!valid) {
+            e.preventDefault();
+        }
+    });
+
+    // Carousel functionality
+    const reviews = document.querySelectorAll('.review');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const slides = document.querySelector('.review-slides');
+
+    function showSlide(index) {
+        const totalSlides = reviews.length;
+        slideIndex = (index + totalSlides) % totalSlides;
+        const offset = slideIndex * -100;
+        slides.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        showSlide(slideIndex - 1);
+    });
+
+    nextButton.addEventListener('click', () => {
+        showSlide(slideIndex + 1);
+    });
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+        showSlide(slideIndex + 1);
+    }, 5000);
+
+    // Initialize first slide
+    showSlide(slideIndex);
+</script>
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__col">
+            <h3>Sunshine</h3>
+            <p>
+                Where Excellence Takes Flight. With a strong commitment to customer
+                satisfaction and a passion for air travel, Sunshine Airlines offers
+                exceptional service and seamless journeys.
+            </p>
+            <p>
+                From friendly smiles to state-of-the-art aircraft, we connect the
+                world, ensuring safe, comfortable, and unforgettable experiences.
+            </p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Quick Links</h4>
+            <p>Home</p>
+            <p>Special Offers</p>
+            <p>Manage Booking</p>
+            <p>Contact Us</p>
+            <p>About Us</p>
+        </div>
+
+        <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>Email: info@sunshineairline.com</p>
+            <p>Phone: 1-800-555-0199</p>
+            <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+        </div>
+    </div>
+    <div class="footer__bar">
+        <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+        <div class="socials">
+            <span>Facebook</span>
+            <span>Twitter</span>
+            <span>Instagram</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

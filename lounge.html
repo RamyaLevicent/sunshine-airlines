@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lounge Access - Sunshine Airlines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light gray background */
+        }
+        
+        header {
+            text-align: center;
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            padding: 20px 0;
+            animation: fadeIn 1s ease-in; /* Animation for header */
+        }
+
+        h1 {
+            color: white; /* Set title color to white */
+            margin: 0; /* Remove margin */
+        }
+
+        img {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto;
+            margin: 10px 0; /* Add margin for spacing */
+            border-radius: 5px; /* Rounded corners for image */
+            animation: slideIn 1s ease; /* Animation for image */
+            margin-top: 100px;
+        }
+
+        section {
+            padding: 20px;
+            background-color: white; /* White background for section */
+            margin: 10px auto; /* Center the section */
+            max-width: 800px; /* Max width for content */
+            border-radius: 10px; /* Rounded corners for section */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            animation: fadeIn 1s ease-in; /* Animation for section */
+        }
+
+        h2 {
+            color: #007BFF; /* Blue color for subheadings */
+        }
+
+        ul, ol {
+            padding-left: 20px; /* Indent list items */
+        }
+
+        p {
+            color: #333; /* Darker text for paragraphs */
+        }
+
+        /* Animation effects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            section {
+                padding: 15px; /* Less padding on smaller screens */
+            }
+
+            h1 {
+                font-size: 24px; /* Smaller title font */
+            }
+
+            h2 {
+                font-size: 20px; /* Smaller subheading font */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="about.html">About</a></li>
+            <li class="link"><a href="specialoffers.html">Offers</a></li>
+            <li class="link dropdown">
+                <a href="managebooking.html" class="dropdown-toggle">
+                    Book a Flight <i class="ri-arrow-down-s-line"></i>
+                </a>
+                <ul class="dropdown__menu">
+                    <li><a href="bookaflight.html">Booking</a></li>                     
+                    <li><a href="checkin.html">Check-In</a></li>
+                    <li><a href="flightstatus.html">Flight Status</a></li>   
+                    <li><a href="baggage.html">Luggage</a></li>          
+                    <li><a href="managebooking.html">Manage Booking</a></li>         
+                </ul>
+            </li>
+            <li class="link dropdown">
+                <a href="travelinfo.html" class="dropdown-toggle">
+                    Services <i class="ri-arrow-down-s-line"></i>
+                </a>
+                <ul class="dropdown__menu">
+                    <li><a href="customersupport.html">Customer Support</a></li>
+                    <li class="link"><a href="insurance.html">Insurance</a></li>        
+                    <li><a href="mobileapp.html">Mobile App</a></li>
+                    <li><a href="language.html">Language / Region Selector</a></li> 
+                    <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+                    <li><a href="travelinfo.html">Travel Information</a></li>
+                </ul>
+            </li>
+            <li class="link contact-btn">
+                <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Welcome to Our Lounge Access Page</h1>
+    
+    </header>
+    <img src="assets/lounge 1" alt="Lounge" style="display: block; margin: 0 auto; max-width: 700px; height: auto;" />
+
+    <section>
+        <h2>What is Lounge Access?</h2>
+        <p>Airport lounges are exclusive spaces at the airport where travelers can relax, work, or enjoy refreshments before their flights. They provide a serene environment away from the hustle and bustle of the terminal, allowing you to recharge before your journey.</p>
+        
+        <h2>Eligibility for Lounge Access</h2>
+        <ul>
+            <li><strong>First Class and Business Class Passengers:</strong> All first and business class passengers of Sunshine Airlines enjoy complimentary access to our lounges.</li>
+            <li><strong>Frequent Flyer Members:</strong> Gold and Platinum members of our frequent flyer program are entitled to complimentary lounge access, providing them with a premium experience.</li>
+            <li><strong>Lounge Membership:</strong> Passengers can purchase an annual lounge membership for a fee, granting access to all Sunshine Airlines lounges regardless of ticket class.</li>
+            <li><strong>Paid Access:</strong> Economy class passengers can buy a one-time access pass to the lounge for a nominal fee, allowing them to enjoy the same benefits.</li>
+        </ul>
+
+        <h2>Lounge Amenities</h2>
+        <p>Our lounges provide a variety of amenities designed to enhance your travel experience:</p>
+        <ul>
+            <li>Complimentary snacks and beverages, including soft drinks, coffee, and light meals.</li>
+            <li>Free Wi-Fi access to stay connected while you wait for your flight.</li>
+            <li>Comfortable seating with charging ports to keep your devices powered.</li>
+            <li>Workstations equipped with computers for business travelers.</li>
+            <li>Showers and relaxation areas for those looking to freshen up before their journey.</li>
+            <li>Entertainment options, including television and reading materials.</li>
+        </ul>
+
+        <h2>How to Access the Lounge</h2>
+        <p>Accessing our lounges is simple and straightforward:</p>
+        <ol>
+            <li><strong>Locate the Lounge:</strong> Check your airport’s lounge directory for the Sunshine Airlines lounge location.</li>
+            <li><strong>Present Your Boarding Pass:</strong> Show your boarding pass at the lounge entrance for verification.</li>
+            <li><strong>Membership Card (if applicable):</strong> If you’re accessing the lounge through a membership or frequent flyer program, present the relevant card.</li>
+        </ol>
+
+        <img src="assets/lounge 2.jpeg" alt="Lounge" style="display: block; margin: 0 auto; max-width: 100%; height: auto;" />
+
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <p><strong>Can I bring guests into the lounge?</strong> Yes, eligible passengers can bring one guest into the lounge, subject to availability.</p>
+        <p><strong>Are children allowed in the lounge?</strong> Children are welcome in our lounges, and we have special facilities available for families.</p>
+        <p><strong>What should I do if I encounter issues accessing the lounge?</strong> If you face any issues, please contact our customer service team or the lounge staff for assistance.</p>
+
+        <h2>Contact Us</h2>
+        <p>For more information about lounge access, eligibility, or any other inquiries, feel free to contact our customer service:</p>
+        <p><strong>Phone:</strong></p>
+        <p style="color: blue;">[+1-800-555-0199]</p>
+        <p><strong>Email:</strong></p>
+        <p style="color: blue;">[info@sunshineairline.com]</p>
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__col">
+                <h3>Sunshine</h3>
+                <p>
+                    Where Excellence Takes Flight. With a strong commitment to customer
+                    satisfaction and a passion for air travel, Sunshine Airlines offers
+                    exceptional service and seamless journeys.
+                </p>
+                <p>
+                    From friendly smiles to state-of-the-art aircraft, we connect the
+                    world, ensuring safe, comfortable, and unforgettable experiences.
+                </p>
+            </div>
+    
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <p>Home</p>
+                <p>Special Offers</p>
+                <p>Manage Booking</p>
+                <p>Contact Us</p>
+                <p>About Us</p>
+            </div>
+    
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p>Email: info@sunshineairline.com</p>
+                <p>Phone: 1-800-555-0199</p>
+                <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+            <div class="socials">
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Instagram</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
