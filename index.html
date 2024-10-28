@@ -6,34 +6,14 @@
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"/>
+
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="styles.css"/>
 
     <title>Sunshine Airlines</title>
     <style>
-     /* Rotate the icon when active */
-.dropdown-toggle.active i {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-
-/* Ensure icons transition smoothly */
-.dropdown-toggle i {
-  transition: transform 0.3s ease;
-}
-
-      /* Existing Styles */
-      
-      /* Rotate the icon when active */
-      .dropdown-toggle.active i {
-        transform: rotate(180deg);
-        transition: transform 0.3s ease;
-      }
-      
-      /* Ensure icons transition smoothly */
-      .dropdown-toggle i {
-        transition: transform 0.3s ease;
-      }
-
+    
       /* New Styles for "Book Now" Button */
       .book-now-container {
         text-align: center;
@@ -76,7 +56,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
-        width: 300px;
+        /* width: 300px; */
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
@@ -192,7 +172,7 @@
             background-color: #f0f8ff;
             color: #333;
         }
-        .container {
+        .containerindex {
             max-width: 1200px;
             margin: 50px auto;
             padding: 20px;
@@ -287,235 +267,185 @@
                 transform: translateY(0);
                 opacity: 1;
             }
-        }
-
+          }
         /* General styles for all screen sizes */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color:white;
-    padding: 10px 20px;
-    color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  color: black;
+  position: relative;
+  z-index: 10;
 }
 
 .nav__logo {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .nav__links {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 
 .nav__links li {
-    margin-left: 60px;
-    position: relative;
+  margin-left: 60px;
+  position: relative;
 }
 
 .nav__links a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .nav__links a:hover {
-    color: #f0c040;
+  color: #f0c040;
 }
 
 /* Dropdown Styles */
 .dropdown__menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 10px 0;
-    width: 200px;
-    z-index: 10;
-    border-radius: 5px;
- 
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px 0;
+  width: 200px;
+  z-index: 10;
+  border-radius: 5px;
 }
 
-
 .dropdown__menu li {
-    text-align: center; /* Center the dropdown items */
-    padding: 10px 20px;
+  text-align: center;
+  padding: 10px 20px;
 }
 
 .dropdown__menu li a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .dropdown__menu li a:hover {
-    color: #f0c040;
+  color: #f0c040;
 }
 
 /* Mobile View - Hide navigation links and show the toggle button */
 .nav-toggle-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: black;
-    font-size: 28px;
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 .nav-toggle-btn .open {
-    display: block;
+  display: block;
 }
 
 .nav-toggle-btn .close {
-    display: none;
+  display: none;
 }
 
 /* Mobile View */
 @media (max-width: 768px) {
-    .nav__links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        
-        flex-direction: column;
-        width: 100%;
-        padding: 20px 0;
-        align-items: center; /* Center the entire navigation */
-    }
+  .nav__links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px 0;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
-    .nav__links li {
-        margin: 10px 0;
-        text-align: center;
-        width: 100%; /* Ensure the dropdown takes full width in mobile */
-    }
+  .nav__links li {
+      margin: 10px 0;
+      text-align: center;
+      width: 100%;
+  }
 
-    .nav__links.active {
-        display: flex;
-    }
+  .nav__links.active {
+      display: flex;
+  }
 
-    .nav-toggle-btn {
-        display: block;
-    }
+  .nav-toggle-btn {
+      display: block;
+  }
 
-    .nav-toggle-btn.active .open {
-        display: none;
-    }
+  .nav-toggle-btn.active .open {
+      display: none;
+  }
 
-    .nav-toggle-btn.active .close {
-        display: block;
-    }
+  .nav-toggle-btn.active .close {
+      display: block;
+  }
 
-    /* Dropdown menu items are aligned in the center and span full width */
-    .dropdown__menu {
-        position: static;
-        display: none;
-        padding: 10px 0;
-        width: 100%;
-    
-    }
+  /* Dropdown menu items are aligned in the center and span full width */
+  .dropdown__menu {
+      position: static;
+      display: none;
+      padding: 10px 0;
+      width: 100%;
+  }
 
-    .dropdown__menu li {
-        width: 100%;
-        padding: 10px 0;
-        text-align: center; /* Centering dropdown items in mobile view */
-    }
+  .dropdown.active .dropdown__menu {
+      display: block;
+  }
 
-    .dropdown.active .dropdown__menu {
-        display: block;
-    }
+  /* Adjust margin for body content */
+  .body-content {
+      transition: margin-top 0.3s ease;
+  }
+
+  .menu-opened .body-content {
+      margin-top: var(--menu-height, 0); /* Dynamically set the margin-top */
+  }
 }
 
-
-
 .dropdown-icon {
-    margin-left: 8px;
-    transition: transform 0.3s ease;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
 }
 
 /* Rotate the dropdown icon when the dropdown is open */
 .dropdown.active .dropdown-icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Dropdown Hover for Desktop */
 @media (min-width: 769px) {
-    .dropdown:hover .dropdown__menu {
-        display: block;
-    }
+  .dropdown:hover .dropdown__menu {
+      display: block;
+  }
 
-    .dropdown:hover .dropdown-icon {
-        transform: rotate(180deg);
-    }
+  .dropdown:hover .dropdown-icon {
+      transform: rotate(180deg);
+  }
 }
+
     </style>
+
+    
   </head>
   <body>
-   <!-- <nav>
-      <div class="nav__logo">Sunshine</div>
-      <button class="nav-toggle-btn active" aria-label="Toggle menu" data-nav-toggler="">
-        <ion-icon name="menu-outline" class="open md hydrated" role="img" aria-label="menu outline"></ion-icon>
-        <ion-icon name="close-outline" class="close md hydrated" role="img" aria-label="close outline"></ion-icon>
-      </button>
-      <ul class="nav__links">
-        <li class="link"><a href="index.html">Home</a></li>
-        <li class="link"><a href="about.html">About </a></li>
-        <li class="link"><a href="specialoffers.html">Offers</a></li>
-        -->
-        <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
-        <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
-        <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
-        <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
-        
-        <!-- Flight Details Dropdown -->
-        <!-- <li class="link dropdown">
-          <a href="managebooking.html" class="dropdown-toggle">
-           Book a Flight <i class="ri-arrow-down-s-line"></i>
-          </a>
-          <ul class="dropdown__menu">
-            <li><a href="bookaflight.html">Booking</a></li>                     
-            <li><a href="checkin.html">Check-In</a></li>
-            <li><a href="flightstatus.html">Flight Status</a></li>   
-            <li><a href="baggage.html">Luggage</a></li>          
-            <li><a href="managebooking.html">Manage Booking</a></li>         
-          </ul>
-        </li> -->
-        
-        <!-- Services Dropdown -->
-        <!-- <li class="link dropdown">
-          <a href="travelinfo.html" class="dropdown-toggle">
-            Services <i class="ri-arrow-down-s-line"></i>
-          </a>
-          <ul class="dropdown__menu">
-            <li class="link"><a href="mobileapp.html">Mobile App</a></li>
-            <li><a href="customersupport.html">Customer Support</a></li>
-            <li class="link"><a href="insurance.html">Insurance</a></li>                   
-            <li><a href="language.html">Language / Region Selector</a></li> 
-            <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
-            <li><a href="travelinfo.html">Travel Information</a></li>
-          </ul>
-        </li>
-         -->
-        <!-- Contact Button -->
-        <!-- <li class="link contact-btn">
-          <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
-        </li> -->
-        <!-- <li class="link contact-btn"></li>
-          <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
-        </li> -->
-      <!-- </ul>
-    </nav> -->
+
     <nav>
       <div class="nav__logo">Sunshine</div>
       <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler="">
@@ -525,8 +455,10 @@ nav {
       <ul class="nav__links">
           <li class="link"><a href="index.html">Home</a></li>
           <li class="link"><a href="about.html">About</a></li>
-          <li class="link"><a href="specialoffers.html">Offers</a></li> 
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+      
           <!-- Book a Flight Dropdown -->
+
           <li class="link dropdown">
               <a href="managebooking.html" class="dropdown-toggle">
                   Book a Flight 
@@ -539,7 +471,8 @@ nav {
                   <li><a href="baggage.html">Luggage</a></li>
                   <li><a href="managebooking.html">Manage Booking</a></li>
               </ul>
-          </li>    
+          </li>
+      
           <!-- Services Dropdown -->
           <li class="link dropdown">
               <a href="travelinfo.html" class="dropdown-toggle">
@@ -558,21 +491,25 @@ nav {
           <li class="link contact-btn">
               <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
           </li>
-      </ul>    
-    </nav>
-  
+      </ul>  
+  </nav>
+
+    
+
     <header class="section__container header__container">
       <h1 class="section__header">Find And Book<br/>A Great Experience</h1>
       <img src="assets/header.jpg" alt="header" style="width:100%; height:500px; border:2px solid #ccc; border-radius:5px;" />
     </header>
-    
-    <div class="container">
+
+
+    <div class="containerindex">
       <div class="tabs">
           <button class="tab-btn active" id="flight-tab">Flights</button>
           <button class="tab-btn" id="hotel-tab">Hotels</button>
           <button class="tab-btn" id="flight-hotel-tab">Flight + Hotel</button>
           <button class="tab-btn" id="car-rental-tab">Car Rental</button>
       </div>
+
       <div class="form-container">
           <!-- Flight Booking Form -->
           <form id="flight-search" class="form-section active">
@@ -772,6 +709,8 @@ document.addEventListener('DOMContentLoaded', () => {
       carRentalTab.addEventListener('click', () => {
           setActiveTab(carRentalTab, carRentalForm);
       });
+
+
       function setActiveTab(tab, form) {
           // Remove 'active' class from all tabs and forms
           document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -780,26 +719,46 @@ document.addEventListener('DOMContentLoaded', () => {
           tab.classList.add('active');
           form.classList.add('active');
       }
-      /*Navigation Bar*/
-      // Toggle the entire navigation for mobile view
+
+
+
+
+
+
+
+
 const navToggleBtn = document.querySelector('.nav-toggle-btn');
 const navLinks = document.querySelector('.nav__links');
+const sectionContainer = document.querySelector('.section__container');
+let isMenuOpen = false;
 
 navToggleBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     navToggleBtn.classList.toggle('active');
+    document.body.classList.toggle('menu-opened');
+
+    if (!isMenuOpen) {
+        const menuHeight = navLinks.scrollHeight;
+        sectionContainer.style.marginTop = `${menuHeight}px`;
+    } else {
+        sectionContainer.style.marginTop = "0";
+    }
+    isMenuOpen = !isMenuOpen;
 });
 
 // Handle dropdown functionality for mobile view
 const dropdowns = document.querySelectorAll('.dropdown-toggle');
-
 dropdowns.forEach(dropdown => {
     dropdown.addEventListener('click', function (event) {
         event.preventDefault();
-        const parent = this.parentElement;  // The parent <li> element
-        parent.classList.toggle('active');  // Toggle the active class to show/hide dropdown
+        const parent = this.parentElement;
+        parent.classList.toggle('active');
     });
 });
+
+
+
+
   </script>
 
 <!-- Book Now Button -->
@@ -1088,4 +1047,6 @@ dropdowns.forEach(dropdown => {
       </div>
     </footer>
   </body>
+
+       
 </html>

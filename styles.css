@@ -7,7 +7,7 @@
   --text-light: #64748b;
   --extra-light: #f1f5f9;
   --white: #ffffff;
-  --max-width: 1200px;
+  --max-width: 1000px;
 }
 
 * {
@@ -974,3 +974,4 @@ body {
       margin-top: 10px;
   }
 }
+/*SERVICE STYLE*/

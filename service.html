@@ -8,14 +8,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <link rel="stylesheet" href="styles.css"/>
     <style>
-        body {
+        /* body{
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f2f2f2;
-        }
+        } */
 
-        .container {
+        .containerservice {
             max-width: 1100px;
             margin: 40px auto;
             padding: 20px;
@@ -24,29 +24,29 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
+        .serviceh1 {
             color: navy;
             text-align: center;
             animation: fadeInDown 1s ease-in-out;
         }
 
-        h2 {
+        .serciceh2 {
             color: #333;
             animation: fadeInUp 1s ease-in-out;
             margin-top: 30px;
         }
 
-        p, ul {
+        .servicep, ul {
             color: #555;
             line-height: 1.6;
             margin-bottom: 20px;
         }
 
-        ul {
+        .serviceul {
             padding-left: 20px;
         }
 
-        li {
+        .service-li {
             margin-bottom: 10px;
         }
 
@@ -64,7 +64,7 @@
         }
 
         /* Button Styles */
-        .btn {
+        .btnservice {
             display: inline-block;
             padding: 12px 20px;
             background-color:#002855;;
@@ -75,7 +75,7 @@
             margin-top: 20px;
         }
 
-        .btn:hover {
+        .btnservice:hover {
             background-color:#ffdd57;
             transform: scale(1.05);
         }
@@ -133,7 +133,7 @@
         text-align: center; /* Center-align text inside the container */
     }
 
-    h1 {
+    h1{
         font-size: 24px;
         text-align: center; /* Center-align heading */
     }
@@ -186,7 +186,6 @@
         margin: 0 auto; /* Ensure it's centered */
     }
 }
-
     </style>
 </head>
 
@@ -241,44 +240,44 @@
         </ul>
       </nav>
 
-    <div class="container">
-        <h1>Our Premium Services</h1>
+    <div class="containerservice">
+        <h1 class="serviceh1">Our Premium Services</h1>
 
-        <h2>Flight Booking</h2>
+        <h2 class="serviceh2">Flight Booking</h2>
         <img src="assets/flightbook.jpg" alt="Flight Booking" class="service-image" 
         style="display: block; margin: 0 auto; width: 800px; height: 500px;">
-           <p>We offer a seamless and user-friendly flight booking experience, whether you're traveling domestically or internationally. Enjoy exclusive deals on airfares, real-time price comparisons, and flexible ticket options for economy, business, and first-class flights.</p>
-        <ul>
+           <p class="servicep">We offer a seamless and user-friendly flight booking experience, whether you're traveling domestically or internationally. Enjoy exclusive deals on airfares, real-time price comparisons, and flexible ticket options for economy, business, and first-class flights.</p>
+        <ul class="serviceul">
             <li><strong><b>Special Discounts</b>:</strong> Unlock special offers and discounts available only through our platform.</li>
             <li><strong><b>Multiple Payment Options</b>:</strong> Pay using credit cards, digital wallets, or net banking for maximum convenience.</li>
             <li><strong><b>24/7 Customer Support</b>:</strong> Get assistance at any time if you have questions or need to make changes to your booking.</li>
         </ul>
 
-        <h2>Hotel Reservations</h2>
+        <h2 class="serviceh2">Hotel Reservations</h2>
         <img src="assets/a1f0ea0f2e11b42aaeee9257dfade63d.jpg" alt="Flight Booking" class="service-image" 
         style="display: block; margin: 0 auto; width:800px; height:500px;">
    
-        <p>We partner with top hotels around the world to offer a wide selection of accommodations. Whether you're looking for luxury suites, boutique hotels, or budget-friendly stays, our system provides options tailored to your preferences.</p>
-        <ul>
+        <p class="servicep">We partner with top hotels around the world to offer a wide selection of accommodations. Whether you're looking for luxury suites, boutique hotels, or budget-friendly stays, our system provides options tailored to your preferences.</p>
+        <ul class="serviceul">
             <li><strong>Best Price Guarantee:</strong> We ensure competitive pricing across all hotel options.</li>
             <li><strong>Instant Confirmation:</strong> Receive instant booking confirmations for hassle-free check-ins.</li>
             <li><strong>Custom Filters:</strong> Narrow down hotels by star rating, customer reviews, amenities, and proximity to popular destinations.</li>
         </ul>
 
-        <h2>Car Rentals</h2>
+        <h2 class="serviceh2">Car Rentals</h2>
         <img src="assets/MicrosoftTeams-image - 2024-09-30T142450.235.png" alt="Flight Booking" class="service-image" 
         style="display: block; margin: 0 auto; width: 800px; height: 500px;">
-           <p>Travel at your own pace with our trusted car rental partners. We offer an extensive range of vehicles, from economy cars to luxury SUVs, at competitive rates to make your road trip or business travel comfortable.</p>
-        <ul>
+           <p >Travel at your own pace with our trusted car rental partners. We offer an extensive range of vehicles, from economy cars to luxury SUVs, at competitive rates to make your road trip or business travel comfortable.</p>
+        <ul class="serviceul">
             <li><strong>Flexible Pickup Locations:</strong> Choose from multiple pickup and drop-off locations, including airports and city centers.</li>
             <li><strong>Unlimited Mileage:</strong> Enjoy unlimited mileage on most rentals, perfect for long drives.</li>
             <li><strong>No Hidden Fees:</strong> Transparent pricing with no hidden charges ensures you get the best deal.</li>
         </ul>
 
-        <h2>Visa Assistance</h2>
+        <h2 class="serviceh2">Visa Assistance</h2>
         <img src="assets/MicrosoftTeams-image - 2024-09-30T143352.248.png" alt="Flight Booking" class="service-image" 
         style="display: block; margin: 0 auto; width:800px; height:500px;">
-           <p>Navigating visa applications can be stressful, but our dedicated visa assistance team simplifies the process. We provide timely and accurate visa consultation and processing services for your travel destination.</p>
+           <p class="servicep">Navigating visa applications can be stressful, but our dedicated visa assistance team simplifies the process. We provide timely and accurate visa consultation and processing services for your travel destination.</p>
         <ul>
             <li><strong>Fast Processing:</strong> Expedite your visa application to avoid delays in your travel plans.</li>
             <li><strong>Document Verification:</strong> Ensure that all your documents meet embassy standards for a smooth application.</li>
