@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Background Style */
+        .bg {
+            background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -3;
+        }
+        .bg:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: #000;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+        }
+
+        /* Starfield Animation */
+        /* Add your animations here (same as before) */
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(120deg, #a0e3e8, #e1e8f0);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container Style */
+        /* .container {
+            background: rgba(255, 255, 255, 0.5);
+            color: #003366;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px 40px;
+            width: 90%; 
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        } */
+        .container {
+   background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+   color: #003366;
+   border-radius: 10px;
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+   padding: 30px 40px;
+   width: 100%;
+   max-width: 400px;
+   text-align: center;
+   backdrop-filter: blur(10px); /* Applies the blur effect */
+   -webkit-backdrop-filter: blur(10px); /* For Safari support */
+   overflow: auto; /* Allows scrolling inside the container if content exceeds */
+}
+
+html, body {
+   overflow-x: hidden; /* Prevents horizontal scroll, but allows vertical scroll */
+}
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color:white;
+        }
+
+        .tagline {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input:focus, select:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+
+        button {
+            width: 100%; /* Make button full-width for small screens */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: white;
+        }
+
+        .toggle {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .toggle a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .toggle a:hover {
+            color: #003366;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .captcha-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            color: darkgray;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            button {
+                width: 100%; /* Full-width buttons on small screens */
+            }
+
+            .form-row {
+                margin-bottom: 10px; /* Smaller gap between form fields */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 20px; /* Smaller font for titles on smaller screens */
+            }
+
+            .tagline {
+                font-size: 12px; /* Smaller tagline font */
+            }
+
+            .captcha-container {
+                flex-direction: column; /* Stack captcha elements */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="container">
+    <h2>Responsive Form</h2>
+    <p class="tagline">Please fill out the form below</p>
+    <form action="#" method="post">
+        <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-row">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="india">India</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

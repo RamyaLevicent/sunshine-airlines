@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <style>
+        /* Background styles */
+        .bg {
+            background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -3;
+        }
+
+        .bg:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: #000;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+        }
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(120deg, #a0e3e8, #e1e8f0);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container styles */
+        .container {
+            background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            color: #003366;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px); /* Applies the blur effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari support */
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .tagline {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input:focus, select:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0066cc;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .toggle {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .toggle a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .toggle a:hover {
+            color: #003366;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: inherit; /* Inherits the button's text color */
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Captcha container */
+        .captcha-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px; /* Adds spacing between elements */
+            margin: 10px 0;
+            color: darkgray;
+        }
+
+        /* Media Queries for Mobile Devices */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%; /* Use a percentage for better scaling */
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .tagline {
+                font-size: 12px;
+            }
+
+            button {
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+
+        /* Media Queries for Small Mobile Devices */
+        @media (max-width: 480px) {
+            .container {
+                max-width: 100%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .tagline {
+                font-size: 12px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .captcha-container {
+                flex-direction: column; /* Stack captcha elements vertically */
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="star-field">
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+    </div>
+    <div class="container">
+        <h2>Responsive Form</h2>
+        <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <form>
+            <div class="form-row">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-row">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-row">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div class="toggle">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+</body>
+</html>

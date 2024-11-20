@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+    background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -3;
+}
+.bg:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+@keyframes sf-fly-by-1 {
+    from {
+        transform: translateZ(-600px);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateZ(0);
+        opacity: 0.5;
+    }
+}
+@keyframes sf-fly-by-2 {
+    from {
+        transform: translateZ(-1200px);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateZ(-600px);
+        opacity: 0.5;
+    }
+}
+@keyframes sf-fly-by-3 {
+    from {
+        transform: translateZ(-1800px);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateZ(-1200px);
+        opacity: 0.5;
+    }
+}
+.star-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 600px;
+    -webkit-perspective: 600px;
+    z-index: -1;
+}
+.star-field .layer {
+    box-shadow: -411px -476px #cccccc, 777px -407px #d4d4d4, -387px -477px #fcfcfc, -91px -235px #d4d4d4, 491px -460px #f7f7f7, 892px -128px #f7f7f7, 758px -277px #ededed, 596px 378px #cccccc, 647px 423px whitesmoke, 183px 389px #c7c7c7,
+        524px -237px #f0f0f0, 679px -535px #e3e3e3, 158px 399px #ededed, 157px 249px #ededed, 81px -450px #ebebeb, 719px -360px #c2c2c2, -499px 473px #e8e8e8, -158px -349px #d4d4d4, 870px -134px #cfcfcf, 446px 404px #c2c2c2,
+        440px 490px #d4d4d4, 414px 507px #e6e6e6, -12px 246px #fcfcfc, -384px 369px #e3e3e3, 641px -413px #fcfcfc, 822px 516px #dbdbdb, 449px 132px #c2c2c2, 727px 146px #f7f7f7, -315px -488px #e6e6e6, 952px -70px #e3e3e3,
+        -869px -29px #dbdbdb, 502px 80px #dedede, 764px 342px #e0e0e0, -150px -380px #dbdbdb, 654px -426px #e3e3e3, -325px -263px #c2c2c2, 755px -447px #c7c7c7, 729px -177px #c2c2c2, -682px -391px #e6e6e6, 554px -176px #ededed,
+        -85px -428px #d9d9d9, 714px 55px #e8e8e8, 359px -285px #cfcfcf, -362px -508px #dedede, 468px -265px #fcfcfc, 74px -500px #c7c7c7, -514px 383px #dbdbdb, 730px -92px #cfcfcf, -112px 287px #c9c9c9, -853px 79px #d6d6d6,
+        828px 475px #d6d6d6, -681px 13px #fafafa, -176px 209px #f0f0f0, 758px 457px #fafafa, -383px -454px #ededed, 813px 179px #d1d1d1, 608px 98px whitesmoke, -860px -65px #c4c4c4, -572px 272px #f7f7f7, 459px 533px #fcfcfc,
+        624px -481px #e6e6e6, 790px 477px #dedede, 731px -403px #ededed, 70px -534px #cccccc, -23px 510px #cfcfcf, -652px -237px whitesmoke, -690px 367px #d1d1d1, 810px 536px #d1d1d1, 774px 293px #c9c9c9, -362px 97px #c2c2c2,
+        563px 47px #dedede, 313px 475px #e0e0e0, 839px -491px #e3e3e3, -217px 377px #d4d4d4, -581px 239px #c2c2c2, -857px 72px #cccccc, -23px 340px #dedede, -837px 246px white, 170px -502px #cfcfcf, 822px -443px #e0e0e0, 795px 497px #e0e0e0,
+        -814px -337px #cfcfcf, 206px -339px #f2f2f2, -779px 108px #e6e6e6, 808px 2px #d4d4d4, 665px 41px #d4d4d4, -564px 64px #cccccc, -380px 74px #cfcfcf, -369px -60px #f7f7f7, 47px -495px #e3e3e3, -383px 368px #f7f7f7, 419px 288px #d1d1d1,
+        -598px -50px #c2c2c2, -833px 187px #c4c4c4, 378px 325px whitesmoke, -703px 375px #d6d6d6, 392px 520px #d9d9d9, -492px -60px #c4c4c4, 759px 288px #ebebeb, 98px -412px #c4c4c4, -911px -277px #c9c9c9;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4px;
+    width: 4px;
+    border-radius: 2px;
+}
+.star-field .layer:nth-child(1) {
+    animation: sf-fly-by-1 5s linear infinite;
+}
+.star-field .layer:nth-child(2) {
+    animation: sf-fly-by-2 5s linear infinite;
+}
+.star-field .layer:nth-child(3) {
+    animation: sf-fly-by-3 5s linear infinite;
+}
+ /* General Reset */
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #a0e3e8, #e1e8f0);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* .container {
+      background: rgba(255, 255, 255, 0.9);
+      color: #003366;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      padding: 30px 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    } */
+    .container {
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+  color: #003366;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  backdrop-filter: blur(10px); /* Applies the blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+}
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color:white;
+    }
+
+    .tagline {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color:  black;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    .form-row {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: black;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      color: #333;
+    }
+
+    input:focus, select:focus {
+      border-color: #0066cc;
+      outline: none;
+    }
+
+    button {
+      width: 15%;
+      padding: 10px;
+      /* background: #0066cc; */
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+ 
+    button:hover {
+      background: white;
+    }
+
+    .toggle {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .toggle a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .toggle a:hover {
+      color: #003366;
+    }
+
+    .hidden {
+      display: none;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn a {
+      text-decoration: none;
+      color: inherit; /* Inherits the button's text color */
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    
+.captcha-container {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 10px; /* Adds spacing between elements */
+    margin: 10px 0;
+    color:darkgray;
+}
+
+/* #captchaDisplay {
+    font-size: 20px;
+    letter-spacing:7px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    background-color: #f3f3f3;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+} */
+#captchaDisplay {
+    font-size: 24px;
+    letter-spacing: 7px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    padding: 10px 15px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    transform: rotate(-3deg); 
+    display: inline-block;
+}
+
+/* .refresh-btn {
+    background-color: #007BFF;
+    border: 1px solid gray;
+    color: rgb(17, 16, 16);
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.refresh-btn {
+    /* background-color: #007BFF; */
+    border: 1px solid gray;
+    color: rgb(17, 16, 16);
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.refresh-btn ion-icon {
+    font-size: 5px;
+}
+
+.refresh-btn:hover {
+    background-color: #0056b3;
+    color:white;
+}
+
+  </style>
+
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm">
+          <h2 class="">Welcome to Sunshine Airlines</h2>
+          <p class="tagline">Login to your account</p>
+          <form onsubmit="handleLogin(event)">
+            <div class="form-row">
+              <label for="loginEmail">Email</label>
+              <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="form-row">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            </div>
+             <!-- CAPTCHA -->
+        <div class="form-row">
+          <label for="captcha">Enter CAPTCHA</label>
+          <input type="text" id="captchaInput" placeholder="Enter the CAPTCHA" required>
+         
+          <div id="captchaContainer" class="captcha-container">
+            <div id="captchaDisplay"></div>
+            <button type="button" id="refreshCaptcha" onclick="generateCaptcha()" class="refresh-btn">
+                <ion-icon name="refresh-outline"></ion-icon>
+            </button>
+        </div>
+      </div> 
+      <!-- <div id="captchaDisplay"></div>
+          <button type="button" id="refreshCaptcha" onclick="generateCaptcha()">Refresh CAPTCHA</button> -->
+            <!-- <button type="submit">Login</button> -->
+            <!-- <button class="btn">
+              <a href="./index.html">Login</a>
+            </button> -->
+            <!-- <a href="./index.html" class="btn">Login</a> -->
+            <a href="./home.html" class="btn" id="loginBtn">Login</a>
+
+          </form>
+          <p class="toggle">Don't have an account? <a href="#" onclick="toggleForms('signup')">Sign Up</a></p>
+        </div>
+    
+        <!-- Signup Form -->
+        <div id="signupForm" class="hidden">
+          <h2>Create Your Sunshine Airlines Account</h2>
+          <p class="tagline">Sign up to get started</p>
+          <form onsubmit="handleSignup(event)">
+            <div class="form-row">
+              <label for="signupName">Full Name</label>
+              <input type="text" id="signupName" placeholder="Enter your name" required>
+            </div>
+            <div class="form-row">
+              <label for="signupEmail">Email</label>
+              <input type="email" id="signupEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="form-row">
+              <label for="signupPassword">Password</label>
+              <input type="password" id="signupPassword" placeholder="Create a password" required>
+            </div>
+            <div class="form-row">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+          <p class="toggle">Already have an account? <a href="#"  onclick="toggleForms('login')">Login</a></p>
+        </div>
+      </div>
+      <!-- <div class="loader" id="loader">Loading, please wait...</div> -->
+<div class="star-field">
+<div class="layer"></div>
+<div class="layer"></div>
+<div class="layer"></div>
+<script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+<script>
+
+  let captchaCode = "";
+ 
+ // Function to generate a random CAPTCHA
+ function generateCaptcha() {
+     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ@$*&!~abcdefghijklmnopqrstuvwxyz0123456789";
+     captchaCode = "";
+     for (let i = 0; i < 6; i++) {
+         captchaCode += chars.charAt(Math.floor(Math.random() * chars.length));
+     }
+     document.getElementById("captchaDisplay").innerText = captchaCode;
+ }
+
+ // Function to handle form submission
+ function handleLogin(event) {
+     event.preventDefault(); // Prevent default form submission
+
+     const userCaptcha = document.getElementById("captchaInput").value;
+
+     if (userCaptcha === captchaCode) {
+         alert("CAPTCHA verified successfully!");
+         // Redirect to the loading page
+         window.location.href = "loading.html";
+
+         // After 10 seconds, redirect to the index page
+         setTimeout(function () {
+             window.location.href = "home.html";
+         }, 10000); // 10 seconds
+     } else {
+         alert("Invalid CAPTCHA. Please try again.");
+         generateCaptcha(); // Refresh CAPTCHA on failure
+     }
+ }
+
+ // Generate CAPTCHA on page load
+ window.onload = generateCaptcha;
+
+</script>
+
+<script>
+  document.getElementById("loginBtn").addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default anchor behavior
+      // Redirect to loading.html
+      window.location.href = "loading.html";
+      
+      // After 10 seconds, redirect to index.html
+      // setTimeout(function () {
+      //     window.location.href = "index.html";
+      // }, 1000); // 10000 ms = 10 seconds
+  });
+</script>
+
+
+  <script>
+    function toggleForms(formType) {
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+
+      if (formType === 'signup') {
+        loginForm.classList.add('hidden');
+        signupForm.classList.remove('hidden');
+      } else {
+        signupForm.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+      }
+    }
+
+    // function handleLogin(event) {
+    //   event.preventDefault();
+    //   // Redirect to indexpage after login
+    //   alert('Login successful!');
+    //   window.location.href = "index.html"; // Replace with your indexpage path
+    // }
+
+    function handleSignup(event) {
+      event.preventDefault();
+      // Redirect to indexpage after signup
+      alert('Signup successful!');
+      window.location.href = "home.html"; // Replace with your indexpage path
+    }
+  </script>
+</body>
+</html>
