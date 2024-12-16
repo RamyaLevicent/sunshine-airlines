@@ -5,394 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Support – Sunshine Airline</title>
+    <title>CustomerSupport</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="styles.css"/>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            /* background-color: #f7f7f7; */
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-            /* background-color: #ffffff; */
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        h1 {
-            color: rgb(63, 9, 63);
-            text-align: center;
-            animation: slideDown 1.2s ease;
-        }
-
-        h2 {
-            color: #333;
-            animation: slideUp 1.5s ease;
-            margin-top: 30px;
-        }
-
-        p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        /* Image Styles */
-        .support-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.5s ease;
-        }
-
-        .support-image:hover {
-            transform: scale(1.05);
-        }
-
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            background-color: #5e0ce2;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-top: 20px;
-            display: inline-block;
-        }
-
-        /* .btn:hover {
-            background-color:#002855;;
-            transform: scale(1.05);
-        } */
-
-        /* Headings Animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Fade-in Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            .btn {
-                padding: 10px 15px;
-                font-size: 14px;
-            }
-
-            .support-image {
-                max-height: 300px;
-            }
-        }
-        body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f9f9f9;
-            }
-    
-            .container {
-                max-width: 1000px;
-                margin: 40px auto;
-                padding: 20px;
-                background-color: #fff;
-                border-radius: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                animation: fadeIn 1.5s ease-in-out;
-            }
-    
-            h1 {
-                color: rgb(82, 9, 82);
-                text-align: center;
-                animation: slideDown 1.5s ease;
-            }
-    
-            h2 {
-                color: #333;
-                animation: slideUp 1.5s ease;
-                margin-top: 30px;
-            }
-    
-            p {
-                color: #555;
-                line-height: 1.6;
-                margin-bottom: 15px;
-            }
-    
-            ul {
-                list-style: none;
-                padding-left: 0;
-            }
-    
-            li {
-                color: #555;
-                line-height: 1.6;
-                margin-bottom: 10px;
-            }
-    
-            /* Image Styles */
-            .privacy-image {
-                width: 100%;
-                max-height: 400px;
-                object-fit: cover;
-                border-radius: 10px;
-                transition: transform 0.5s ease;
-            }
-    
-            .privacy-image:hover {
-                transform: scale(1.05);
-            }
-    
-            /* Button Styles */
-            .btn {
-                display: inline-block;
-                padding: 12px 20px;
-                background-color: #045e26;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background-color 0.3s ease, transform 0.3s ease;
-                margin-top: 20px;
-            }
-    
-            /* .btn:hover {
-                background-color: #ff7700;
-                transform: scale(1.05);
-            } */
-    
-            /* Animations */
-            @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-50px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-    
-            @keyframes slideUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(50px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-    
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: scale(0.9);
-                }
-                to {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-    
-           
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        text-align: center; /* Center-align text inside the container */
-    }
-
-    h1 {
-        font-size: 24px;
-        text-align: center; /* Center-align heading */
-    }
-
-    h2 {
-        font-size: 20px;
-        text-align: center; /* Center-align subheading */
-    }
-
-    .btn {
-        padding: 10px 15px;
-        font-size: 14px;
-        display: inline-block; /* Ensure button is treated as inline */
-        margin: 0 auto; /* Center-align button */
-    }
-
-    .support-image {
-        max-height: 300px;
-        display: block; /* Center-align image */
-        margin: 0 auto; /* Ensure it's centered */
-    }
-}
-/* Footer Styles */
-footer {
-            background-color: #004080;
-            color: white;
-        }
-
-        .footer__container {
-            display: grid;
-            grid-template-columns: 2fr repeat(2, 1fr);
-            gap: 5rem;
-            padding: 20px;
-        }
-
-        .footer__col h3,
-        .footer__col h4 {
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .footer__col p {
-            margin-bottom: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .footer__col p:hover {
-            color: #dddddd;
-        }
-
-        .footer__bar {
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            border-top: 1px solid #cccccc;
-        }
-
-        .footer__bar p {
-            font-size: 0.9rem;
-        }
-
-        .socials {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .socials span {
-            font-size: 1.2rem;
-        }
-         /* Dropdown Menu Styles */
-         .dropdown__menu {
-            display: none;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: #ffffff;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            min-width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .dropdown__menu.show {
-            display: block;
-        }
-
-        .dropdown__menu li {
-            padding: 10px 20px;
-        }
-
-        .dropdown__menu li a {
-            color: #333;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown__menu li a:hover {
-            background-color: #f4f4f4;
-        }
-
-        /* Rotate the icon when active */
-        .dropdown-toggle.active i {
-            transform: rotate(180deg);
-            transition: transform 0.3s ease;
-        }
-
-        /* Ensure icons transition smoothly */
-        .dropdown-toggle i {
-            transition: transform 0.3s ease;
-        }
-
-        /* Positioning for dropdown */
-        .dropdown {
-            position: relative;
-        }
-        /* Rotate the icon when active */
-.dropdown-toggle.active i {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-
-/* Ensure icons transition smoothly */
-.dropdown-toggle i {
-  transition: transform 0.3s ease;
-}
-        
+       
     </style>
 </head>
 
@@ -411,7 +28,7 @@ footer {
           <!-- Flight Details Dropdown -->
           <li class="link dropdown"></li>
             <a href="managebooking.html" class="dropdown-toggle">
-             Book a Flight <i class="ri-arrow-down-s-line"></i>
+             Book a Flight <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown__menu">
               <li><a href="bookaflight.html">Booking</a></li>                     
@@ -431,7 +48,7 @@ footer {
                 <li><a href="customersupport.html">Customer Support</a></li>
                 <li><a href="insurance.html">Insurance</a></li>        
                 <li><a href="mobileapp.html">Mobile App</a></li>
-                <li><a href="language.html">Language / Region Selector</a></li> 
+                <li><a href="language.html">Language</a></li> 
                 <li><a href="privacypolicy.html">Privacy Policy</a></li>
                 <li><a href="travelinfo.html">Travel Information</a></li>
             </ul>
@@ -448,7 +65,7 @@ footer {
       </nav>
     <div class="container">
         <h1>Customer Support</h1>
-        <p>We understand that travel can sometimes be stressful, but we’re here to make it easier. Our dedicated customer support team is available 24/7 to answer any questions or assist you with your travel needs.</p>
+        <!-- <p>We understand that travel can sometimes be stressful, but we’re here to make it easier. Our dedicated customer support team is available 24/7 to answer any questions or assist you with your travel needs.</p> -->
         <img src="assets/customer service.jpg" alt="Customer Support Image" class="support-image">
 
         <h2>Contact Us Anytime:</h2>
@@ -492,16 +109,10 @@ footer {
             </div>
         </section> 
 
-        <a href="bookaflight.html" class="btn">Visit More FAQs</a>
+        <!-- <a href="bookaflight.html" class="btn">Visit More FAQs</a> -->
     </div>
         <title>Privacy and Security - Sunshine Airlines</title>
-        <style>
-           
-        </style>
-    </head>
-    
-    <body>
-    
+
         <div class="container">
             <h1>We Take Your Privacy Seriously</h1>
             <p>When you choose to fly with Sunshine Airlines, you can trust that your personal information is protected.</p>

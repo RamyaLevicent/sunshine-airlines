@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+
+    <title>carbike</title>
+
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">Sunshine</div>
+        <ul class="nav__links">
+          <li class="link"><a href="home.html">Home</a></li>
+          <li class="link"><a href="about.html">About </a></li>
+          <li class="link"><a href="specialoffers.html">Offers</a></li>
+          <!-- <li class="link"><a href="payment.html">Payment</a></li> -->
+          <!-- <li class="link"><a href="insurance.html">Insurance Coverage</a></li>
+          <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li> -->
+          <!-- <li class="link"><a href="userinfo.html">User Info</a></li> -->
+          
+          <!-- Flight Details Dropdown -->
+          <li class="link dropdown">
+            <a href="managebooking.html" class="dropdown-toggle">
+              Book a Flight<i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="baggage.html">Baggage</a></li>
+              <li><a href="bookaflight.html">Book Flight</a></li>  
+              <li><a href="checkin.html">Check-In</a></li>
+              <li><a href="flightstatus.html">Flight Status</a></li>           
+              <li><a href="managebooking.html">Manage Booking</a></li>
+            
+            </ul>
+          </li>
+          
+          <!-- Services Dropdown -->
+          <li class="link dropdown">
+            <a href="travelinfo.html" class="dropdown-toggle">
+              Services <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown__menu">
+              <li><a href="customersupport.html">Customer Support</a></li>
+              <li class="link"><a href="insurance.html">Insurance</a></li>        
+              <li><a href="mobileapp.html">Mobile App</a></li>
+              <li><a href="language.html">Language</a></li> 
+              <li class="link"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="travelinfo.html">Travel Information</a></li>
+            </ul>
+          </li>
+          
+          <!-- Contact Button -->
+          <li class="link contact-btn">
+            <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
+          </li>
+          <!-- <li class="link contact-btn"></li>
+            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
+          </li> -->
+        </ul>
+      </nav>
+    
+    <header class="bcrheader">Sunshine Airlines- Bike & Car Rentals</header>
+<!-- 
+    <section id="bcrsection">
+        <h2 class="bcrh2">Bike Rentals</h2>
+        <p class="bcrp">Explore your destination with ease using Sunshine Airlines' bike rental service.</p>
+        <img src="assets/bike rental 1.jpg" style="width: 1000px; height: 400px;" alt="img ; class=bcrimg">
+
+        <table class="bcrtable">
+            <thead >
+                <tr>
+                    <th class="bcrtableth">Bike Type</th>
+                    <th class="bcrtableth">Options</th>
+                    <th class="bcrtableth">Price (Per Day)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bcrtable">
+                    <td class="bcrtabletd">Standard Bikes</td>
+                    <td class="bcrtabletd">City Commuter Bike, Hybrid Bike</td>
+                    <td class="bcrtabletd">$15, $18</td>
+                </tr>
+                <tr>
+                    <td class="bcrtabletd">Mountain Bikes</td>
+                    <td class="bcrtabletd">Trail Mountain Bike, All-Terrain Bike</td>
+                    <td class="bcrtabletd">$25, $30</td>
+                </tr>
+                <tr>
+                    <td class="bcrtabletd">Electric Bikes</td>
+                    <td class="bcrtabletd">Basic Electric Bike, Premium Electric Bike</td>
+                    <td class="bcrtabletd">$35, $45</td>
+                </tr>
+                <tr>
+                    <td class="bcrtabletd">Road Bikes</td>
+                    <td class="bcrtabletd">Performance Road Bike, Pro Carbon Road Bike</td>
+                    <td class="bcrtabletd">$40, $50</td>
+                </tr>
+                <tr>
+                    <td class="bcrtabletd">Specialty Bikes</td>
+                    <td class="bcrtabletd">Tandem Bike, Child-Friendly Bike</td>
+                    <td class="bcrtabletd">$60, $20</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="bcrterms">*Terms & conditions apply for cancellations, returns, and security deposits.</p>
+    </section>
+    <a href="booknowcarrentals.html" class="bcrbutton">Book Now</a>
+
+
+    <section id="bcrsection">
+        <h2 class="bcrh2">Car Rentals</h2>
+        <p class="bcrp">Enjoy seamless car rentals with Sunshine Airlines for families, business, and special needs.</p>
+        <img src="assets/car rentals 1.png" style="width: 1000px; height: 400px;" alt="img ; class=bcrimg">
+
+        <table class="bcrtable">
+            <thead >
+                <tr>
+                    <th class="bcrtableth">Car Type</th>
+                    <th class="bcrtableth">Models</th>
+                    <th class="bcrtableth">Price (Per Day)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="bcrtabletd">Economy & Compact Cars</td>
+                    <td class="bcrtabletd">Toyota Yaris, Hyundai Accent, Ford Fiesta</td>
+                    <td class="bcrtabletd">$38-$42</td>
+                </tr>
+                <tr>
+                    <td class="bcrtabletd">Sedans & Mid-Size Cars</td>
+                    <td class="bcrtabletd">Honda Civic, Toyota Corolla, Nissan Altima</td>
+                    <td class="bcrtabletd">$50-$57</td>
+                </tr>
+                <tr>
+                    <td class="bcrtabletd">SUVs & Crossovers</td>
+                    <td class="bcrtabletd"> Toyota RAV4, Ford Escape, Hyundai Tucson</td>
+                    <td class="bcrtabletd">$75-$80</td>
+                </tr>
+                <tr>
+                    <td class="bcrtabletd">Minivans</td>
+                    <td class="bcrtabletd">Chrysler Pacifica, Honda Odyssey, Toyota Sienna</td>
+                    <td class="bcrtabletd">$90-$95</td>
+                </tr>
+                <tr>
+                    <td class="bcrtabletd">Luxury Cars</td>
+                    <td class="bcrtabletd">Mercedes-Benz E-Class, BMW 5 Series, Audi A6</td>
+                    <td class="bcrtabletd"> $150-$160</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="bcrp">*Accessible vehicles and special needs options available upon request.</p>
+        <a href="booknowcarrentals.html" class="bcrbutton">Book Now</a>
+    </section> -->
+    <div class="container">
+        <h1 class="bcrh2">Terms & Conditions</h1>
+        <h2 class="bcrh2">Booking and Payment</h2>
+        <ul class="bcrul">
+          <li class="bcrli"><strong>Booking Process:</strong> Bike rentals can be booked online through the Sunshine Airlines website or app, or at select airport locations. Booking in advance is recommended for availability.</li>
+          <li class="bcrli"><strong>Payment Options:</strong> Payment can be made using major credit/debit cards, mobile wallets, or online banking.</li>
+          <li class="bcrli"><strong>Payment Plans:</strong>
+            <ul class="bcrul">
+              <li class="bcrli"><strong>Full Payment:</strong> Pay the full amount at the time of booking.</li>
+              <li class="bcrli"><strong>Partial Payment:</strong> Pay 50% of the total rental at the time of booking, with the balance due at pick-up.</li>
+              <li class="bcrli"><strong>Delayed Payment:</strong> Reserve the bike with no upfront cost and pay the full amount upon bike pick-up (available only at selected locations).</li>
+            </ul>
+          </li>
+        </ul>
+     <h2 class="bcrh2">Returns & Extensions</h2>
+        <ul class="bcrul">
+          <li class="bcrli"><strong>Return Policy:</strong> Bikes should be returned to the designated Sunshine Airlines bike rental location or airport drop-off point by the agreed-upon time. Late returns may incur an additional hourly charge.</li>
+          <li class="bcrli"><strong>Extensions:</strong> If you wish to extend your rental, please notify us 12 hours before the initial return time. Extensions are subject to availability and additional charges.</li>
+        </ul>
+     <h2 class="bcrh2">Cancellations and Refunds</h2>
+        <ul class="bcrul">
+          <li class="bcrli"><strong>Free Cancellations:</strong> Cancellations made 24 hours or more before the pick-up time are eligible for a full refund.</li>
+          <li class="bcrli"><strong>Late Cancellations:</strong> For cancellations made less than 24 hours before pick-up, a 25% cancellation fee will apply.</li>
+          <li class="bcrli"><strong>No-Show Policy:</strong> If the bike is not picked up within 2 hours of the scheduled time without prior notification, the reservation will be canceled, and a no-show fee of 50% will apply.</li>
+        </ul>
+        <img src="assets/bike rentals 2.jpg" alt="Cancellation Policy; class=bcrimg">
+     <h2 class="bcrh2">Additional Informations</h2>
+        <ul class="bcrul">
+          <li class="bcrli"><strong>Security Deposit:</strong> A refundable security deposit may be required at pick-up and will be returned upon the bike’s safe return.</li>
+          <li class="bcrli"><strong>Safety Gear:</strong> Helmets and other safety equipment are provided with every rental at no additional charge.</li>
+          <li class="bcrli"><strong>Insurance:</strong> Optional insurance for theft and damage protection is available.</li>
+        </ul>
+        </div>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__col">
+                    <h3>Sunshine</h3>
+                    <p>
+                        Where Excellence Takes Flight. With a strong commitment to customer
+                        satisfaction and a passion for air travel, Sunshine Airlines offers
+                        exceptional service and seamless journeys.
+                    </p>
+                    <p>
+                        From friendly smiles to state-of-the-art aircraft, we connect the
+                        world, ensuring safe, comfortable, and unforgettable experiences.
+                    </p>
+                </div>
+        
+                <div class="footer__col">
+                    <h4>Quick Links</h4>
+                    <p>Home</p>
+                    <p>Special Offers</p>
+                    <p>Manage Booking</p>
+                    <p>Contact Us</p>
+                    <p>About Us</p>
+                </div>
+        
+                <div class="footer__col">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@sunshineairline.com</p>
+                    <p>Phone: 1-800-555-0199</p>
+                    <p>Address: 123 Sunshine Road, Happy Town, ST 12345</p>
+                </div>
+            </div>
+            <div class="footer__bar">
+                <p>&copy; 2024 Sunshine Airline. All Rights Reserved.</p>
+                <div class="socials">
+                    <span>Facebook</span>
+                    <span>Twitter</span>
+                    <span>Instagram</span>
+                </div>
+            </div>
+        </footer>
+        
+
+</body>
+</html>

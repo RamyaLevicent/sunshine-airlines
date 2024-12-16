@@ -4,268 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Baggage – Sunshine Airline</title>
+        <title>CheckIn</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <link rel="stylesheet" href="styles.css"/>
         <style>
-            
-        /* Basic styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #dce1e6;
-            color: #333;
-        }
-
-        h1, h2, h3 {
-            color: #002855;
-        }
-
-        .checkin-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .checkin-header {
-            background: url('https://example.com/airline-background.jpg') no-repeat center center;
-            background-size: cover;
-            text-align: center;
-            padding: 60px 20px;
-            color: rgb(3, 3, 3);
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        .checkin-header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
-        .checkin-header p {
-            font-size: 1.2em;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animated-heading {
-    font-size: 2.5rem;
-    color: #002855;
-    animation: fadeInUp 2s ease-out;
-}
-
-.animated-subheading {
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: #666;
-    animation: fadeInUp 2.5s ease-out;
-}
-
-
-        /* Steps section styling */
-        .checkin-steps {
-            background-color: #eaf1f8;
-            padding: 40px 20px;
-            margin: 30px 0;
-            border-radius: 10px;
-        }
-
-        .checkin-steps h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            animation: slideIn 1s ease-out;
-        }
-
-        .step {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            animation: fadeIn 2s;
-        }
-
-        .step i {
-            font-size: 2.5em;
-            margin-right: 20px;
-            color: #ffdd57;
-            animation: bounceIn 1s ease-in;
-        }
-
-        .step img {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
-        }
-
-        .step-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
-
-        /* Mobile check-in and boarding pass */
-        .mobile-checkin, .boarding-pass {
-            text-align: center;
-            padding: 40px 20px;
-            margin: 30px 0;
-            background-color: white;
-            border-radius: 10px;
-            animation: slideUp 1.5s ease-out;
-        }
-
-        .app-link, .get-pass-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            color: white;
-            background-color: #002855;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .app-link:hover, .get-pass-btn:hover {
-            background-color: #ffdd57;
-            color: #002855;
-        }
-
-        /* Footer
-        .footer {
-            background-color: #15181b;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        } */
-
-        /* Animation Keyframes */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes bounceIn {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .manage-options {
-                grid-template-columns: 1fr;
-                padding: 30px 10px;
-            }
-
-            header {
-                padding: 30px 10px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h3 {
-                font-size: 1.1rem;
-            }
-        }
- /* Dropdown Menu Styles */
- .dropdown__menu {
-            display: none;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: #ffffff;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            min-width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .dropdown__menu.show {
-            display: block;
-        }
-
-        .dropdown__menu li {
-            padding: 10px 20px;
-        }
-
-        .dropdown__menu li a {
-            color: #333;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown__menu li a:hover {
-            background-color: #f4f4f4;
-        }
-
-        /* Rotate the icon when active */
-        .dropdown-toggle.active i {
-            transform: rotate(180deg);
-            transition: transform 0.3s ease;
-        }
-
-        /* Ensure icons transition smoothly */
-        .dropdown-toggle i {
-            transition: transform 0.3s ease;
-        }
-
-        /* Positioning for dropdown */
-        .dropdown {
-            position: relative;
-        }
-        /* Rotate the icon when active */
-.dropdown-toggle.active i {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-
-/* Ensure icons transition smoothly */
-.dropdown-toggle i {
-  transition: transform 0.3s ease;
-}
-
     </style>
 </head>
 
@@ -284,7 +26,7 @@
            <!-- Flight Details Dropdown -->
            <li class="link dropdown">
             <a href="managebooking.html" class="dropdown-toggle">
-             Book a Flight <i class="ri-arrow-down-s-line"></i>
+             Book a Flight <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown__menu">
               <li><a href="bookaflight.html">Booking</a></li>                     
@@ -304,7 +46,7 @@
                 <li><a href="customersupport.html">Customer Support</a></li>
                 <li><a href="insurance.html">Insurance</a></li>        
                 <li><a href="mobileapp.html">Mobile App</a></li>
-                <li><a href="language.html">Language / Region Selector</a></li> 
+                <li><a href="language.html">Language</a></li> 
                 <li><a href="privacypolicy.html">Privacy Policy</a></li>
                 <li><a href="travelinfo.html">Travel Information</a></li>
             </ul>
@@ -315,116 +57,107 @@
           <li class="link contact-btn">
             <a href="contact.html" target="_blank"><button class="btn">Contact</button></a>
           </li>
-          <!-- <li class="link contact-btn"></li>
-            <a href="userinfo.html" target="_blank"><button class="btn">User Details</button></a>
-          </li> -->
         </ul>
       </nav>
 
 <body>
+  
     <div class="checkin-container">
         <section class="checkin-header">
             <h1>Online Check-In</h1>
             <p>Make your journey smoother and faster with Sunshine Airline’s Online Check-In services.</p>
         </section>
-
+        
         <section class="checkin-steps">
             <h2>How to Check-In Online</h2>
+            
             <div class="step">
-                <img src="assets/check in 1.jpeg" alt="Website Icon">
+                <!-- <img src="assets/check in 1.jpeg" alt="Website Icon" class="checkin-img"> -->
                 <div class="step-content">
                     <h3>Step 1: Visit Our Website or Mobile App</h3>
-                    <p>Start by visiting the Sunshine Airline website or app, and navigate to the Check-In section.</p>
+                    <p class="center-align">Start by visiting the Sunshine Airline website or app, and navigate to the Check-In section.</p>
                 </div>
             </div>
+            
             <div class="step">
-                <img src="assets/manage booking 4.jpeg" alt="Enter Details Icon">
+                <!-- <img src="assets/manage booking 4.jpeg" alt="Enter Details Icon" class="checkin-img"> -->
                 <div class="step-content">
                     <h3>Step 2: Enter Your Details</h3>
-                    <p>Enter your booking reference number and last name to access your flight details.</p>
+                    <p class="center-align">Enter your booking reference number and last name to access your flight details.</p>
                 </div>
             </div>
+            
             <div class="step">
-                <img src="assets/check in 5.jpg" alt="Choose Seat Icon">
+                
                 <div class="step-content">
                     <h3>Step 3: Choose Your Seat</h3>
-                    <p>Select your preferred seat or make changes before the flight.</p>
+                    <p class="center-align">Select your preferred seat or make changes before the flight.</p>
                 </div>
             </div>
+            
             <div class="step">
-                <img src="assets/baggage 6.jpg" alt="Add Baggage Icon">
+               <img src="assets/check in 5.jpg" alt="Choose Seat Icon" class="checkin-img">
                 <div class="step-content">
                     <h3>Step 4: Add Baggage</h3>
-                    <p>Add extra baggage to your booking if needed.</p>
+                    <p class="center-align">Add extra baggage to your booking if needed.</p>
                 </div>
             </div>
+            
             <div class="step">
-                <img src="assets/check in 2.jpg" alt="Get Boarding Pass Icon">
+                <img src="assets/baggage 6.jpg" alt="Add Baggage Icon" class="checkin-img">
                 <div class="step-content">
                     <h3>Step 5: Get Your Boarding Pass</h3>
-                    <p>Download or print your boarding pass for easy access at the airport.</p>
+                    <p class="center-align">Download or print your boarding pass for easy access at the airport.</p>
                 </div>
             </div>
         </section>
 
         <section class="mobile-checkin">
             <h2>Mobile Check-In</h2>
-            <img src="assets/manage booking 1.jpg" alt="Mobile Check-In"style="display: block; margin: 20px auto 40px; width: 700px; border-radius: 8px;">
-            <!-- <h2 style="margin-bottom: 10px;">Mobile Check-In</h2> -->
-            <p>Check-in and get your boarding pass directly from your phone using our mobile app.</p>
+            <img src="assets/manage booking 1.jpg" alt="Mobile Check-In" class="checkin-img">
+            <p class="center-align">Check-in and get your boarding pass directly from your phone using our mobile app.</p>
             <a href="mobileapp.html" class="app-link">Download the App</a>
         </section>
 
         <section class="boarding-pass">
             <h2>Your Boarding Pass</h2>
-            <img src="assets/check in 5.jpg" alt="Boarding Pass"style="display: block; margin: 20px auto 40px; width: 700px; border-radius: 8px;">
-            <!-- <h2 style="margin-bottom: 10px;">Your Boarding Pass</h2> -->
-            <p>Save time by obtaining your boarding pass before arriving at the airport.</p>
+            <img src="assets/check in 5.jpg" alt="Boarding Pass" class="checkin-img">
+            <p class="center-align">Save time by obtaining your boarding pass before arriving at the airport.</p>
             <a href="boardingpass.html" class="get-pass-btn">Get Boarding Pass</a>
         </section>
 
         <footer class="footer">
             <div class="section__container footer__container">
-              <div class="footer__col">
-                <h3>Sunshine</h3>
-                <p>
-                  Where Excellence Takes Flight. With a strong commitment to customer
-                  satisfaction and a passion for air travel, Sunshine Airlines offers
-                  exceptional service and seamless journeys.
-                </p>
-                <p>
-                  From friendly smiles to state-of-the-art aircraft, we connect the
-                  world, ensuring safe, comfortable, and unforgettable experiences.
-                </p>
-              </div>
-              <div class="footer__col">
-                <h4>INFORMATION</h4>
-                <a href="home.html"><p>Home</p></a>
-                <a href="about.html"><p>About</p></a>
-                <a href="specialoffers.html"><p>Special Offers</p></a>
-                <a href="service.html"><p>Services</p></a>
-         
-                <a href="flightstatus.html"><p>Flight Status</p></a>
-        </div>
-              <div class="footer__col">
-                  <a href="contact.html"> <h4>CONTACT</h4></a>
-                <a href="customers.html"><p>Customers Support</p></a>
-                <a href="mobileapp.html"><p>Mobile App</p></a>
-                <a href="travelinfo.html"><p>Travel Informations</p></a>
-         
-         
-              </div>
+                <div class="footer__col">
+                    <h3>Sunshine</h3>
+                    <p class="center-align">Where Excellence Takes Flight. With a strong commitment to customer satisfaction and a passion for air travel, Sunshine Airlines offers exceptional service and seamless journeys.</p>
+                    <p class="center-align">From friendly smiles to state-of-the-art aircraft, we connect the world, ensuring safe, comfortable, and unforgettable experiences.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>INFORMATION</h4>
+                    <a href="home.html"><p>Home</p></a>
+                    <a href="about.html"><p>About</p></a>
+                    <a href="specialoffers.html"><p>Special Offers</p></a>
+                    <a href="service.html"><p>Services</p></a>
+                    <a href="flightstatus.html"><p>Flight Status</p></a>
+                </div>
+                <div class="footer__col">
+                    <a href="contact.html"><h4>CONTACT</h4></a>
+                    <a href="customers.html"><p>Customer Support</p></a>
+                    <a href="mobileapp.html"><p>Mobile App</p></a>
+                    <a href="travelinfo.html"><p>Travel Information</p></a>
+                </div>
             </div>
             <div class="section__container footer__bar">
-              <p>Copyright © 2024 Sunshine Airlines. All rights reserved.</p>
-              <div class="socials">
-                <span><i class="ri-facebook-fill"></i></span>
-                <span><i class="ri-twitter-fill"></i></span>
-                <span><i class="ri-instagram-line"></i></span>
-                <span><i class="ri-youtube-fill"></i></span>
-              </div>
+                <p>Copyright © 2024 Sunshine Airlines. All rights reserved.</p>
+                <div class="socials">
+                    <span><i class="ri-facebook-fill"></i></span>
+                    <span><i class="ri-twitter-fill"></i></span>
+                    <span><i class="ri-instagram-line"></i></span>
+                    <span><i class="ri-youtube-fill"></i></span>
+                </div>
             </div>
-          </footer>
+        </footer>
     </div>
     <script>    
         // Toggle dropdown on click for touch devices

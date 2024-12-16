@@ -588,6 +588,74 @@ nav {
     gap: 2rem;
   }
 }
+/* Mobile View */
+@media (max-width: 768px) {
+  .nav__links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px 0;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__links li {
+      margin: 10px 0;
+      text-align: center;
+      width: 100%;
+  }
+
+  .nav__links.active {
+      display: flex;
+  }
+
+  .nav-toggle-btn {
+      display: block;
+  }
+
+  .nav-toggle-btn.active .open {
+      display: none;
+  }
+
+  .nav-toggle-btn.active .close {
+      display: block;
+  }
+
+  /* Dropdown menu items are aligned in the center and span full width */
+  .dropdown__menu {
+      position: static;
+      display: none;
+      padding: 10px 0;
+      width: 100%;
+  }
+
+  .dropdown.active .dropdown__menu {
+      display: block;
+  }
+
+  /* Adjust margin for body content */
+  .body-content {
+      transition: margin-top 0.3s ease;
+  }
+
+  .menu-opened .body-content {
+      margin-top: var(--menu-height, 0); /* Dynamically set the margin-top */
+  }
+}
+
+.dropdown-icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate the dropdown icon when the dropdown is open */
+.dropdown.active .dropdown-icon {
+  transform: rotate(180deg);
+}
 @media (width < 600px) {
   .nav__links {
     display: none;
@@ -678,14 +746,13 @@ nav {
 /* Navigation Bar Styling */
 nav {
   display: flex;
-  justify-content: center; /* Centers the nav items horizontally */
-  align-items: center;     /* Centers the nav items vertically */
-  padding: 20px 0;
-  background-color: #fff;  /* Change as needed */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  color: black;
+  position: relative;
+  z-index: 10;
 }
 
 .nav__logo {
@@ -698,6 +765,7 @@ nav {
   display: flex;
   list-style: none;
   align-items: center;
+
 }
 
 .nav__links li {
@@ -1066,5 +1134,3457 @@ width: 90%;
   .firimage-section img {
       width: 90%;
       margin-bottom: 10px;
+  }
+}
+                  /*ABOUT STYLE*/
+
+                   /* ABOUT STYLE */
+                   /* Basic styling */
+        /* body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        } */
+ /* Bold black text for headings */
+        .abouth1, .abouth2, .abouth3 {
+          font-weight: bold;
+          color: #000;
+      }
+
+      /* Flexbox for responsiveness */
+      .aboutontainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      /* Header with contrast color */
+      .aboutheader {
+          text-align: center;
+          padding: 20px;
+          /* background-color: #f3f1ea; */
+          color: #000; /* Black text for contrast */
+          animation: fadeInDown 2s ease;
+      }
+
+      .aboutheader h1 {
+          font-size: 2.5em;
+          margin-bottom: 10px;
+      }
+
+      .aboutheader .aboutp {
+          font-size: 1.2em;
+      }
+
+      /* Values Section */
+      /* .aboutvaluessection {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: 30px;
+          padding: 30px 0;
+          background-color: #f3f1ea; 
+      }
+
+      .aboutvaluessection h2 {
+          text-align: center;
+          width: 100%;
+          color: #002855; 
+      }
+
+      .aboutpurpose,.aboutvalues {
+          flex: 1;
+          padding: 20px;
+          background: #fff;
+          border-radius: 10px;
+          transition: transform 0.3s ease-in-out;
+      }
+
+      .aboutpurpose:hover.aboutvalues:hover {
+          transform: translateY(-10px);
+      }
+
+      .aboutvalues ul {
+          list-style: none;
+          padding: 0;
+      }
+      .aboutvalues ul li i {
+          margin-right: 10px;
+          color: #059bff; 
+      }
+     */
+     /* Styling for the values section */
+.values {
+  margin: 20px auto; /* Center the section horizontally */
+  padding: 20px; /* Add padding inside the section */
+  max-width: 800px; /* Set a maximum width for better readability */
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  animation: fadeIn 2s ease-in; /* Animation for smooth fade-in effect */
+}
+
+.values ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.values li {
+  display: flex; /* Align icon and text side-by-side */
+  align-items: center; /* Vertically align icon and text */
+  margin-bottom: 15px; /* Space between each list item */
+  font-size: 1.1em; /* Slightly larger font for readability */
+  line-height: 1.5; /* Increase line height for better spacing */
+  color: #333; /* Text color for contrast */
+}
+
+.values li i {
+  color: #007bff; /* Icon color (adjust as needed) */
+  font-size: 1.5em; /* Slightly larger icon size */
+  margin-right: 15px; /* Space between icon and text */
+}
+
+.values li strong {
+  font-weight: bold; /* Make strong text stand out */
+  margin-right: 5px; /* Space between bold text and normal text */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+      /* Culture Section */
+      /* Styling for the culture section */
+.culture-section {
+  margin: 40px auto; /* Center the section with spacing */
+  padding: 20px; /* Inner padding */
+  max-width: 900px; /* Restrict width for readability */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  animation: fadeIn 2s ease-in; /* Smooth fade-in animation */
+  text-align: center; /* Center-align text */
+}
+
+.culture-section h2 {
+  font-size: 2em; /* Larger font for the title */
+  color: #333; /* Title text color */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.culture-card {
+  display: grid; /* Grid layout for culture items */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between items */
+}
+
+.culture-item {
+  background-color: #ffffff; /* White background for items */
+  border-radius: 8px; /* Rounded corners for items */
+  padding: 15px; /* Inner padding for content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for items */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.culture-item:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.culture-item h3 {
+  font-size: 1.5em; /* Sub-heading font size */
+  color: #007bff; /* Color for sub-heading */
+  margin-bottom: 10px; /* Space below sub-heading */
+}
+
+.culture-item p {
+  font-size: 1em; /* Paragraph font size */
+  color: #555; /* Text color */
+  line-height: 1.6; /* Better line spacing */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+      .about {
+        height: 400px; /* Set the desired height */
+        width: 500px;  /* Set the desired width */
+        display: block; /* Make the image a block element to center it */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+    /* External CSS for About Section CTA */
+.about .cta {
+  background-color: #f9f9f9; /* Light background color */
+  padding: 40px 20px; /* Padding around the section */
+  text-align: center; /* Center-align text */
+  border-radius: 8px; /* Rounded corners for the section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 30px 0; /* Margin above and below the section */
+}
+
+.about .cta h2 {
+  font-size: 2.5em; /* Larger font size for heading */
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.about .cta p {
+  font-size: 1.2em; /* Medium size for the paragraph */
+  color: #666; /* Slightly lighter color for the text */
+  margin-bottom: 30px; /* Space below the paragraph */
+}
+
+.about .cta a {
+  font-size: 1.2em; /* Size of the button text */
+  color: white; /* Text color for the button */
+  background-color: #007BFF; /* Blue background for the button */
+  padding: 12px 24px; /* Padding inside the button */
+  border-radius: 5px; /* Rounded button corners */
+  text-decoration: none; /* Remove underline from link */
+  display: inline-block; /* Make the link behave like a block element */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.about .cta a:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: white; /* Text color remains white on hover */
+}
+
+      /* Image styling */
+      .aboutheaderimg, .aboutpurposeimg, .aboutvaluesimg {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+      }
+      .aboutheaderimg {
+          max-height: 300px;
+          object-fit: cover;
+      }
+      .aboutdropdowntoggle {
+      display: flex;
+      align-items: center;
+    }
+    .aboutdropdowntoggle i {
+      margin-left: 5px;
+      font-size: 16px;
+    }
+      /* Animation effects */
+      @keyframes fadeInDown {
+          from {
+              opacity: 0;
+              transform: translateY(-30px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .fade-in {
+          opacity: 0;
+          animation: fadeIn 2s forwards;
+      }
+/* Rotate the icon when active */
+.aboutdropdowntoggle.active i {
+transform: rotate(180deg);
+transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.aboutdropdowntoggle i.a {
+transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      /* Responsive layout */
+      @media (max-width: 768px) {
+          .aboutvalues-section, .aboutculture-card {
+              flex-direction: column;
+          }
+
+          .aboutpurpose, .aboutvalues, .aboutculture-item {
+              flex: 1 1 100%;
+              margin-bottom: 20px;
+          }
+      }
+
+      /* Call to action */
+      .aboutcta section {  
+          background-color: #f3f1ea;
+          color: #302d2d;
+          text-align: center;
+          padding: 40px;
+          margin-top: 30px;
+          animation: slideUp 1.5s ease-out;
+      }
+
+      .aboutcta section h2 {
+          font-size: 2em;
+      }
+
+      .aboutctasection p {
+          font-size: 1.2em;
+          margin-bottom: 20px;
+      }
+
+      .aboutcta section a {
+          display: inline-block;
+          background-color: #002855;
+          color: #fff;
+          padding: 15px 30px;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s ease-in-out;
+      }
+
+      .aboutcta section a:hover {
+          background-color: #ffdd57;
+          color: #002855;
+      }
+
+                  /*BAGGAGE STYLE*/
+  /* BAGGAGE STYLE */
+
+.baggagecontainer {
+  display: flex;
+flex-direction: column;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+color: #666;
+}
+
+.baggageheader h1 {
+  font-size: 3.5rem;
+  color: #111314;
+  text-align: center;
+  animation: fadeIn 5s ease-in-out;
+}
+
+.baggageheader p {
+  text-align: center;
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.baggageanimated-heading {
+font-size: 2.5rem;
+color: #002855;
+animation: fadeInUp 2s ease-out;
+}
+
+.baggageanimated-subheading {
+font-size: 1.3rem;
+font-weight: 400;
+color: #666;
+animation: fadeInUp 2.5s ease-out;
+}
+
+
+.baggagesection {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 1.5s ease-in-out;
+}
+
+.baggagesection h2 {
+  font-size: 1.8rem;
+  color: #002855;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.baggagesection p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.baggage-image {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 100%;
+  border-radius: 10px;
+  width: 800px;
+}
+
+.baggage-btn {
+  display: block;
+  width: fit-content;
+  padding: 15px 30px;
+  background-color: #0026ff;
+  color: white;
+  font-size: 1.2rem;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0px 5px 15px rgba(255, 102, 0, 0.3);
+  transition: all 0.3s ease;
+  animation: bounce 2s infinite;
+}
+
+.baggage-btn:hover {
+  background-color: #0e0aff;
+  transform: translateY(-5px);
+}
+/* Spacing and Layout for Special Items Section */
+.special-items {
+  padding: 40px 20px; /* Padding for spacing inside the section */
+  background-color: #f9f9f9; /* Light background for the section */
+  margin-bottom: 30px; /* Margin below the section */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.special-items h2 {
+  font-size: 2em; /* Font size for the heading */
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 15px; /* Space below the heading */
+}
+
+.special-items p {
+  font-size: 1.1em; /* Medium font size for paragraph text */
+  color: #666; /* Lighter color for text */
+  margin-bottom: 20px; /* Space below paragraphs */
+}
+
+.special-items ul {
+  list-style-type: disc; /* Disc style for list items */
+  margin-left: 20px; /* Indentation for the list */
+  margin-bottom: 20px; /* Space below the list */
+}
+
+.special-items a {
+  color: #007BFF; /* Blue color for the link */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+.special-items a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Spacing and Layout for Baggage Info Button Section */
+.baggage-info-btn-section {
+  text-align: center; /* Center-align the button */
+  margin-top: 20px; /* Space above the button */
+}
+
+.baggage-info-btn-section .btn {
+  font-size: 1.2em; /* Button text size */
+  padding: 12px 24px; /* Button padding */
+  color: white; /* White text color */
+  background-color: #0056B3; /* Green background for the button */
+  border-radius: 5px; /* Rounded corners for the button */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Button behaves like a block element */
+  transition: background-color 0.3s ease; /* Smooth background-color transition */
+}
+
+.baggage-info-btn-section .btn:hover {
+  background-color: #007BFF; /* Darker green on hover */
+}
+/* External CSS for Baggage Check-In Section */
+.baggagecheck-in {
+  padding: 40px 20px; /* Padding around the section */
+  background-color: #f4f4f4; /* Light background color for the section */
+  margin-bottom: 30px; /* Margin below the section */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center the content */
+}
+
+.baggagecheck-in h2 {
+  font-size: 2.5em; /* Large font size for the heading */
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.baggagecheck-in .baggage-image {
+  width: 100%; /* Make the image responsive */
+  max-width: 600px; /* Maximum width for the image */
+  height: auto; /* Maintain the image aspect ratio */
+  margin-bottom: 20px; /* Space below the image */
+}
+
+.baggagecheck-in p {
+  font-size: 1.2em; /* Medium font size for the paragraph */
+  color: #666; /* Slightly lighter color for text */
+  margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.baggagecheck-in .checkin-btn {
+  font-size: 1.2em; /* Button text size */
+  padding: 12px 24px; /* Button padding */
+  color: white; /* White text color */
+  background-color: #007BFF; /* Green background for the button */
+  border-radius: 5px; /* Rounded button corners */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the link behave like a block element */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.baggagecheck-in .checkin-btn:hover {
+  background-color: #0056B3; /* Darker green on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+      transform: translateY(0);
+  }
+
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* body {
+      padding: 20px;
+  } */
+
+  .baggagecontainer {
+      padding: 20px;
+  }
+
+  .baggageheader h1 {
+      font-size: 2.5rem;
+  }
+
+  .baggageheader p {
+      font-size: 1rem;
+  }
+
+  .baggagesection h2 {
+      font-size: 1.5rem;
+  }
+
+  .baggage-btn {
+      padding: 12px 25px;
+      font-size: 1rem;
+  }
+}                
+                  /*BOARDING PASS STYLE*/
+ /* BOARDING PASS SECTION STYLE */
+      /* Style for Info Section */
+.info-section {
+  margin: 30px 0; /* Space above and below the section */
+  padding: 20px; /* Padding inside the section */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Style for Heading (h2) */
+.info-heading {
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+  font-size: 1.8rem; /* Size of the heading */
+  color: #333; /* Dark text color */
+  margin-bottom: 15px; /* Space below the heading */
+}
+
+/* Style for Paragraph Text */
+.info-paragraph {
+  font-size: 1rem; /* Font size for paragraphs */
+  color: #555; /* Slightly lighter color than heading */
+  line-height: 1.6; /* Better line spacing for readability */
+  margin-bottom: 15px; /* Space below paragraphs */
+}
+
+/* Style for List */
+.info-list {
+  padding-left: 20px; /* Indentation for the list */
+  list-style-type: disc; /* Default bullet points */
+}
+
+/* Style for List Items */
+.info-item {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px; /* Space between list items */
+}
+
+/* Style for Strong Text Inside List Items */
+.info-strong {
+  color: #007bff; /* Blue color for emphasis */
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+ /* Style for Boarding Pass Image Section */
+.boardingpass {
+  width: 100%;
+  max-width: 600px; /* You can adjust this width as needed */
+  margin: 20px auto; /* Centers the image */
+  border: 2px solid #ccc; /* Optional border around the image */
+  padding: 10px; /* Space between the image and the border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+.boardingpass img {
+  width: 100%;
+  height: auto; /* Ensures the image retains its aspect ratio */
+  border-radius: 8px; /* Optional rounded corners */
+}
+
+/* If you want to apply the style specifically to the .image-section */
+.image-section {
+  width: 100%;
+  text-align: center; /* Centers the image within the section */
+  padding: 20px;
+}
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+              transform: translateY(20px);
+          }
+ 
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+ 
+      .bpimage-section {
+          margin-top: 40px;
+          animation: slideIn 1.5s ease-in-out;
+      }
+ 
+      .bpimage-section img {
+          max-width: 100%;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+ 
+      @keyframes slideIn {
+          from {
+              opacity: 0;
+              transform: translateX(-50px);
+          }
+ 
+          to {
+              opacity: 1;
+              transform: translateX(0);
+          }
+      }
+ 
+      .bpinfo-section {
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          margin-top: 30px;
+          animation: fadeIn 2s ease-in;
+      }
+ 
+      ul {
+          text-align: left;
+          list-style-type: none;
+          padding: 0;
+      }
+ 
+      ul li {
+          padding: 8px 0;
+          font-size: 1.1rem;
+          color: #333;
+      }
+ 
+      ul li strong {
+          color: #1856a7;
+      }
+ 
+      @media (max-width: 768px) {
+          .bph1 {
+              font-size: 2rem;
+          }
+ 
+          .bpp {
+              font-size: 1rem;
+          }
+ 
+          .bpboarding-form {
+              padding: 20px;
+          }
+ 
+          .bpinput[type="submit"] {
+              font-size: 1rem;
+          }
+      }
+       /* Footer Styles */
+.bpfooter {
+background-color: var(--primary-color);
+}
+ 
+.bpfooter__container {
+display: grid;
+grid-template-columns: 2fr repeat(2, 1fr);
+gap: 5rem;
+}
+ 
+.bpfooter__col .bph3 {
+font-size: 1.5rem;
+font-weight: 500;
+color: var(--white);
+margin-bottom: 1rem;
+}
+ 
+.bpfooter__col .bph4 {
+font-size: 1.2rem;
+font-weight: 500;
+color: var(--white);
+margin-bottom: 1rem;
+}
+ 
+.bpfooter__col p {
+color: var(--extra-light);
+margin-bottom: 1rem;
+cursor: pointer;
+transition: 0.3s;
+}
+ 
+.bpfooter__col p:hover {
+color: var(--white);
+}
+ 
+.bpfooter__bar {
+padding: 0.5rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+border-top: 1px solid var(--extra-light);
+}
+ 
+.bpfooter__bar p {
+font-size: 0.9rem;
+color: var(--extra-light);
+}
+ 
+.bpsocials {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+ 
+.bpsocials span {
+font-size: 1.2rem;
+color: var(--extra-light);
+}
+
+                  /*BOOK A FLIGHT STYLE*/
+    /* BOOK A FLIGHT STYLE */
+        /* CSS Variables for Consistent Theming */
+        /* :root {
+            --primary-color: #004080;
+            --secondary-color: #ff6600;
+            --light-bg: #f4f4f4;
+            --white: #ffffff;
+            --text-color: #333333;
+            --extra-light: #cccccc;
+        } */
+
+        /* General Styles */
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        } */
+
+/* Main container for the entire flight booking section */
+.bookaflight {
+  padding: 50px 0; /* Adds top and bottom padding */
+  background-color: #f4f4f4; /* Light gray background color */
+}
+
+/* Button styling */
+.bookaflight .button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #007bff; /* Blue background */
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.bookaflight .button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Flight booking steps section */
+.bookaflight .flight-steps {
+  margin-top: 40px;
+}
+
+/* Step heading styling */
+.bookaflight .flight-steps h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333; /* Dark text for heading */
+}
+
+/* Step containers styling */
+.bookaflight .steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Individual step styling */
+.bookaflight .step {
+  background-color: #ffffff; /* White background for each step */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 48%; /* Each step takes 48% of the container width */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for each step */
+.bookaflight .step:hover {
+  transform: translateY(-10px); /* Slight raise effect on hover */
+}
+
+/* Step title styling */
+.bookaflight .step h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #007bff; /* Blue color for titles */
+  margin-bottom: 10px;
+}
+
+/* Step paragraph styling */
+.bookaflight .step p {
+  font-size: 1rem;
+  color: #555; /* Gray color for text */
+  line-height: 1.6;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .bookaflight .steps {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .bookaflight .step {
+      width: 80%; /* Make steps take more width on small screens */
+      margin-bottom: 20px; /* Add space between steps */
+  }
+}
+
+        .book-flight-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      .bfheader {
+          text-align: center;
+          background-color: var(--primary-color);
+          color: var(--white);
+          padding: 30px 0;
+          border-radius: 10px;
+          margin-bottom: 40px;
+          animation: fadeInDown 1s ease-out;
+      }
+
+      .bfheader h1 {
+          font-size: 36px;
+          margin-bottom: 10px;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(-20px);
+          animation-fill-mode: forwards;
+          animation-delay: 0.3s;
+      }
+
+      .bfheader p {
+          font-size: 18px;
+          margin-bottom: 20px;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(-20px);
+          animation-fill-mode: forwards;
+          animation-delay: 0.5s;
+      }
+
+      /* Flight Options */
+      .bookaflight-options {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          margin: 40px 0;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(20px);
+          animation-fill-mode: forwards;
+          animation-delay: 0.7s;
+      }
+
+      .bookaflightoption-box {
+          background-color: var(--white);
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: 300px;
+          margin: 20px;
+          padding: 20px;
+          text-align: center;
+          transition: transform 0.3s, box-shadow 0.3s;
+          position: relative;
+          overflow: hidden;
+      }
+
+      .bookaflightoption-box:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .bookaflightoption-box i {
+          font-size: 40px;
+          color: black;
+          margin-bottom: 15px;
+          transition: transform 0.3s;
+      }
+
+      .bookaflightoption-box:hover i {
+          transform: scale(1.1);
+      }
+
+      .bookaflightoption-box h3 {
+          font-size: 24px;
+          color: var(--primary-color);
+          margin-bottom: 10px;
+          transition: color 0.3s;
+      }
+
+      .bookaflightoption-box h3:hover {
+          color: var(--secondary-color);
+      }
+
+      .bookaflightoption-box p {
+          font-size: 16px;
+          margin-bottom: 15px;
+          color: #666;
+      }
+
+      .bookaflightoption-box img {
+          width: 100%;
+          border-radius: 8px;
+          margin-top: 10px;
+          transition: transform 0.5s, opacity 0.5s;
+          opacity: 0.9;
+      }
+
+      .bookaflightoption-box img:hover {
+          transform: scale(1.05);
+          opacity: 1;
+      }
+
+      /* Flight Booking Steps */
+      .bookaflight-steps {
+          text-align: center;
+          margin: 50px 0;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(20px);
+          animation-fill-mode: forwards;
+          animation-delay: 1s;
+      }
+
+      .ookaflight-steps h2 {
+          font-size: 32px;
+          color: var(--primary-color);
+          margin-bottom: 40px;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(-20px);
+          animation-fill-mode: forwards;
+          animation-delay: 1.2s;
+      }
+
+      .bookaflightsteps {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+      }
+
+      .bookaflightstep {
+          background-color: var(--white);
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: 250px;
+          padding: 20px;
+          margin: 20px;
+          transition: transform 0.3s, box-shadow 0.3s;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(20px);
+          animation-fill-mode: forwards;
+          animation-delay: 1.3s;
+      }
+
+      .bookaflightstep:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .bookaflightstep h3 {
+          font-size: 20px;
+          color: rgb(45, 45, 207);
+          margin-bottom: 10px;
+          transition: color 0.3s;
+      }
+
+      .bookaflightstep h3:hover {
+          color: var(--primary-color);
+      }
+
+      .bookaflightstep p {
+          font-size: 16px;
+          color: #333;
+      }
+
+      /* Additional Features */
+      .bfadditional-features {
+          background-color: var(--white);
+          padding: 40px 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin: 40px 0;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(20px);
+          animation-fill-mode: forwards;
+          animation-delay: 1.5s;
+      }
+
+      .bfadditional-features h2 {
+          font-size: 28px;
+          color: var(--primary-color);
+          margin-bottom: 20px;
+          text-align: center;
+      }
+
+      .bffeatures-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+      }
+
+      .bffeature-item {
+          width: 45%;
+          margin-bottom: 20px;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(20px);
+          animation-fill-mode: forwards;
+      }
+
+      .bffeature-item:nth-child(odd) {
+          animation-delay: 1.6s;
+      }
+
+      .bffeature-item:nth-child(even) {
+          animation-delay: 1.7s;
+      }
+
+      .bffeature-item i {
+          font-size: 30px;
+          color: black;
+          margin-bottom: 10px;
+      }
+
+      .bffeature-item h4 {
+          font-size: 20px;
+          color: var(--primary-color);
+          margin-bottom: 10px;
+      }
+
+      .bffeature-item p {
+          font-size: 16px;
+          color: #666;
+      }
+
+      /* Testimonials */
+      .bftestimonials-section {
+          background-color: var(--light-bg);
+          padding: 40px 20px;
+          border-radius: 10px;
+          margin: 40px 0;
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          transform: translateY(20px);
+          animation-fill-mode: forwards;
+          animation-delay: 1.8s;
+      }
+
+      .bftestimonials-section h2 {
+          font-size: 28px;
+          color: var(--primary-color);
+          margin-bottom: 20px;
+          text-align: center;
+      }
+
+      .bftestimonials {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+      }
+
+      .bftestimonial {
+          background-color: var(--white);
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: 300px;
+          padding: 20px;
+          margin: 20px;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .bftestimonial:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .bftestimonial p {
+          font-style: italic;
+          color: #555;
+          margin-bottom: 15px;
+      }
+
+      .bftestimonial h4 {
+          font-size: 18px;
+          color: var(--primary-color);
+          text-align: right;
+      }
+
+                  /*BOOK RELAX STYLE*/
+  /* BOOK & RELAX STYLE */
+         /* body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        } */
+/* Style for the content section */
+.bookandrelax .content {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Heading styles */
+.bookandrelax .content h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Paragraph styles */
+.bookandrelax .content p {
+  font-size: 16px;
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Button styles */
+.bookandrelax .book-relax-btn {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.bookandrelax .book-relax-btn:hover {
+  background-color: #2980b9;
+}
+
+        .brheader {
+          background-color: #1e90ff;
+          text-align: center;
+          padding: 20px;
+          color: #333;
+          font-size: 2.5em;
+          font-weight: bold;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: 1200px;
+          margin: 0 auto;
+      }
+
+      .brcontainer {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+          text-align: center;
+          animation: fadeIn 2s ease-in-out;
+      }
+
+      .brcontainer img {
+          width: 100%;
+          max-width: 600px;
+          border-radius: 15px;
+          transition: transform 0.3s ease-in-out;
+      }
+
+      .brcontainer img:hover {
+          transform: scale(1.05);
+      }
+
+      .brcontent {
+          margin-top: 20px;
+          background-color: #ffffff;
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .brcontent h2 {
+          color: #333;
+          font-size: 2em;
+          margin-bottom: 15px;
+      }
+
+      .brcontent p {
+          font-size: 1.1em;
+          line-height: 1.6;
+          color: #292828;
+      }
+
+      .brbook-relax-btn {
+          display: inline-block;
+          margin-top: 30px;
+          padding: 15px 30px;
+          background-color: #170677;
+          color: #f7f6f2;
+          text-decoration: none;
+          font-size: 1.2em;
+          border-radius: 50px;
+          box-shadow: 0 4px 8px rgba(207, 178, 9, 0.1);
+          transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      .brbook-relax-btn:hover {
+          background-color: #615f5c;
+          transform: translateY(-5px);
+      }
+
+      /* Animation for page elements */
+      @keyframes fadeIn {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+          .brcontainer img {
+              max-width: 100%;
+          }
+
+          .brcontent h2 {
+              font-size: 1.6em;
+          }
+
+          .brcontent p {
+              font-size: 1em;
+          }
+      }
+/* <!-- Animation Keyframes for Testimonials --> */
+@keyframes fadeInRight {
+from {
+  opacity: 0;
+  transform: translateX(50px);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+/* <!-- Animation Keyframes for Our Fleet --> */
+
+@keyframes fadeInUp {
+from {
+  opacity: 0;
+  transform: translateY(50px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+                                  /* CHECK-IN STYLE */
+       /* Basic styling */
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #dce1e6;
+            color: #333;
+        } */
+/* Base reset for padding, margin, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for check-in page */
+.checkinairlines .checkin-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header of check-in section */
+.checkinairlines .checkin-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.checkinairlines .checkin-header h1 {
+  font-size: 36px;
+  color: #2c3e50;
+}
+
+.checkinairlines .checkin-header p {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-top: 10px;
+}
+
+/* Steps container for check-in */
+.checkinairlines .checkin-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.checkinairlines .checkin-steps .step {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.checkinairlines .checkin-steps .step img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.checkinairlines .checkin-steps .step h3 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.checkinairlines .checkin-steps .step p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* Mobile check-in section */
+.checkinairlines .mobile-checkin {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.checkinairlines .mobile-checkin img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.checkinairlines .mobile-checkin .app-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.checkinairlines .mobile-checkin .app-link:hover {
+  background-color: #2980b9;
+}
+
+/* Boarding pass section */
+.checkinairlines .boarding-pass {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.checkinairlines .boarding-pass img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.checkinairlines .boarding-pass .get-pass-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.checkinairlines .boarding-pass .get-pass-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Footer */
+.checkinairlines .footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.checkinairlines .footer__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.checkinairlines .footer__col h3,
+.checkinairlines .footer__col h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.checkinairlines .footer__col p,
+.checkinairlines .footer__col a {
+  font-size: 16px;
+  color: #bdc3c7;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.checkinairlines .footer__col a:hover {
+  color: #3498db;
+}
+
+.checkinairlines .footer__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+}
+
+.checkinairlines .footer__bar p {
+  font-size: 14px;
+  color: #bdc3c7;
+}
+
+.checkinairlines .footer__bar .socials span {
+  margin-right: 15px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.checkinairlines .footer__bar .socials span:hover {
+  color: #3498db;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .checkinairlines .checkin-steps {
+      grid-template-columns: 1fr;
+  }
+
+  .checkinairlines .footer__container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .checkinairlines .footer__bar {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkinairlines .checkin-header h1 {
+      font-size: 28px;
+  }
+
+  .checkinairlines .checkin-header p {
+      font-size: 16px;
+  }
+
+  .checkinairlines .checkin-steps .step h3 {
+      font-size: 18px;
+  }
+
+  .checkinairlines .checkin-steps .step p {
+      font-size: 14px;
+  }
+
+  .checkinairlines .footer__col p {
+      font-size: 14px;
+  }
+
+  .checkinairlines .footer__bar p {
+      font-size: 12px;
+  }
+
+  .checkinairlines .footer__bar .socials span {
+      font-size: 18px;
+  }
+}
+ /* General Styling for Images */
+ .checkin-img {
+  width: 100%;
+  max-width: 600px; /* Adjust image size */
+  height: auto;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: block;
+}
+/* Center align paragraphs */
+.center-align {
+  text-align: center;
+  margin: 0 auto;
+}
+
+        .checkinh1, h2, h3 {
+          color: #002855;
+      }
+
+      .checkin-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      .checkin-header {
+          background: url('https://example.com/airline-background.jpg') no-repeat center center;
+          background-size: cover;
+          text-align: center;
+          padding: 60px 20px;
+          color: rgb(3, 3, 3);
+          animation: fadeIn 1.5s ease-in;
+      }
+
+      .checkin-header h1 {
+          font-size: 3em;
+          margin-bottom: 10px;
+      }
+
+      .checkin-header p {
+          font-size: 1.2em;
+          max-width: 700px;
+          margin: 0 auto;
+      }
+      @keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.checkinanimated-heading {
+  font-size: 2.5rem;
+  color: #002855;
+  animation: fadeInUp 2s ease-out;
+}
+
+.checkinanimated-subheading {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #666;
+  animation: fadeInUp 2.5s ease-out;
+}
+
+
+      /* Steps section styling */
+      .checkin-steps {
+          background-color: #eaf1f8;
+          padding: 40px 20px;
+          margin: 30px 0;
+          border-radius: 10px;
+      }
+
+      .checkin-steps h2 {
+          text-align: center;
+          margin-bottom: 30px;
+          animation: slideIn 1s ease-out;
+      }
+
+      .checkinstep {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          animation: fadeIn 2s;
+      }
+
+      .checkinstep i {
+          font-size: 2.5em;
+          margin-right: 20px;
+          color: #ffdd57;
+          animation: bounceIn 1s ease-in;
+      }
+
+      .checkstep img {
+          width: 50px;
+          height: 40px;
+          margin-right: 15px;
+      }
+
+      .checkstep-content h3 {
+          margin-bottom: 10px;
+          font-size: 1.5em;
+      }
+
+      /* Mobile check-in and boarding pass */
+      .checkinmobile-checkin, .boarding-pass {
+          text-align: center;
+          padding: 40px 20px;
+          margin: 30px 0;
+          background-color: white;
+          border-radius: 10px;
+          animation: slideUp 1.5s ease-out;
+      }
+
+      .checkinapp-link, .get-pass-btn {
+          display: inline-block;
+          margin-top: 20px;
+          padding: 10px 20px;
+          color: white;
+          background-color: #002855;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s ease-in-out;
+      }
+
+      .checkinapp-link:hover, .get-pass-btn:hover {
+          background-color: #007BFF;
+          color: #0056B3;
+      }
+   
+      /* Styling for the Download the App link */
+      .app-link {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #007BFF; /* Green background */
+          color: white; /* White text */
+          font-size: 16px;
+          font-weight: bold;
+          text-align: center;
+          text-decoration: none;
+          border-radius: 5px; /* Rounded corners */
+          transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effect */
+      }
+  
+      /* Hover effect */
+      .app-link:hover {
+          background-color: #0056B3; /* Slightly darker green on hover */
+          transform: scale(1.05); /* Slightly increase the size on hover */
+      }
+  
+      /* Focus effect for accessibility
+      .app-link:focus {
+          outline: 3px solid #ffbf47; /* Golden outline on focus */
+      
+
+  
+      /* Animation Keyframes */
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      @keyframes slideIn {
+          from {
+              transform: translateY(-50px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+
+      @keyframes bounceIn {
+          0% {
+              transform: scale(0.8);
+              opacity: 0;
+          }
+          100% {
+              transform: scale(1);
+              opacity: 1;
+          }
+      }
+
+      @keyframes slideUp {
+          from {
+              transform: translateY(100px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 900px) {
+          .checkinmanage-options {
+              grid-template-columns: 1fr;
+              padding: 30px 10px;
+          }
+
+          .checkinheader {
+              padding: 30px 10px;
+          }
+
+          .checkinh1 {
+              font-size: 2rem;
+          }
+          .checkinh2 {
+              font-size: 1.5rem;
+          }
+
+          .checkinh3 {
+              font-size: 1.1rem;
+          }
+      }
+
+                          /* CONTACT STYLE */
+   /* Reset CSS */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Image Section */
+.contact .image-section {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.contact .image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact .image-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.contact .image-overlay h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact .explore-btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact .explore-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Contact Header */
+.contact .contact-header {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.contact .contact-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.contact .contact-header p {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+/* Contact Form */
+.contact .contact-form {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact .contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact .form-group {
+  margin-bottom: 20px;
+}
+
+.contact .form-group label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.contact .form-group input,
+.contact .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact .form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0056B3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.contact .form-group button:hover {
+  background-color: #0056B3;
+}
+
+/* Contact Info */
+.contact .contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.contact .info-box {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.contact .info-box i {
+  font-size: 2rem;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.contact .info-box p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* FAQ Section */
+.contact .faq-section {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.contact .faq-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contact .faq-item {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.contact .faq-question {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact .faq-answer {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact .image-section {
+      height: 250px;
+  }
+
+  .contact .image-overlay h2 {
+      font-size: 1.5rem;
+  }
+
+  .contact .contact-info {
+      flex-direction: column;
+  }
+
+  .contact .info-box {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .contact .contact-form {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact .contact-header h1 {
+      font-size: 2rem;
+  }
+
+  .contact .contact-header p {
+      font-size: 1rem;
+  }
+}
+/* Contact Info Section */
+.contact .contact-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 50px 0;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.contact .info-box {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  min-width: 250px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.contact .info-box:hover {
+  transform: translateY(-5px);
+}
+
+.contact .info-box i {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.contact .info-box p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .contact .info-box {
+      width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact .info-box {
+      width: 100%;
+  }
+}
+
+/* Body Styles */
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} */
+
+/* Main Section */
+.contactmain {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease;
+}
+
+.contact-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Image Section */
+.contactimage-section {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.contactimage-section img {
+    width: 100%;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+.contactimage-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.contactimage-section:hover .contactimage-overlay {
+    opacity: 1;
+}
+
+.contactimage-overlay h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.contactexplore-btn {
+    background-color: #002855;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.contactexplore-btn:hover {
+    background-color: #ffdd57;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.contactform-group {
+    margin-bottom: 20px;
+}
+
+.contactform-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contactform-group input,
+.contactform-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contactform-group button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contactform-group button:hover {
+    background-color: #0056B3;
+    
+}
+.contactinfo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+    animation: slideIn 0.8s ease-in-out;
+    
+}
+
+.contactinfo-box i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.contactfaq-section {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.contactfaq-section h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1s ease;
+}
+
+.contactfaq-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    cursor: pointer;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.contactfaq-question {
+    padding: 15px;
+    background-color: #6ca6cd;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.contactfaq-item:hover .contactfaq-question {
+    background-color: #6db2da;
+}
+
+.contactfaq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background-color: #f1f1f1;
+    color: #333;
+    border-top: 1px solid #ddd;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.contactfaq-item.active .contactfaq-answer {
+    max-height: 200px;
+    padding: 15px;
+}
+
+.contactfaq-question::after {
+    content: '+';
+    font-size: 18px;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    transition: transform 0.3s ease;
+}
+
+.contactfaq-item.active .contactfaq-question::after {
+    transform: rotate(45deg);
+}
+
+
+
+/* Animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  
+.contact-header h1 {
+        font-size: 2em;
+    }
+
+.contactimage-section img {
+        width: 100%;
+    }
+}
+
+                        /* CUSTOMER SUPPORT STYLE */
+               /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0; */
+            /* background-color: #f7f7f7; */
+        /* } */
+
+        .cscontainer {
+          max-width: 1100px;
+          margin: 40px auto;
+          padding: 20px;
+          /* background-color: #ffffff; */
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .csh1 {
+          color: rgb(63, 9, 63);
+          text-align: center;
+          animation: slideDown 1.2s ease;
+      }
+
+      .csh2 {
+          color: #333;
+          animation: slideUp 1.5s ease;
+          margin-top: 30px;
+      }
+
+      .csp {
+          color: #555;
+          line-height: 1.6;
+      }
+
+      /* .csul {
+          list-style: none;
+          padding-left: 0;
+      }
+
+      .csli {
+          color: #555;
+          line-height: 1.6;
+          margin-bottom: 10px;
+      } */
+
+      /* Image Styles */
+      .cssupport-image {
+          width: 100%;
+          max-height: 400px;
+          object-fit: cover;
+          border-radius: 10px;
+          transition: transform 0.5s ease;
+      }
+
+      .cssupport-image:hover {
+          transform: scale(1.05);
+      }
+
+
+      /* Headings Animation */
+      @keyframes slideDown {
+          from {
+              opacity: 0;
+              transform: translateY(-50px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      @keyframes slideUp {
+          from {
+              opacity: 0;
+              transform: translateY(30px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      /* Fade-in Animation */
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+              transform: scale(0.9);
+          }
+          to {
+              opacity: 1;
+              transform: scale(1);
+          }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+          .cscontainer {
+              padding: 15px;
+          }
+
+          .csh1 {
+              font-size: 24px;
+          }
+
+          .csh2 {
+              font-size: 20px;
+          }
+
+          /* .csbtn {
+              padding: 10px 15px;
+              font-size: 14px;
+          } */
+
+          .cssupport-image {
+              max-height: 300px;
+          }
+      }
+      /* body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f9f9f9;
+          }
+   */
+          .cscontainer {
+              max-width: 1000px;
+              margin: 40px auto;
+              padding: 20px;
+              background-color: #fff;
+              border-radius: 10px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              animation: fadeIn 1.5s ease-in-out;
+          }
+
+          .csh1 {
+              color: rgb(82, 9, 82);
+              text-align: center;
+              animation: slideDown 1.5s ease;
+          }
+  
+          .csh2 {
+              color: #333;
+              animation: slideUp 1.5s ease;
+              margin-top: 30px;
+             
+          }
+  
+          .csp {
+              color: #555;
+              line-height: 1.6;
+              margin-bottom: 15px;
+          }
+
+  
+          /* Image Styles */
+          .csprivacy-image {
+              width: 100%;
+              max-height: 400px;
+              object-fit: cover;
+              border-radius: 10px;
+              transition: transform 0.5s ease;
+          }
+  
+          .csprivacy-image:hover {
+              transform: scale(1.05);
+          }
+  
+          /* Button Styles */
+          /* .csbtn {
+              display: inline-block;
+              padding: 12px 20px;
+              background-color: #045e26;
+              color: #fff;
+              text-decoration: none;
+              border-radius: 5px;
+              transition: background-color 0.3s ease, transform 0.3s ease;
+              margin-top: 20px;
+          } */
+  
+          /* .btn:hover {
+              background-color: #ff7700;
+              transform: scale(1.05);
+          } */
+  
+          /* Animations */
+          @keyframes slideDown {
+              from {
+                  opacity: 0;
+                  transform: translateY(-50px);
+              }
+              to {
+                  opacity: 1;
+                  transform: translateY(0);
+              }
+          }
+  
+          @keyframes slideUp {
+              from {
+                  opacity: 0;
+                  transform: translateY(50px);
+              }
+              to {
+                  opacity: 1;
+                  transform: translateY(0);
+              }
+          }
+  
+          @keyframes fadeIn {
+              from {
+                  opacity: 0;
+                  transform: scale(0.9);
+              }
+              to {
+                  opacity: 1;
+                  transform: scale(1);
+              }
+          }
+  
+         
+@media (max-width: 768px) {
+  .cscontainer {
+      padding: 15px;
+      text-align: center; /* Center-align text inside the container */
+  }
+
+  .csh1 {
+      font-size: 24px;
+      text-align: center; /* Center-align heading */
+  }
+
+  .csh2 {
+      font-size: 20px;
+      text-align: center; /* Center-align subheading */
+  }
+
+  .csbtn {
+      padding: 10px 15px;
+      font-size: 14px;
+      display: inline-block; /* Ensure button is treated as inline */
+      margin: 0 auto; /* Center-align button */
+  }
+
+  .cssupport-image {
+      max-height: 300px;
+      display: block; /* Center-align image */
+      margin: 0 auto; /* Ensure it's centered */
+  }
+}
+
+      /* Rotate the icon when active */
+.csdropdown-toggle.active i {
+transform: rotate(180deg);
+transition: transform 0.3s ease;
+}
+
+/* Ensure icons transition smoothly */
+.csdropdown-toggle i {
+transition: transform 0.3s ease;
+}
+
+                                   /* FLIGHT STATUS STYLE */
+       /* General Styles */
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        } */
+
+        .fscontainer {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      .fsh1, h2 {
+          color: #004080;
+          text-align: center;
+      }
+
+      /* Flight Status Form */
+      .fsstatus-form {
+          background-color: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-bottom: 40px;
+      }
+
+      .fsform-group {
+          margin-bottom: 20px;
+      }
+
+      .fsform-group label {
+          display: block;
+          font-size: 16px;
+          margin-bottom: 5px;
+          color: #004080;
+      }
+
+      .fsform-group input {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 16px;
+      }
+
+      .flight-status-btn {
+          background-color: #004080;
+          color: white;
+          padding: 15px 25px;
+          border: none;
+          border-radius: 25px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .flight-status-btn:hover {
+          background-color: #003366;
+          transform: translateY(-5px);
+      }
+
+      /* Status Results Section */
+      .fsstatus-results {
+          background-color: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          margin-bottom: 40px;
+      }
+
+      /* Information Section */
+      .fsinfo-section {
+          text-align: center;
+          margin-bottom: 40px;
+      }
+
+      /* .info-section img {
+        display: block;
+          width: 50%; 
+          align-items: center;
+          border-radius: 8px;
+          margin-top: 20px;
+      } */
+
+      /* Real-Time Updates Section */
+      .fsreal-time-updates {
+          background-color: #eaf4f4;
+          padding: 20px;
+          border-radius: 8px;
+          text-align: center;
+          margin-bottom: 40px;
+      }
+
+      /* Travel Tips Section */
+      .fstravel-tips {
+          text-align: center;
+      }
+
+      .fstravel-tips ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .fstravel-tips li {
+          background: #fff;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 10px 0;
+      }
+
+      .fstips-image {
+          width: 50%;
+          border-radius: 8px;
+          margin-top: 20px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+          .fsstatus-form {
+              padding: 15px;
+          }
+
+          .flight-status-btn {
+              padding: 12px 20px;
+              font-size: 14px;
+          }
+
+          .fsinfo-section img, .fstips-image {
+              width: 90%;
+          }
+      }
+
+      @media (max-width: 500px) {
+          .flight-status-btn {
+              padding: 10px 15px;
+              font-size: 12px;
+          }
+
+          .fsinfo-section img, .fstips-image {
+              width: 100%;
+          }
+      }
+
+                                /* ECONOMY CLASS STYLE */
+  /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        } */
+
+        .ecoclscontainer {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+       .ecocls h1, h2, h3 {
+          color: #0056b3;
+          text-align: center;
+          margin-top: 20px;
+          animation: slideIn 1s ease-in-out;
+      }
+
+      @keyframes slideIn {
+          from {
+              opacity: 0;
+              transform: translateY(-50px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .ecocls p {
+          color: #333;
+          line-height: 1.6;
+      }
+
+      .ecoclsfeatures, .ecoclsbooking, .ecoclspolicies, .ecoclsexperience, .ecoclsassistance, .ecoclsloyalty, .ecoclsadditional {
+          margin-bottom: 30px;
+      }
+
+      .ecoclsfeature-box {
+          background: white;
+          padding: 20px;
+          margin-bottom: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      .ecoclsimg {
+          width: 100%;
+          max-width: 400px;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+          animation: fadeIn 2s ease-in;
+      }
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+
+      @media (max-width: 768px) {
+          .ecoclsfeature-box {
+              padding: 15px;
+          }
+
+          .ecocls h1, h2, h3 {
+              font-size: 1.5em;
+          }
+
+          .ecoclsimg {
+              max-width: 100%;
+          }
+
+      }
+
+      /*Car bike RENTAL*/
+
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        } */
+        .bcrheader {
+          text-align: center;
+          padding: 1rem;
+       color:#007bff;
+          font-size: 1.5rem;
+      }
+      .bcrsection {
+          padding: 20px;
+          margin: 10px;
+          background: #f9f9f9;
+          border-radius: 8px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      .bcrh2 {
+          color:#007bff;
+          text-align: center;
+          margin-bottom: 15px;
+      }
+      .bcrtable {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 15px;
+      }
+      .bcrtableth, .bcrtabletd {
+          border: 1px solid #ddd;
+          padding: 10px;
+          text-align: left;
+      }
+      .bcrtableth {
+          background:#007bff;
+          color: white;
+      }
+      .bcrtabletd {
+          background: #fff;
+      }
+      .bcrterms, .bcrinfo {
+          font-size: 1.3rem;
+          color: #555;
+      }
+      .bcrbutton {
+          display: inline-block;
+          padding: 10px 20px;
+          margin-top: 10px;
+          background:#007bff;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          text-align: center;
+          align-content: center;
+          .container {
+  display: flex; /* Flexbox helps in alignment */
+  justify-content: flex-end; /* Aligns children to the right */
+}
+
+      }
+      .bcrbutton:hover {
+          background:#0056b3;
+          cursor: pointer;
+      }
+      .bcrimg {
+          max-width: 100px;
+          border-radius: 5px;
+          transition: transform 0.3s ease-in-out;
+      }
+      .bcrimg:hover {
+          transform: scale(1.1);
+      }
+      .bcrul {
+          list-style: none;
+          padding: 0;
+      }
+      .bcrli {
+          font-size: 1.1em;
+          margin-bottom: 10px;
+      }
+      /* .carfeatures, .cardeals {
+          margin-top: 30px;
+      }
+      .carfeatures li, .cardeals li {
+          margin-bottom: 15px;
+          padding-left: 20px;
+          position: relative;
+      } */
+       .bcrp{
+           
+          font-size: 1.4em;
+          margin-bottom: 10px;
+      }
+@media (max-width: 768px) {
+          .bcrsection {
+              margin: 5px;
+              padding: 10px;
+          }
+          .bcrtable, .bcrtable tr, .bcrtable th, .bcrtable td {
+              display: block;
+              width: 100%;
+          }
+          .bcrtable th, .bcrtable td {
+              text-align: right;
+          }
+          .bcrtable td {
+              position: relative;
+              padding-left: 50%;
+              font-size: 1.9em;
+          }
+          .bcrtable td:before {
+              content: attr(data-label);
+              position: absolute;
+              left: 10px;
+              width: calc(50% - 20px);
+              font-weight: bold;
+              text-align: left;
+          }
+      }
+      footer {
+          background-color: #004080;
+          color: white;
+      }
+
+      .footer__container {
+          display: grid;
+          grid-template-columns: 2fr repeat(2, 1fr);
+          gap: 5rem;
+          padding: 20px;
+      }
+
+      .footer__col h3,
+      .footer__col h4 {
+          font-weight: 500;
+          margin-bottom: 1rem;
+      }
+
+      .footer__col p {
+          margin-bottom: 1rem;
+          cursor: pointer;
+          transition: 0.3s;
+      }
+
+      .footer__col p:hover {
+          color: #dddddd;
+      }
+
+      .footer__bar {
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          border-top: 1px solid #cccccc;
+      }
+
+      .footer__bar p {
+          font-size: 0.9rem;
+      }
+
+      /*HOME PAGE*/
+
+       /* New Styles for "Book Now" Button */
+       .book-now-container {
+        text-align: center;
+        margin: 20px 0;
+        animation: fadeInDown 1s ease-out;
+      }
+
+      .book-now-btn {
+        background-color: blue;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .book-now-btn:hover {
+        background-color: grey;
+        transform: scale(1.05);
+      }
+
+      /* Styles for Animated Containers */
+      .animated-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 1s forwards;
+      }
+
+      .container-box {
+        background-color: #f5f5f5;
+        padding: 30px;
+        margin: 0 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        /* width: 300px; */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .container-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .container-box img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .container-box:hover img {
+        transform: rotate(360deg);
+      }
+
+      .container-box h3 {
+        margin-bottom: 15px;
+        font-size: 1.5em;
+        color: #333;
+      }
+
+      .container-box p {
+        color: #666;
+        font-size: 1em;
+      }
+
+      /* Animation Keyframes */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .animated-container {
+          flex-direction: column;
+        }
+
+        .container-box {
+          margin: 15px 0;
+          width: 80%;
+        }
+      }
+        /* General styling for the card */
+  .memories__card {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  /* Hover effect: box highlights and scales */
+  .memories__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #e0f7fa; /* Light highlight on hover */
+  }
+
+  /* Styling for the heading */
+  .memories__card h4 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+  /* Change text color on hover */
+  .memories__card:hover h4 {
+    color: #00796b; /* Highlight heading color */
+  }
+
+  /* Link styling */
+  .memories__card a {
+    text-decoration: none;
+  }
+
+  /* Icon styling */
+  .memories__card span i {
+    font-size: 2rem;
+    color: #666;
+    transition: color 0.3s ease;
+  }
+
+  /* Change icon color on hover */
+  .memories__card:hover span i {
+    color: #00796b; /* Highlight icon color */
+  }
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        .containerindex {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #007bff;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .tab-btn {
+            padding: 15px 30px;
+            background-color: #f1f1f1;
+            border: none;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .form-container {
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1.2s ease-out;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+        .radio-group, .input-group, .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .radio-group input, 
+        .input-group input, 
+        .input-group select, 
+        .button-group button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .input-group input::placeholder {
+            color: #aaa;
+        }
+        .input-group input, .input-group select {
+            width: 200px;
+        }
+        .button-group .btn {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .button-group .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+          }
+        /* General styles for all screen sizes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  color: black;
+  position: relative;
+  z-index: 10;
+}
+
+.nav__logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  margin-left: 6px;
+  position: relative;
+}
+
+.nav__links a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav__links a:hover {
+  color: #f0c040;
+}
+
+/* Dropdown Styles */
+.dropdown__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px 0;
+  width: 200px;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.dropdown__menu li {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.dropdown__menu li a {
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown__menu li a:hover {
+  color: #f0c040;
+}
+
+/* Mobile View - Hide navigation links and show the toggle button */
+.nav-toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.nav-toggle-btn .active {
+  
+  color: black;
+ 
+}
+.nav-toggle-btn .open {
+  display: block;
+  
+}
+
+.nav-toggle-btn .close {
+  display: none;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .nav__links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px 0;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .nav-toggle-btn .active {
+  
+  color: black;
+ 
+}
+
+  .nav__links li {
+      margin: 10px 0;
+      text-align: center;
+      width: 100%;
+  }
+
+  .nav__links.active {
+      display: flex;
+  }
+
+  .nav-toggle-btn {
+      display: block;
+  }
+
+  .nav-toggle-btn.active .open {
+      display: none;
+  }
+
+  .nav-toggle-btn.active .close {
+      display: block;
+  }
+
+  /* Dropdown menu items are aligned in the center and span full width */
+  .dropdown__menu {
+      position: static;
+      display: none;
+      padding: 10px 0;
+      width: 100%;
+  }
+
+  .dropdown.active .dropdown__menu {
+      display: block;
+  }
+
+  /* Adjust margin for body content */
+  .body-content {
+      transition: margin-top 0.3s ease;
+  }
+
+  .menu-opened .body-content {
+      margin-top: var(--menu-height, 0); /* Dynamically set the margin-top */
+  }
+}
+
+.dropdown-icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate the dropdown icon when the dropdown is open */
+.dropdown.active .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Hover for Desktop */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown__menu {
+      display: block;
+  }
+
+  .dropdown:hover .dropdown-icon {
+      transform: rotate(180deg);
   }
 }

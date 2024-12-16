@@ -5,308 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baggage – Sunshine Airline</title>
+    <title>Baggage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="styles.css"/>
     <style>
       
-
-        .container {
-            padding: 50px 80px;
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            color: #111314;
-            text-align: center;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        header p {
-            text-align: center;
-            color: #555;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
-        @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animated-heading {
-    font-size: 2.5rem;
-    color: #002855;
-    animation: fadeInUp 2s ease-out;
-}
-
-.animated-subheading {
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: #666;
-    animation: fadeInUp 2.5s ease-out;
-}
-
-
-        section {
-            background-color: white;
-            padding: 30px;
-            margin-bottom: 40px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-            animation: slideUp 1.5s ease-in-out;
-        }
-
-        section h2 {
-            font-size: 1.8rem;
-            color: #002855;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        section p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .baggage-image {
-            display: block;
-            margin: 0 auto 20px;
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .checkin-btn {
-            display: block;
-            width: fit-content;
-            padding: 15px 30px;
-            background-color: #0026ff;
-            color: white;
-            font-size: 1.2rem;
-            margin: 20px auto;
-            text-align: center;
-            border-radius: 10px;
-            text-decoration: none;
-            box-shadow: 0px 5px 15px rgba(255, 102, 0, 0.3);
-            transition: all 0.3s ease;
-            animation: bounce 2s infinite;
-        }
-
-        .checkin-btn:hover {
-            background-color: #0e0aff;
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideUp {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown__menu {
-            display: none;
-            position: absolute;
-            background-color: white;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        .dropdown:hover .dropdown__menu {
-            display: block;
-        }
-
-        .dropdown__menu li {
-            padding: 10px 15px;
-        }
-
-        .dropdown__menu li a {
-            text-decoration: none;
-            color: #002855;
-        }
-
-        .dropdown__menu li:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                padding: 20px;
-            }
-
-            .container {
-                padding: 20px;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            section h2 {
-                font-size: 1.5rem;
-            }
-
-            .checkin-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-        }
-        /* Footer Styles */
- footer {
-            background-color: #004080;
-            color: white;
-        }
-
-        .footer__container {
-            display: grid;
-            grid-template-columns: 2fr repeat(2, 1fr);
-            gap: 5rem;
-            padding: 20px;
-        }
-
-        .footer__col h3,
-        .footer__col h4 {
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .footer__col p {
-            margin-bottom: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .footer__col p:hover {
-            color: #dddddd;
-        }
-
-        .footer__bar {
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            border-top: 1px solid #cccccc;
-        }
-
-        .footer__bar p {
-            font-size: 0.9rem;
-        }
-
-        .socials {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .socials span {
-            font-size: 1.2rem;
-        }
-         /* Dropdown Menu Styles */
-         .dropdown__menu {
-            display: none;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: #ffffff;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            min-width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .dropdown__menu.show {
-            display: block;
-        }
-
-        .dropdown__menu li {
-            padding: 10px 20px;
-        }
-
-        .dropdown__menu li a {
-            color: #333;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown__menu li a:hover {
-            background-color: #f4f4f4;
-        }
-
-        /* Rotate the icon when active */
-        .dropdown-toggle.active i {
-            transform: rotate(180deg);
-            transition: transform 0.3s ease;
-        }
-
-        /* Ensure icons transition smoothly */
-        .dropdown-toggle i {
-            transition: transform 0.3s ease;
-        }
-
-        /* Positioning for dropdown */
-        .dropdown {
-            position: relative;
-        }
-        /* Rotate the icon when active */
-.dropdown-toggle.active i {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-
-/* Ensure icons transition smoothly */
-.dropdown-toggle i {
-  transition: transform 0.3s ease;
-}
     </style>
 </head>
 
@@ -325,7 +28,7 @@
          <!-- Flight Details Dropdown -->
          <li class="link dropdown">
             <a href="managebooking.html" class="dropdown-toggle">
-             Book a Flight <i class="ri-arrow-down-s-line"></i>
+             Book a Flight <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown__menu">
               <li><a href="bookaflight.html">Booking</a></li>                     
@@ -345,7 +48,7 @@
                 <li><a href="customersupport.html">Customer Support</a></li>
                 <li><a href="insurance.html">Insurance</a></li>        
                 <li><a href="mobileapp.html">Mobile App</a></li>
-                <li><a href="language.html">Language / Region Selector</a></li> 
+                <li><a href="language.html">Language</a></li> 
                 <li><a href="privacypolicy.html">Privacy Policy</a></li>
                 <li><a href="travelinfo.html">Travel Information</a></li>
             </ul>
@@ -365,12 +68,12 @@
        
         <header>
             <h1>Baggage Information</h1>
-            <p>Your complete guide to baggage allowances, fees, and online check-in at Sunshine Airline.</p>
+            <!-- <p>Your complete guide to baggage allowances, fees, and online check-in at Sunshine Airline.</p> -->
         </header>
 
         <section class="baggage-allowance">
-            <h2>Carry-On Baggage Allowance</h2>
-            <img src="assets/carryon.jpeg" alt="Carry-On Baggage" class="baggage-image">
+            <!-- <h2>Carry-On Baggage Allowance</h2> -->
+            <!-- <img src="assets/carryon.jpeg" alt="Carry-On Baggage" class="baggage-image"> -->
             <p>Each passenger is allowed:</p>
             <ul>
                 <li><strong>1 Carry-On Bag:</strong> Maximum dimensions 55 cm x 35 cm x 25 cm, up to 7 kg (15 lbs).</li>
@@ -402,22 +105,7 @@
             </ul>
         </section>
 
-        <!-- <section class="special-items">
-            <h2>Special Items and Sports Equipment</h2>
-            <p>Sunshine Airline allows the transport of special items such as:</p>
-            <ul>
-                <li>Golf clubs, bicycles, and surfboards (fees may apply for oversized items).</li>
-                <li>Musical instruments, either checked or carried on, subject to space limitations.</li>
-            </ul>
-            <p>For more details, please refer to our <a href="#">Sports Equipment section</a>.</p>
-        </section>
-
-        <section class="check-in">
-            <h2>Online Check-In & Boarding Passes</h2>
-            <img src="assets/baggage 6.jpg" alt="Boarding Pass" class="baggage-image">
-            <p>Save time by checking in online and obtaining your boarding pass before you arrive at the airport.</p>
-            <a href="checkin.html" class="checkin-btn">Check In Now</a>
-        </section> -->
+        
         <section class="special-items">
             <h2>Special Items and Sports Equipment</h2>
             <p>Sunshine Airline allows the transport of special items such as:</p>
@@ -425,7 +113,7 @@
                 <li>Golf clubs, bicycles, and surfboards (fees may apply for oversized items).</li>
                 <li>Musical instruments, either checked or carried on, subject to space limitations.</li>
             </ul>
-            <p>For more details, please refer to our <a href="sports.html">Sports Equipment section</a> <---Click Here</p>
+            <p>For more details, please refer to our <a href="sports.html">Sports Equipment section</a> </p>
         </section>
         
         <!-- New Button Section for More Baggage Info -->
@@ -433,7 +121,7 @@
             <a href="morebaggageinfo.html" class="btn">More Baggage Info</a>
         </div>
         
-        <section class="check-in">
+        <section class="baggagecheck-in">
             <h2>Online Check-In & Boarding Passes</h2>
             <img src="assets/baggage 6.jpg" alt="Boarding Pass" class="baggage-image">
             <p>Save time by checking in online and obtaining your boarding pass before you arrive at the airport.</p>
